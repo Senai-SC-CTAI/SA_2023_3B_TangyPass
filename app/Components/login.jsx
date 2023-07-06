@@ -6,10 +6,11 @@ import { styles } from './styles';
 export function login() {
   return (
     <View style={styles.container}>
-      {/* asdaccsd */}
       <Text>
         Olá sjfdkhdjs
       </Text>
     </View>
   );
 }
+
+//Anselmo
