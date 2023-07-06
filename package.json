@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "expo": "^49.0.0"
+    "@react-navigation/stack": "^6.3.17",
+    "expo": "^49.0.0",
+    "react-native-gesture-handler": "~2.12.0"
   }
 }
