@@ -7,7 +7,7 @@ export function login() {
   return (
     <View style={styles.container}>
       <Text>
-        Olá sjfdkhdjs
+        Olá 
       </Text>
     </View>
   );
