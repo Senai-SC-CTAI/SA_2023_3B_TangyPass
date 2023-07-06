@@ -6,8 +6,9 @@ import { styles } from './styles';
 export function login() {
   return (
     <View style={styles.container}>
+      {/* asdasd */}
       <Text>
-        Olá 
+        Olá sjfdkhdjs
       </Text>
     </View>
   );
