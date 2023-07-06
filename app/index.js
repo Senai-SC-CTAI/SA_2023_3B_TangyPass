@@ -1,2 +1,2 @@
 import "expo-router/entry";
-// BRUNO 
+// BR
