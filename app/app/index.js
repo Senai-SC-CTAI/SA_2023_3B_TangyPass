@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Image } from "react-native";
+import { StyleSheet, Text, View,Image, Pressable, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 
 export default function Page() {
@@ -6,7 +6,10 @@ export default function Page() {
     <View style={styles.container}>
       <View style={styles.main}>
         <Text style={styles.alingText}> Estudante</Text>
-        <Text style={styles.tex}> Entre com sua conta googlr para continuar</Text>
+        <Text style={styles.tex}> Entre com sua conta google para continuar</Text>
+        <TouchableOpacity style={styles.btn} >
+        <Image source={require('../Components/Assets/google.png')} style={styles.img}></Image> <Text style={styles.tex}>Prosseguir com google</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -18,6 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     padding: 24,
+    backgroundColor:'#FDFDFD'
   },
   main: {
     flex: 1,
@@ -38,5 +42,16 @@ const styles = StyleSheet.create({
     color:'#9A9A9A',
     fontWeight:'bold',
     textAlign:'center'
+  },
+  btn:{
+    margin:10,
+    padding:10,
+    width:339,
+    height:39,
+    backgroundColor:'red'
+  },
+  img:{
+    top:30
   }
+  
 });
