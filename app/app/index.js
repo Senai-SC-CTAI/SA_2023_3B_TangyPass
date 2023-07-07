@@ -1,16 +1,19 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View,Image } from "react-native";
 import { Link } from "expo-router";
+
 export default function Page() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text> Estudante</Text>
+        <Text style={styles.alingText}> Estudante</Text>
+        <Text style={styles.tex}> Entre com sua conta googlr para continuar</Text>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     alignItems: "center",
@@ -23,11 +26,17 @@ const styles = StyleSheet.create({
     marginHorizontal: "auto",
   },
   alingText:{
-    display:'flex',
-    justifyContent:'center',
-    margin:5,
-    marginBottom:700,
-    position:'absolute',
-    textAlign:'center',
+    color:'#5D5D5D',
+    fontWeight:'bold',
+    fontFamily:'Alata',
+    fontSize:25,
+    textAlign:'center'
   },
+  tex:{
+    margin:5,
+    fontSize:18,
+    color:'#9A9A9A',
+    fontWeight:'bold',
+    textAlign:'center'
+  }
 });
