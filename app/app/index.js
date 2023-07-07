@@ -7,10 +7,13 @@ export default function Page() {
       <View style={styles.main}>
         <Text style={styles.alingText}> Estudante</Text>
         <Text style={styles.tex}> Entre com sua conta google para continuar</Text>
-        <TouchableOpacity style={styles.btn} >
-        <Image source={require('../Components/Assets/google.png')} style={styles.img}></Image> <Text style={styles.tex}>Prosseguir com google</Text>
-        </TouchableOpacity>
+        <Pressable style={styles.btn}>
+          <View>
+            <Image source={require('../Components/Assets/google.png')} style={styles.img}/><Text style={styles.texPres}>Prosseguir com o google</Text>
+          </View>
+        </Pressable>
       </View>
+        
     </View>
   );
 }
@@ -37,21 +40,36 @@ const styles = StyleSheet.create({
     textAlign:'center'
   },
   tex:{
-    margin:5,
+  
     fontSize:18,
     color:'#9A9A9A',
     fontWeight:'bold',
     textAlign:'center'
   },
+  texPres:{
+    fontSize:18,
+    color:'#9A9A9A',
+    fontWeight:'bold',
+    textAlign:'center',
+    marginTop:-30,
+    
+  
+  },
   btn:{
-    margin:10,
-    padding:10,
-    width:339,
+    width:387,
     height:39,
-    backgroundColor:'red'
+    padding:5,
+    margin:5,
+    backgroundColor:'red',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'row',
+  
   },
   img:{
-    top:30
+    bottom:4,
+    right:50
   }
   
 });
