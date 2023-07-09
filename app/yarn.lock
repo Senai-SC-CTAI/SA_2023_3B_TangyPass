@@ -1186,11 +1186,14 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
+<<<<<<< HEAD
 "@expo-google-fonts/alata@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/alata/-/alata-0.2.3.tgz#485e5dccaca5688dbb5db1be7108f102346c33ca"
   integrity sha512-FHQ0Hn8KfvxbxaBLFQJOxHUTMp1/aIXZk5Swu14cfZ+KqEeN1ZQVSvPpBdSzkc8s+jS3OLOXqcsvvnqhd83j/w==
 
+=======
+>>>>>>> 5cf4e95aa5e61e742843f798fc1ff6c80cb670e0
 "@expo/bunyan@4.0.0", "@expo/bunyan@^4.0.0":
   version "4.0.0"
   resolved "https://registry.npmjs.org/@expo/bunyan/-/bunyan-4.0.0.tgz"
@@ -3708,7 +3711,11 @@ expo-splash-screen@~0.18.1:
     "@expo/configure-splash-screen" "^0.6.0"
     "@expo/prebuild-config" "6.0.1"
 
+<<<<<<< HEAD
 expo-status-bar@~1.4.4:
+=======
+expo-status-bar@~1.4.2:
+>>>>>>> 5cf4e95aa5e61e742843f798fc1ff6c80cb670e0
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.4.4.tgz#6874ccfda5a270d66f123a9f220735a76692d114"
   integrity sha512-5DV0hIEWgatSC3UgQuAZBoQeaS9CqeWRZ3vzBR9R/+IUD87Adbi4FGhU10nymRqFXOizGsureButGZIXPs7zEA==
