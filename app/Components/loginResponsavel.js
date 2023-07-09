@@ -6,7 +6,7 @@ import { styles } from './styles';
 export function loginResponsavel() {
   return (
     <View style={styles.container}>
-      
+      <Text>123</Text>
     </View>
   );
 }
