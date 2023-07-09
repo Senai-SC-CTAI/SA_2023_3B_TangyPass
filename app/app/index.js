@@ -8,7 +8,7 @@ export default function Page() {
       <View style={styles.main}>
         <Text style={styles.alingText}> Estudante</Text>
         <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
-        <Pressable  onPress={"Home_Estudante"}>
+        <Pressable  onPress={()=> "Home_Estudante"}>
           <View style={styles.btn} >
             <Image source={require('../app/Assets/google.png')} style={styles.img}/>
             <Link href="Home_Estudante"> Prosseguir com google</Link>
