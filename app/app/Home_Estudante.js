@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react';
+import { StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
-export default function App() {
+export default function Page() {
   return (
     <View style={styles.container}>
-
-      <StatusBar style="auto" />
+     
     </View>
   );
 }
@@ -12,7 +11,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   
+    alignItems: "center",
+    padding: 24,
   },
-  
+ 
 });
