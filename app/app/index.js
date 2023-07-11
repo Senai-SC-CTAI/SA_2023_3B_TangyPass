@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View,Image, Pressable, TouchableOpacity } from "react-native";
+import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
 import { Link } from "expo-router";
 
-export default function Page() {
+export default function Page() {  
   return (
     <View style={styles.container}>
       <Image source={require('./Assets/img.png')} style={styles.logo}/>
@@ -11,7 +12,7 @@ export default function Page() {
         <Pressable  onPress={()=> "Home_Estudante"}>
           <View style={styles.btn} >
             <Image source={require('../app/Assets/google.png')} style={styles.img}/>
-            <Link href="Home_Estudante"> Prosseguir com google</Link>
+            <Link href="Home_Estudante" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </Pressable>
         
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
     fontSize:18,
     color:'#000',
   },
+
   btn:{
     width:339,
     height:39,
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     margin:22,
     borderRadius:5,
     marginTop:20,
-    backgroundColor:'#FFFFFF',
+    backgroundColor:'#ffffff',
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
@@ -101,7 +103,7 @@ width: 100,
 height: 369.922,
 backgroundColor:'#000',
 transform: [{rotate: '50deg'}],
-top:190,
+top:202,
 marginLeft:220,
 },
   logo:{

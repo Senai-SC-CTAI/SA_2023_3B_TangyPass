@@ -9,7 +9,7 @@ export default function Page() {
         </View>
 
         <TextInput placeholder="Usúario" style={styles.inp}/>
-        <TextInput placeholder="Insira sua senha" style={styles.inp}/>
+        <TextInput placeholder="Insira sua senha" style={styles.inp} secureTextEntry={true}/>
 
         <Pressable>
             <View style={styles.btn} >
@@ -17,7 +17,13 @@ export default function Page() {
             </View>
         </Pressable>
         <Link href="/" style={styles.ty}>Entrar como estudante</Link>
+
+        <View style={styles.retangle}>
+
+        </View>
     </View>
+
+    
   );
 }
 
@@ -69,5 +75,13 @@ const styles = StyleSheet.create({
   ty:{
     top:10,
     fontSize:16,
-  }
+  },
+  retangle:{
+    width: 100,
+    height: 369.922,
+    backgroundColor:'#000',
+    transform: [{rotate: '50deg'}],
+    top:100,
+    marginLeft:220,
+    },
 });
