@@ -19,23 +19,21 @@ export default function Page() {
      
      <Pressable style={styles.agendarbtn}>
       <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
-<<<<<<< HEAD
      </Pressable>
+   
      <View style={styles.sty}>
      <Pressable style={styles.pedidosbtn}>
       <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
      </Pressable>
      </View>
-=======
-     </TouchableOpacity>
+
      
       <Link href="Historico_Responsavel">
-        <TouchableOpacity style={styles.pedidosbtn} onPress={()=> "Historico_Responsavel"}>
+        <TouchableOpacity style={styles.pedidosbtn}>
           <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
         </TouchableOpacity>
       </Link>
      
->>>>>>> a9b4cd7769716c95c79b3d379a1dac36ee8b41d9
     </View>
   );
 }
@@ -90,8 +88,6 @@ const styles = StyleSheet.create({
   elevation:5,
   borderWidth:5,
   borderRadius:5,
- 
- 
  },
  pedidostxt:{
   color:'white',
