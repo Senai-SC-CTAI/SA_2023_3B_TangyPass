@@ -21,9 +21,11 @@ export default function Page() {
       <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
      </TouchableOpacity>
      
-     <TouchableOpacity style={styles.pedidosbtn}>
-      <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
-     </TouchableOpacity>
+      <Link href="Historico_Responsavel">
+        <TouchableOpacity style={styles.pedidosbtn} onPress={()=> "Historico_Responsavel"}>
+          <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
+        </TouchableOpacity>
+      </Link>
      
     </View>
   );

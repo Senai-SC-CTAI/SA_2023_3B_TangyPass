@@ -11,8 +11,8 @@ export default function Page() {
         <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
         <Pressable  onPress={()=> "Home_Estudante"}>
           <View style={styles.btn} >
-            <Image source={require('../app/Assets/google.png')} style={styles.img}/>
-            <Link href="Home_Estudante" style={styles.texbtn}> Prosseguir com google</Link>
+            <Image source={require('./Assets/google.png')} style={styles.img}/>
+            <Link href="Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </Pressable>
         
@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     shadowColor:'#00000010',
     shadowOffset: {width: 5, height:5},
-    shadowRadius:30,
-    elevation:5,
+    shadowRadius: 1,
+    elevation: 5,
   },
   img:{
     right:30,
