@@ -15,7 +15,7 @@ export default function Page() {
             <Link href="Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </Pressable>
-        
+        <Link href="Home_Pai"> Home </Link>
         <Pressable>
             <View style={styles.aling}>
              <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>

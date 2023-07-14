@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View,Pressable } from "react-native";
 import { Link } from "expo-router";
 import React from 'react';
 import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
@@ -17,12 +17,19 @@ export default function Page() {
      <Text style={styles.title}>Tangy</Text>
      <Text style={styles.usertitle}>Logado como{"\n"} Responsável</Text>
      
-     <TouchableOpacity style={styles.agendarbtn}>
+     <Pressable style={styles.agendarbtn}>
       <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
-     </TouchableOpacity>
+     </Pressable>
+   
+     <View style={styles.sty}>
+     <Pressable style={styles.pedidosbtn}>
+      <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
+     </Pressable>
+     </View>
+
      
       <Link href="Historico_Responsavel">
-        <TouchableOpacity style={styles.pedidosbtn} onPress={()=> "Historico_Responsavel"}>
+        <TouchableOpacity style={styles.pedidosbtn}>
           <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
         </TouchableOpacity>
       </Link>
@@ -56,6 +63,10 @@ const styles = StyleSheet.create({
   position:'relative',
   top:100,
   right:90,
+  shadowColor:'#909090',
+  shadowOffset:{width:5, height:5},
+  shadowRadius:30,
+  elevation:5,
  },
  agendartxt:{
   color:'white',
@@ -64,7 +75,6 @@ const styles = StyleSheet.create({
  },
  pedidosbtn:{
   backgroundColor:'black',
-  borderRadius:5,
   width:159,
   height:99,
   justifyContent:'center',
@@ -72,6 +82,12 @@ const styles = StyleSheet.create({
   position:'relative',
   top:1.3,
   left:93,
+  shadowColor:'#909090',
+  shadowOffset:{width:5, height:5},
+  shadowRadius:30,
+  elevation:5,
+  borderWidth:5,
+  borderRadius:5,
  },
  pedidostxt:{
   color:'white',
