@@ -14,7 +14,7 @@ export default function Page() {
             <Text style={styles.texPres}>Prosseguir com o google</Text>
           </View>
         </Pressable>
-        
+        <Link href="Home_Pai"> Home </Link>
         <Pressable>
             <View style={styles.aling}>
              <Link href="Login_Responsavel">Entrar como responsável</Link>
