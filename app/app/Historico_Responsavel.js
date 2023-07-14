@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Div } from '../Components/HistóricoHoras';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 
 export default function Page() {
     return (
@@ -25,10 +26,11 @@ export default function Page() {
             <Div />
             <Div />
             <Div />
-
-            <Text style={styles.text}>
-                Voltar
-            </Text>
+            <Link href="Home_Pai">
+                <Text style={styles.text}>
+                    Voltar
+                </Text>
+            </Link>
         </View>
     );
 }
