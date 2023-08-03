@@ -9,13 +9,16 @@ export default function Page() {
       <View style={styles.main}>
         <Text style={styles.alingText}> Estudante</Text>
         <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
+        
         <Pressable  onPress={()=> "Home_Estudante"} style={styles.alingbtn}>
           <View style={styles.btn} >
             <Image source={require('./Assets/google.png')} style={styles.img}/>
             <Link href="Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </Pressable>
+
         <Link href="Home_Pai"> Home </Link>
+
         <Pressable>
             <View style={styles.aling}>
              <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
@@ -111,8 +114,9 @@ const styles = StyleSheet.create({
   },
 
   retangle:{
-    transform: [{translateY:'70%'}, {translateX:'510%'}],
+    transform: [{"translateY":"10%"}, {"translateX":"10%"}],
     right:0,
-    bottom:40,
+    bottom:0,
+    position:'fixed'
   }
 });

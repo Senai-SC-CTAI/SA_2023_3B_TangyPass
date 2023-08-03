@@ -5,24 +5,21 @@ export default function Page() {
     <View style={styles.container}>
      <Image source={require('./Assets/img.png')} style={styles.logo}/>
         <View>
-            <Text style={styles.tex}>Responsável</Text>
+            <Text style={styles.tex}>Recuperar</Text>
         </View>
 
-        <TextInput placeholder="Usúario" style={styles.inp}/>
-        <TextInput placeholder="Insira sua senha" style={styles.inp} secureTextEntry={true}/>
+        <TextInput placeholder="Email" style={styles.inp} autoComplete="email"/>
 
         <Pressable>
             <View style={styles.btn} >
-                <Text style={styles.texPres}>ENTRAR</Text>
+                <Text style={styles.texPres}>Solicitar nova senha</Text>
             </View>
         </Pressable>
-        <Link href="/" style={styles.ty}>Entrar como estudante</Link>
+        <Link href="/" style={styles.ty}>Entrar como responsável</Link>
 
         <View style={styles.retangle}>
           <Image source={require('./Assets/Polygon2.png')}></Image>
         </View>
-
-        <Link href="Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>
     </View>
 
     
@@ -53,7 +50,7 @@ const styles = StyleSheet.create({
     fontSize:18,
     maxWidth:"100%",
     maxHeight:"100%",
-    minWidth:"28%",
+    minWidth:"25%",
     backgroundColor:'#fff',
     padding:15,
     margin:20,
@@ -68,7 +65,7 @@ const styles = StyleSheet.create({
     padding:10,
     maxWidth:"100%",
     maxHeight:"100%",
-    width:345,
+    width:300,
     borderRadius:5,
   },
   texPres:{
