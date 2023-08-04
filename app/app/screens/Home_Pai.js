@@ -23,12 +23,25 @@ export default function Page() {
      </TouchableOpacity>
 
      
-      <Link href="Historico_Responsavel">
         <TouchableOpacity style={styles.pedidosbtn1}>
           <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
         </TouchableOpacity>
-      </Link>
       </View>
+
+      
+        <TouchableOpacity style={styles.cronogramabtn}>
+          <Text style={styles.cronotxt}>Crônograma do estudante</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.hitorico_entrada_saidabtn}>
+          <Text style={styles.hitoricotxt}>Historico de entradas e saídas</Text>
+        </TouchableOpacity>
+      
+        <TouchableOpacity style={styles.saidabtn}>
+          <Text style={styles.saidatxt}>Sair</Text>
+        </TouchableOpacity>
+
+        <Text style={styles.tangy}>Tangy.app @2023</Text>
 
     </View>
   );
@@ -52,18 +65,25 @@ const styles = StyleSheet.create({
  buttons:{
   flexDirection:"row",
   width:"100%",
+
   marginTop:40,
  },
  agendarbtn:{
   backgroundColor:'black',
   borderRadius:5,
   width:"40%",
-  height:98.61,
+  height:"170%",
   justifyContent:'center',
   alignItems:'center',
   position:'relative',
   marginRight:15,
   marginLeft:30,
+  shadowColor:'#000010',
+  shadowOffset:{width:5, height:5},
+  shadowRadius:1,
+  borderRadius:5,
+  shadowOpacity:0.5,
+
   
  },
  agendartxt:{
@@ -73,14 +93,16 @@ const styles = StyleSheet.create({
  },
  pedidosbtn1:{
   backgroundColor:'black',
-  width:159,
-  height:99,
+  width:"40%",
+  height:"170%",
   justifyContent:'center',
   alignItems:'center',
   shadowColor:'#000010',
   shadowOffset:{width:5, height:5},
   shadowRadius:1,
   borderRadius:5,
+  shadowOpacity:0.5,
+
  },
  pedidostxt:{
   color:'white',
@@ -88,5 +110,56 @@ const styles = StyleSheet.create({
   fontSize:18,
   marginLeft:8,
  },
+ cronogramabtn:{
+  backgroundColor:'black',
+  justifyContent:'center',
+  alignItems:'center',
+  shadowColor:'#000010',
+  shadowOffset:{width:5, height:5},
+  shadowRadius:1,
+  borderRadius:5,
+  shadowOpacity:0.5,
+  width:"85%",
+  height:"7%",
+  marginTop:50,
+ },
+ cronotxt:{
+  color:"white",
+  fontFamily:'Alata_400Regular',
+  fontSize:18,
+ },
+ hitorico_entrada_saidabtn:{
+  backgroundColor:'black',
+  justifyContent:'center',
+  alignItems:'center',
+  shadowColor:'#000010',
+  shadowOffset:{width:5, height:5},
+  shadowRadius:1,
+  borderRadius:5,
+  shadowOpacity:0.5,
+  width:"85%",
+  height:"7%",
+  marginTop:15,
+ },
+ hitoricotxt:{
+  color:"white",
+  fontFamily:'Alata_400Regular',
+  fontSize:18,
+ },
+ saidatxt:{
+  color:"black",
+  fontFamily:'Alata_400Regular',
+  fontSize:18,
+ },
+saidabtn:{
+  width:"10%",
+  height:"10%",
+  marginTop:100,
+},
+tangy:{
+  color:"#B6B6B6",
+  fontFamily:'Alata_400Regular',
+  fontSize:15,
+}
 
 });

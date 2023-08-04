@@ -26,7 +26,7 @@ export default function Page() {
             <Div />
             <Div />
             <Div />
-            <Link href="Home_Pai">
+            <Link href="./screens/Home_Pai">
                 <Text style={styles.text}>
                     Voltar
                 </Text>
