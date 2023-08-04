@@ -1,8 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity, View,Pressable } from "react-native";
+import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { Link } from "expo-router";
-import React from 'react';
-import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function Page() {
   let [fontsLoaded] = useFonts({
     Alata_400Regular,
@@ -17,23 +17,19 @@ export default function Page() {
      <Text style={styles.title}>Tangy</Text>
      <Text style={styles.usertitle}>Logado como{"\n"} Responsável</Text>
      
-     <Pressable style={styles.agendarbtn}>
+     <View style={styles.buttons}>
+     <TouchableOpacity style={styles.agendarbtn}>
       <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
-     </Pressable>
-   
-     <View style={styles.sty}>
-     <Pressable style={styles.pedidosbtn}>
-      <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
-     </Pressable>
-     </View>
+     </TouchableOpacity>
 
      
       <Link href="Historico_Responsavel">
-        <TouchableOpacity style={styles.pedidosbtn}>
+        <TouchableOpacity style={styles.pedidosbtn1}>
           <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
         </TouchableOpacity>
       </Link>
-     
+      </View>
+
     </View>
   );
 }
@@ -53,40 +49,37 @@ const styles = StyleSheet.create({
   paddingTop:71,
   fontSize:18,
  },
+ buttons:{
+  flexDirection:"row",
+  width:"100%",
+  marginTop:40,
+ },
  agendarbtn:{
   backgroundColor:'black',
   borderRadius:5,
-  width:162,
+  width:"40%",
   height:98.61,
   justifyContent:'center',
   alignItems:'center',
   position:'relative',
-  top:100,
-  right:90,
-  shadowColor:'#909090',
-  shadowOffset:{width:5, height:5},
-  shadowRadius:30,
-  elevation:5,
+  marginRight:15,
+  marginLeft:30,
+  
  },
  agendartxt:{
   color:'white',
   fontFamily:'Alata_400Regular',
   fontSize:18,
  },
- pedidosbtn:{
+ pedidosbtn1:{
   backgroundColor:'black',
   width:159,
   height:99,
   justifyContent:'center',
   alignItems:'center',
-  position:'relative',
-  top:1.3,
-  left:93,
-  shadowColor:'#909090',
+  shadowColor:'#000010',
   shadowOffset:{width:5, height:5},
-  shadowRadius:30,
-  elevation:5,
-  borderWidth:5,
+  shadowRadius:1,
   borderRadius:5,
  },
  pedidostxt:{

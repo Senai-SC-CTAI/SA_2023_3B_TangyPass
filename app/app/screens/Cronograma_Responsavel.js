@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { Div } from '../Components/HistóricoHoras';
+import { Div } from '../Components/HistoricoHoras.js';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 

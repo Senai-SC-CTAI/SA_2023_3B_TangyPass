@@ -10,8 +10,8 @@ export default function Page() {
 
         <TextInput placeholder="Email" style={styles.inp} autoComplete="email"/>
 
-        <Pressable>
-            <View style={styles.btn} >
+        <Pressable style={styles.btn} >
+            <View >
                 <Text style={styles.texPres}>Solicitar nova senha</Text>
             </View>
         </Pressable>
@@ -44,13 +44,13 @@ const styles = StyleSheet.create({
     fontSize:25,
     marginTop:120,
     padding:10,
+    width:""
   }, 
   inp:{
     color:'#9A9A9A', 
     fontSize:18,
-    maxWidth:"100%",
-    maxHeight:"100%",
-    minWidth:"25%",
+    maxWidth:262,
+    width:"100%",
     backgroundColor:'#fff',
     padding:15,
     margin:20,
@@ -63,9 +63,8 @@ const styles = StyleSheet.create({
   btn:{
     backgroundColor:'#000',
     padding:10,
-    maxWidth:"100%",
-    maxHeight:"100%",
-    width:300,
+    maxWidth:262,
+    width:"100%",
     borderRadius:5,
   },
   texPres:{

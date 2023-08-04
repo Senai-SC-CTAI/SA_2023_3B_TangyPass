@@ -11,8 +11,8 @@ export default function Page() {
         <TextInput placeholder="Usúario" style={styles.inp}/>
         <TextInput placeholder="Insira sua senha" style={styles.inp} secureTextEntry={true}/>
 
-        <Pressable>
-            <View style={styles.btn} >
+        <Pressable  style={styles.btn}>
+            <View>
                 <Text style={styles.texPres}>ENTRAR</Text>
             </View>
         </Pressable>
@@ -51,9 +51,8 @@ const styles = StyleSheet.create({
   inp:{
     color:'#9A9A9A', 
     fontSize:18,
-    maxWidth:"100%",
-    maxHeight:"100%",
-    minWidth:"28%",
+    maxWidth:262,
+    width:"100%",
     backgroundColor:'#fff',
     padding:15,
     margin:20,
@@ -66,9 +65,8 @@ const styles = StyleSheet.create({
   btn:{
     backgroundColor:'#000',
     padding:10,
-    maxWidth:"100%",
-    maxHeight:"100%",
-    width:345,
+    maxWidth:262,
+    width:"100%",
     borderRadius:5,
   },
   texPres:{
