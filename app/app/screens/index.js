@@ -10,18 +10,18 @@ export default function Page() {
         <Text style={styles.alingText}> Estudante</Text>
         <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
         
-        <Pressable  onPress={()=> "Home_Estudante"} style={styles.alingbtn}>
+        <Pressable  onPress={()=> "Home_Estudante"} style={styles.alingbtn} >
           <View style={styles.btn} >
             <Image source={require('../Assets/google.png')} style={styles.img}/>
-            <Link href="Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
+            <Link href="screens/Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </Pressable>
 
-        <Link href="Home_Pai"> Home </Link>
+        <Link href="screens/Home_Pai"> Home </Link>
 
         <Pressable>
             <View style={styles.aling}>
-             <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
+             <Link href="/screens/Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
             </View>
         </Pressable>
   
@@ -71,10 +71,10 @@ const styles = StyleSheet.create({
     fontSize:18,
   },
   btn:{
+    maxWidth:262,
     width:"100%",
-    height:"100%",
     backgroundColor:'#fff',
-    padding:'10',
+    padding:10,
     shadowOffset: { width: 5, height: 5 },
     shadowColor: '#000010',
     shadowOpacity: 0.1,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
-    flexDirection:'column'
+    flexDirection:'column',
   },
 
   logo:{
