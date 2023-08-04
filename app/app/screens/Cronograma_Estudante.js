@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Crono from '../Components/Cronograma.js';
+import {Crono} from '../Components/Cronograma.js';
 import { Link } from 'expo-router';
 
-export default function Page() {
+export default function PageE() {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
@@ -12,6 +12,7 @@ export default function Page() {
             <Crono />
             <Crono />
             <Crono />
+
             <Link href="Home_Estudante">
                 <Text style={styles.text}>
                     Voltar
@@ -20,6 +21,7 @@ export default function Page() {
         </View>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {

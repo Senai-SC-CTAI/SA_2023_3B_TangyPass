@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Div } from '../Components/HistoricoHoras.js';
 import { SimpleLineIcons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 import { AntDesign } from '@expo/vector-icons';
 
 export default function Page() {
@@ -24,9 +25,11 @@ export default function Page() {
             <Div />
 
 
-            <Text style={styles.text}>
-                Voltar
-            </Text>
+            <Link href="Home_Estudante">
+                <Text style={styles.text}>
+                    Voltar
+                </Text>
+            </Link>
         </View>
     );
 }

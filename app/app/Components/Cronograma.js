@@ -40,9 +40,9 @@ export function Crono() {
 
 const styles = StyleSheet.create({
     container: {
-        width: '80%',
+        width: '70%',
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'space-between',
         backgroundColor: "#fff",
         padding: 10,
@@ -59,12 +59,12 @@ const styles = StyleSheet.create({
     ccontainer: {
         display: 'flex',
         flexDirection: 'row',
-        textAlign: 'center',
+        justifyContent: 'space-evenly',
     },
     area: {
-        justifyContent: 'space-between',
         margin: 'auto',
-        padding: 10
+        padding: 10,
+        textAlign: 'center'
     },
     input: {
         display: 'flex',
@@ -74,10 +74,13 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         padding: 5,
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        alignSelf: 'center',
+        alignItems: 'center'
     },
     text: {
-        color: '#919191'
+        color: '#919191',
+        marginLeft: 5
     },
     content: {
         color: '#8C8C8C'

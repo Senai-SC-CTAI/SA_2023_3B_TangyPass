@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-
 import { AntDesign } from '@expo/vector-icons';
 
 export function Div() {
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
         width: '80%',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
         backgroundColor: "#fff",
         padding: 10,
         margin: 10,
@@ -32,5 +31,5 @@ const styles = StyleSheet.create({
         shadowColor: '#696969',
         shadowOpacity: 0.5,
         shadowRadius: 3,
-    },
+    }
 });
