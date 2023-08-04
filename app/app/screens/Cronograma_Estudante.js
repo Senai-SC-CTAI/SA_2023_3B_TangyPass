@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Crono from '../Components/Cronograma.js';
+import { Crono } from '../Components/Cronograma';
 import { Link } from 'expo-router';
 
 export default function Page() {
