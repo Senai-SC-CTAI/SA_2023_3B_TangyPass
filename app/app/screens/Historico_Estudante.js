@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { Div } from '../components/HistoricoHoras.js';
+import { Div } from '../Components/HistoricoHoras.js';
 
 export default function Page() {
   return (

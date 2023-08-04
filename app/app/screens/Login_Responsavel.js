@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 export default function Page() {
   return (
     <View style={styles.container}>
-     <Image source={require('../assets/img.png')} style={styles.logo}/>
+     <Image source={require('../Assets/img.png')} style={styles.logo}/>
         <View>
             <Text style={styles.tex}>Responsável</Text>
         </View>
@@ -19,7 +19,7 @@ export default function Page() {
         <Link href="/" style={styles.ty}>Entrar como estudante</Link>
 
         <View style={styles.retangle}>
-          <Image source={require('../assets/Polygon2.png')}></Image>
+          <Image source={require('../Assets/Polygon2.png')}></Image>
         </View>
 
         <Link href="Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>

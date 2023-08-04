@@ -5,14 +5,14 @@ import { Link } from "expo-router";
 export default function Page() {  
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/img.png')} style={styles.logo}/>
+      <Image source={require('../Assets/img.png')} style={styles.logo}/>
       <View style={styles.main}>
         <Text style={styles.alingText}> Estudante</Text>
         <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
         
         <Pressable  onPress={()=> "Home_Estudante"} style={styles.alingbtn}>
           <View style={styles.btn} >
-            <Image source={require('../assets/google.png')} style={styles.img}/>
+            <Image source={require('../Assets/google.png')} style={styles.img}/>
             <Link href="Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </Pressable>
@@ -28,7 +28,7 @@ export default function Page() {
       </View>
 
       <View style={styles.retangle}>
-          <Image source={require('../assets/Polygon2.png')}></Image>
+          <Image source={require('../Assets/Polygon2.png')}></Image>
       </View>
         
     </View>
