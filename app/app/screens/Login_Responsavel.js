@@ -16,13 +16,13 @@ export default function Page() {
                 <Text style={styles.texPres}>ENTRAR</Text>
             </View>
         </Pressable>
-        <Link href="/" style={styles.ty}>Entrar como estudante</Link>
+        <Link href="screens/" style={styles.ty}>Entrar como estudante</Link>
 
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>
         </View>
 
-        <Link href="Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>
+        <Link href="screens/Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>
     </View>
 
     
