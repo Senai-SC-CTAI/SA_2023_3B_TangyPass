@@ -1,14 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { Div } from '../Components/HistóricoHoras';
+import { Div } from '../components/HistoricoHoras.js';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { Link } from 'expo-router';
 
 export default function Page() {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                Histórico
+                Crônograma
             </Text>
 
             <View style={[styles.ccontainer, styles.shadowProp]}>
@@ -23,14 +22,11 @@ export default function Page() {
 
             <Div />
             <Div />
-            <Div />
-            <Div />
-            <Div />
-            <Link href="Home_Pai">
-                <Text style={styles.text}>
-                    Voltar
-                </Text>
-            </Link>
+
+
+            <Text style={styles.text}>
+                Voltar
+            </Text>
         </View>
     );
 }
@@ -51,7 +47,7 @@ const styles = StyleSheet.create({
     shadowProp: {
         shadowOffset: { width: 4, height: 4 },
         shadowColor: '#696969',
-        shadowOpacity: 1,
+        shadowOpacity: 0.5,
         shadowRadius: 3,
     },
     ccontainer: {
@@ -60,11 +56,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         backgroundColor: "#fff",
-        padding: 10,
+        padding: 15,
         margin: 5,
         shadowColor: '#000',
         borderRadius: 5,
-        marginBottom: 0,
+        marginBottom: 40,
         alignItems: 'center'
     },
     select: {

@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 export default function Page() {
   return (
     <View style={styles.container}>
-     <Image source={require('./Assets/img.png')} style={styles.logo}/>
+     <Image source={require('../assets/img.png')} style={styles.logo}/>
         <View>
             <Text style={styles.tex}>Recuperar</Text>
         </View>
@@ -15,10 +15,10 @@ export default function Page() {
                 <Text style={styles.texPres}>Solicitar nova senha</Text>
             </View>
         </Pressable>
-        <Link href="/" style={styles.ty}>Entrar como responsável</Link>
+        <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
 
         <View style={styles.retangle}>
-          <Image source={require('./Assets/Polygon2.png')}></Image>
+          <Image source={require('../assets/Polygon2.png')}></Image>
         </View>
     </View>
 
