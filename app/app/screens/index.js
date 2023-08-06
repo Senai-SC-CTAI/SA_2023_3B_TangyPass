@@ -3,6 +3,14 @@ import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
 import { Link } from "expo-router";
 
 export default function Page() {  
+  let [fontsLoaded] = useFonts({
+    Alata_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+  
   return (
     <View style={styles.container}>
       <Image source={require('../Assets/img.png')} style={styles.logo}/>
@@ -16,8 +24,6 @@ export default function Page() {
             <Link href="screens/Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </Pressable>
-
-        <Link href="screens/Home_Pai"> Home </Link>
 
         <Pressable>
             <View style={styles.aling}>
@@ -59,7 +65,7 @@ const styles = StyleSheet.create({
     textAlign:'center',
     color:'#5D5D5D',
     margin:37,
-    
+    fontFamily:"Alata_400Regular",
   },
   tex:{
     display:'flex',
@@ -69,6 +75,7 @@ const styles = StyleSheet.create({
     textAlign:'center',
     color:'#9A9A9A',
     fontSize:18,
+    fontFamily:"Alata_400Regular",
   },
   btn:{
     maxWidth:262,
@@ -95,6 +102,7 @@ const styles = StyleSheet.create({
 
   texbtn:{
     padding:10,
+    fontFamily:"Alata_400Regular",
   },
 
   aling:{
@@ -118,5 +126,8 @@ const styles = StyleSheet.create({
     right:0,
     bottom:0,
     position:'fixed'
+  },
+  ty:{
+    fontFamily:"Alata_400Regular",
   }
 });

@@ -1,6 +1,16 @@
 import { StyleSheet, Text, View,Image, TextInput, Pressable } from "react-native";
 import { Link } from "expo-router";
+import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
+
 export default function Page() {
+  let [fontsLoaded] = useFonts({
+    Alata_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+ 
   return (
     <View style={styles.container}>
      <Image source={require('../Assets/img.png')} style={styles.logo}/>
@@ -47,6 +57,7 @@ const styles = StyleSheet.create({
     fontSize:25,
     marginTop:120,
     padding:10,
+    fontFamily:"Alata_400Regular",
   }, 
   inp:{
     color:'#9A9A9A', 
@@ -61,6 +72,8 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 5, height:5},
     shadowRadius:30,
     elevation:5,
+    fontFamily:"Alata_400Regular",
+
   },
   btn:{
     backgroundColor:'#000',
@@ -73,11 +86,13 @@ const styles = StyleSheet.create({
     color:'#fff',
     textAlign:'center',
     padding:5,
+    fontFamily:"Alata_400Regular",
   },
   ty:{
     top:10,
     fontSize:16,
     padding:10,
+    fontFamily:"Alata_400Regular",
   },
   retangle:{
     transform: [{"translateY":"10%"}, {"translateX":"10%"}],

@@ -18,14 +18,14 @@ export default function Page() {
     <Text style={styles.usertitle}>Logado como{"\n"}        Aluno</Text>
    
 <View style={styles.tudo}>
-   <view style={styles.btns2}>
+   <View style={styles.btns2}>
     <TouchableOpacity style={styles.Qrbtn}>
       <Text style={styles.escaneartxt}>Escanear</Text>
       <MaterialIcons  name="qr-code-2" size={61} color="white" />
      </TouchableOpacity>
-     </view>
+     </View>
 
-    <view style={styles.btns}>
+    <View style={styles.btns}>
      <TouchableOpacity style={styles.rqs}>
       <Text style={styles.rqstxt}>Requisitar Saída</Text>
      </TouchableOpacity>
@@ -34,7 +34,7 @@ export default function Page() {
       <Text style={styles.cronogramatxt}>Cronograma</Text>
      </TouchableOpacity>
 
-     </view>
+     </View>
      </View>
      <TouchableOpacity style={styles.entrada_saida_hs}>
       <Text style={styles.hstxt}>Historico de entradas de saídas</Text>
@@ -151,10 +151,10 @@ entrada_saida_hs:{
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
-  width:"95%",
+  width:"89%",
   height:"7%",
   marginTop:45,
-  marginLeft:5,
+  marginLeft:13,
 },
 hstxt:{
   color:"white",

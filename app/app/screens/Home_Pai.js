@@ -18,10 +18,11 @@ export default function Page() {
      <Text style={styles.usertitle}>Logado como{"\n"} Responsável</Text>
      
      <View style={styles.buttons}>
+      <Link href="screns/Home_Estudante">
      <TouchableOpacity style={styles.agendarbtn}>
       <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
      </TouchableOpacity>
-
+     </Link>
      
         <TouchableOpacity style={styles.pedidosbtn1}>
           <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
@@ -65,14 +66,15 @@ const styles = StyleSheet.create({
  buttons:{
   flexDirection:"row",
   width:"100%",
-
+  height:30,
+  marginBottom:50,
   marginTop:40,
  },
  agendarbtn:{
   backgroundColor:'black',
   borderRadius:5,
   width:"40%",
-  height:"170%",
+  height:"230%",
   justifyContent:'center',
   alignItems:'center',
   position:'relative',
@@ -83,7 +85,7 @@ const styles = StyleSheet.create({
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
-
+  marginBottom:0,
   
  },
  agendartxt:{
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
  pedidosbtn1:{
   backgroundColor:'black',
   width:"40%",
-  height:"170%",
+  height:"230%",
   justifyContent:'center',
   alignItems:'center',
   shadowColor:'#000010',
@@ -119,9 +121,9 @@ const styles = StyleSheet.create({
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
-  width:"85%",
+  width:"84%",
   height:"7%",
-  marginTop:50,
+  
  },
  cronotxt:{
   color:"white",
@@ -137,9 +139,9 @@ const styles = StyleSheet.create({
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
-  width:"85%",
+  width:"84%",
   height:"7%",
-  marginTop:15,
+  marginTop:10,
  },
  hitoricotxt:{
   color:"white",
