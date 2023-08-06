@@ -1,12 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { Div } from '../Components/HistoricoHoras.js';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { AntDesign } from '@expo/vector-icons';
+import { Footer } from '../Components/footer.js';
+import { Header } from '../Components/header.js';
 
 export default function Page() {
     return (
         <View style={styles.container}>
+            <Header/>
+
             <Text style={styles.text}>
                 Crônograma
             </Text>
@@ -30,6 +34,8 @@ export default function Page() {
                     Voltar
                 </Text>
             </Link>
+
+            <Footer/>
         </View>
     );
 }

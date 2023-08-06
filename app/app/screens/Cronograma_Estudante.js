@@ -1,10 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import {Crono} from '../Components/Cronograma.js';
 import { Link } from 'expo-router';
+import { Footer } from '../Components/footer.js';
+import { Header } from '../Components/header.js';
+
 
 export default function PageE() {
     return (
         <View style={styles.container}>
+            <Header/>
+
             <Text style={styles.text}>
                 Crônograma
             </Text>
@@ -18,6 +23,8 @@ export default function PageE() {
                     Voltar
                 </Text>
             </Link>
+
+            <Footer/>
         </View>
     );
 }

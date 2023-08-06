@@ -1,9 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { Div } from '../Components/HistoricoHoras.js';
+import { Footer } from '../Components/footer.js';
+import { Header } from '../Components/header.js';
 
 export default function Page() {
   return (
     <View style={styles.container}>
+      <Header/>
+
       <Text style={styles.text}>
         Histórico
       </Text>
@@ -17,6 +21,8 @@ export default function Page() {
       <Text style={styles.text}>
         Voltar
       </Text>
+
+      <Footer/>
     </View>
   );
 }

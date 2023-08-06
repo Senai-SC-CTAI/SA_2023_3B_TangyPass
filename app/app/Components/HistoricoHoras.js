@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         width: '80%',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         backgroundColor: "#fff",
         padding: 10,
         margin: 10,
