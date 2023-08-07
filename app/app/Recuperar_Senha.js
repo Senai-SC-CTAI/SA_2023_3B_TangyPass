@@ -20,12 +20,12 @@ export default function Page() {
 
         <TextInput placeholder="Email" style={styles.inp} autoComplete="email"/>
 
-        <Pressable style={styles.btn} >
-            <View >
+        <TouchableOpacity style={styles.btn}>
+            <View>
                 <Text style={styles.texPres}>Solicitar nova senha</Text>
             </View>
-        </Pressable>
-        <Link href="screens/Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
+        </TouchableOpacity>
+        <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
 
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>

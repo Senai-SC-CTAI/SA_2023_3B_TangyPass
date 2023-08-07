@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Div } from '../Components/HistoricoHoras.js';
+import { Div } from '../src/Components/HistoricoHoras';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { AntDesign } from '@expo/vector-icons';
-import { Footer } from '../Components/footer.js';
-import { Header } from '../Components/header.js';
+import { Footer } from '../src/Components/footer.js';
+import { Header } from '../src/Components/header.js';
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 
 

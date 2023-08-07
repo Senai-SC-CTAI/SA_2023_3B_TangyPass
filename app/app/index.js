@@ -18,18 +18,18 @@ export default function Page() {
         <Text style={styles.alingText}> Estudante</Text>
         <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
         
-        <Pressable  onPress={()=> "Home_Estudante"} style={styles.alingbtn} >
+        <TouchableOpacity onPress={()=> "Home_Estudante"} style={styles.alingbtn} >
           <View style={styles.btn} >
             <Image source={require('../Assets/google.png')} style={styles.img}/>
-            <Link href="screens/Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
+            <Link href="/Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
-        </Pressable>
+        </TouchableOpacity>
 
-        <Pressable>
+        <TouchableOpacity>
             <View style={styles.aling}>
-             <Link href="/screens/Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
+             <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
             </View>
-        </Pressable>
+        </TouchableOpacity>
   
       </View>
 

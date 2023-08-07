@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Div } from '../Components/HistoricoHoras.js';
-import { Footer } from '../Components/footer.js';
-import { Header } from '../Components/header.js';
+import { Div } from '../src/Components/HistoricoHoras';
+import { Footer } from '../src/Components/footer';
+import { Header } from '../src/Components/header';
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 
 

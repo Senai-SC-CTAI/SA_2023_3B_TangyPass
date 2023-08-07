@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Image, TextInput, Pressable } from "react-native";
+import { StyleSheet, Text, View,Image, TextInput, Pressable,TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
 
@@ -21,18 +21,19 @@ export default function Page() {
         <TextInput placeholder="Usúario" style={styles.inp}/>
         <TextInput placeholder="Insira sua senha" style={styles.inp} secureTextEntry={true}/>
 
-        <Pressable  style={styles.btn}>
+        <TouchableOpacity style={styles.btn}>
             <View>
                 <Text style={styles.texPres}>ENTRAR</Text>
             </View>
-        </Pressable>
-        <Link href="screens/" style={styles.ty}>Entrar como estudante</Link>
+        </TouchableOpacity>
+        
+        <Link href="index" style={styles.ty}>Entrar como estudante</Link>
 
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>
         </View>
 
-        <Link href="screens/Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>
+        <Link href="Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>
     </View>
 
     
