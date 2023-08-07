@@ -27,7 +27,7 @@ export default function Page() {
             </View>
         </TouchableOpacity>
         
-        <Link href="index" style={styles.ty}>Entrar como estudante</Link>
+        <Link href="/" style={styles.ty}>Entrar como estudante</Link>
 
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>
@@ -96,9 +96,10 @@ const styles = StyleSheet.create({
     fontFamily:"Alata_400Regular",
   },
   retangle:{
-    transform: [{"translateY":"10%"}, {"translateX":"10%"}],
+
+    left:"91%",
     right:0,
     bottom:0,
-    position:'fixed'
+    position:"absolute",
     },
 });

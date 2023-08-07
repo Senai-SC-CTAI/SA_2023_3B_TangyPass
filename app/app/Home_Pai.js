@@ -24,9 +24,11 @@ export default function Page() {
      </TouchableOpacity>
      </Link>
      
+      
         <TouchableOpacity style={styles.pedidosbtn1}>
           <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
         </TouchableOpacity>
+        
       </View>
 
       
