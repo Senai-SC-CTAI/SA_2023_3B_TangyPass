@@ -25,9 +25,9 @@ export default function Page() {
      </TouchableOpacity>
      </View>
 
-    <View style={styles.btns}>
+    <View style={styles.btns}>  
      <TouchableOpacity style={styles.rqs}>
-      <Text style={styles.rqstxt}>Requisitar Saída</Text>
+      <Text >Requisitar Saída</Text>
      </TouchableOpacity>
 
      <TouchableOpacity style={styles.cronogramabtn}>
