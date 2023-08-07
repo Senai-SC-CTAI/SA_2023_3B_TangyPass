@@ -1,28 +1,35 @@
 import { StyleSheet, Text, View,Image, TextInput, Pressable } from "react-native";
 import { Link } from "expo-router";
+import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
+
 export default function Page() {
+  let [fontsLoaded] = useFonts({
+    Alata_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+ 
   return (
     <View style={styles.container}>
      <Image source={require('../Assets/img.png')} style={styles.logo}/>
         <View>
-            <Text style={styles.tex}>Responsável</Text>
+            <Text style={styles.tex}>Recuperar</Text>
         </View>
 
-        <TextInput placeholder="Usúario" style={styles.inp}/>
-        <TextInput placeholder="Insira sua senha" style={styles.inp} secureTextEntry={true}/>
+        <TextInput placeholder="Email" style={styles.inp} autoComplete="email"/>
 
-        <Pressable  style={styles.btn}>
+        <TouchableOpacity style={styles.btn}>
             <View>
-                <Text style={styles.texPres}>ENTRAR</Text>
+                <Text style={styles.texPres}>Solicitar nova senha</Text>
             </View>
-        </Pressable>
-        <Link href="screens/" style={styles.ty}>Entrar como estudante</Link>
+        </TouchableOpacity>
+        <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
 
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>
         </View>
-
-        <Link href="screens/Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>
     </View>
 
     
@@ -47,6 +54,8 @@ const styles = StyleSheet.create({
     fontSize:25,
     marginTop:120,
     padding:10,
+    width:"",
+    fontFamily:"Alata_400Regular",
   }, 
   inp:{
     color:'#9A9A9A', 
@@ -61,6 +70,8 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 5, height:5},
     shadowRadius:30,
     elevation:5,
+    fontFamily:"Alata_400Regular",
+
   },
   btn:{
     backgroundColor:'#000',
@@ -73,11 +84,15 @@ const styles = StyleSheet.create({
     color:'#fff',
     textAlign:'center',
     padding:5,
+    fontFamily:"Alata_400Regular",
+
   },
   ty:{
     top:10,
     fontSize:16,
     padding:10,
+    fontFamily:"Alata_400Regular",
+
   },
   retangle:{
     transform: [{"translateY":"10%"}, {"translateX":"10%"}],

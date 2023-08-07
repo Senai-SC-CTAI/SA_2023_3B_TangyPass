@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-
 import { AntDesign } from '@expo/vector-icons';
 
 export function Div() {
@@ -32,5 +31,5 @@ const styles = StyleSheet.create({
         shadowColor: '#696969',
         shadowOpacity: 0.5,
         shadowRadius: 3,
-    },
+    }
 });
