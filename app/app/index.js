@@ -122,10 +122,9 @@ const styles = StyleSheet.create({
   },
 
   retangle:{
-    transform: [{"translateY":"10%"}, {"translateX":"10%"}],
     right:0,
     bottom:0,
-    position:'fixed'
+    
   },
   ty:{
     fontFamily:"Alata_400Regular",
