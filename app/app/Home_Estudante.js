@@ -151,15 +151,17 @@ entrada_saida_hs:{
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
-  width:"89%",
-  height:"7%",
   marginTop:45,
   marginLeft:13,
+  maxWidth: 312,
+  width: "100%",
+  padding: 10
 },
 hstxt:{
   color:"white",
   fontFamily:"Alata_400Regular",
   fontSize:18,
+  
 },
 saidatxt:{
   color:"black",

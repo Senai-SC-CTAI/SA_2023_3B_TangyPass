@@ -18,7 +18,7 @@ export default function Page() {
      <Text style={styles.usertitle}>Logado como{"\n"} Responsável</Text>
      
      <View style={styles.buttons}>
-      <Link href="Home_Estudante">
+    <Link href="Home_Estudante">
      <TouchableOpacity style={styles.agendarbtn}>
       <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
      </TouchableOpacity>
