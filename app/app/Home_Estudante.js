@@ -27,7 +27,7 @@ export default function Page() {
 
     <View style={styles.btns}>  
      <TouchableOpacity style={styles.rqs}>
-      <Text >Requisitar Saída</Text>
+      <Text style={styles.rqstxt} >Requisitar Saída</Text>
      </TouchableOpacity>
 
      <TouchableOpacity style={styles.cronogramabtn}>
@@ -35,6 +35,7 @@ export default function Page() {
      </TouchableOpacity>
 
      </View>
+
      </View>
      <TouchableOpacity style={styles.entrada_saida_hs}>
       <Text style={styles.hstxt}>Historico de entradas de saídas</Text>
@@ -79,9 +80,14 @@ const styles = StyleSheet.create({
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
-  width:"170%",
-  height:"130%",
-  
+  maxWidth:124,
+  width:"100%",
+  paddingRight:22,
+  paddingLeft:22,
+  paddingBottom:22,
+  paddingTop:19,
+
+
  },
  escaneartxt:{
   color:"white",
@@ -99,9 +105,11 @@ const styles = StyleSheet.create({
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
-  width:"120%",
-  height:"190%",
+  maxWidth:262,
+  width:"100%",
   marginBottom:15,
+  padding:30,
+  paddingRight:40,
  },
  rqstxt:{
   color:"white",
@@ -111,7 +119,7 @@ const styles = StyleSheet.create({
  btns:{
   width:"50%",
   height:"30%",
-  marginLeft:20,
+  
   
  },
  cronogramabtn:{
@@ -124,8 +132,9 @@ const styles = StyleSheet.create({
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
-  width:"120%",
-  height:"190%",
+  maxWidth:262,
+  width:"100%",
+  padding:10,
  },
  cronogramatxt:{
   color:"white",
@@ -133,13 +142,13 @@ const styles = StyleSheet.create({
   fontSize:18,
  },
  btns2:{
- width:"fit-content",
- marginRight:50,
+ 
+ marginRight:10,
  },
 tudo:{
   flexDirection:"row",
   marginTop:90,
-  marginRight:20,
+  marginRight:30,
 },
 entrada_saida_hs:{
   backgroundColor:'black',

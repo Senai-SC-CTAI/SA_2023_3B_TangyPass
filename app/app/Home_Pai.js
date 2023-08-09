@@ -18,11 +18,13 @@ export default function Page() {
      <Text style={styles.usertitle}>Logado como{"\n"} Responsável</Text>
      
      <View style={styles.buttons}>
-      <Link href="Home_Estudante">
+      
      <TouchableOpacity style={styles.agendarbtn}>
+     <Link href="Home_Estudante">
       <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
+      </Link>
      </TouchableOpacity>
-     </Link>
+     
      
         <TouchableOpacity style={styles.pedidosbtn1}>
           <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
