@@ -17,36 +17,44 @@ export default function Page() {
      <Text style={styles.title}>Tangy</Text>
      <Text style={styles.usertitle}>Logado como{"\n"} Responsável</Text>
      
+     
      <View style={styles.buttons}>
-      
+    
+     <Link href="agendar" style={styles.link}> 
      <TouchableOpacity style={styles.agendarbtn}>
-     <Link href="Home_Estudante">
       <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
-      </Link>
      </TouchableOpacity>
-     
-     
-      
+     </Link>
+
+        <Link href="requisitar" style={styles.link1}>
         <TouchableOpacity style={styles.pedidosbtn1}>
           <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
         </TouchableOpacity>
-        
+        </Link>
+
       </View>
 
-      
+        <Link href="Cronograma_Responsavel" style={styles.link2}>
         <TouchableOpacity style={styles.cronogramabtn}>
-          <Text style={styles.cronotxt}>Crônograma do estudante</Text>
+          <Text style={styles.cronotxt}>Crônograma do Responsável</Text>
         </TouchableOpacity>
+        </Link>
 
+        <Link href="Historico_Responsavel" style={styles.link3}>
         <TouchableOpacity style={styles.hitorico_entrada_saidabtn}>
           <Text style={styles.hitoricotxt}>Historico de entradas e saídas</Text>
         </TouchableOpacity>
-      
+        </Link>
+
+        <Link href="/">
         <TouchableOpacity style={styles.saidabtn}>
           <Text style={styles.saidatxt}>Sair</Text>
         </TouchableOpacity>
+        </Link>
+
 
         <Text style={styles.tangy}>Tangy.app @2023</Text>
+
 
     </View>
   );
@@ -77,13 +85,12 @@ const styles = StyleSheet.create({
  agendarbtn:{
   backgroundColor:'black',
   borderRadius:5,
-  width:"40%",
+  width:"100%",
   height:"230%",
   justifyContent:'center',
   alignItems:'center',
   position:'relative',
   marginRight:15,
-  marginLeft:30,
   shadowColor:'#000010',
   shadowOffset:{width:5, height:5},
   shadowRadius:1,
@@ -99,7 +106,7 @@ const styles = StyleSheet.create({
  },
  pedidosbtn1:{
   backgroundColor:'black',
-  width:"40%",
+  width:"100%",
   height:"230%",
   justifyContent:'center',
   alignItems:'center',
@@ -158,14 +165,29 @@ const styles = StyleSheet.create({
   fontSize:18,
  },
 saidabtn:{
-  width:"10%",
+  width:"100%",
   height:"10%",
   marginTop:100,
+  marginBottom:70,
 },
 tangy:{
   color:"#B6B6B6",
   fontFamily:'Alata_400Regular',
   fontSize:15,
+},
+link:{
+  maxWidth:147,
+  width:"100%",
+  marginLeft:30,
+  marginRight:13,
+},
+link1:{
+  maxWidth:147,
+  width:"100%",
+  marginRight:13,
+},
+link2:{
+
 }
 
 });
