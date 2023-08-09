@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Image, TextInput, Pressable } from "react-native";
+import { StyleSheet, Text, View,Image, TextInput, Pressable,TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
 
@@ -95,9 +95,10 @@ const styles = StyleSheet.create({
 
   },
   retangle:{
-    transform: [{"translateY":"10%"}, {"translateX":"10%"}],
+    left:"91%",
     right:0,
     bottom:0,
-    position:'fixed'
+    position:"absolute",
+
     },
 });
