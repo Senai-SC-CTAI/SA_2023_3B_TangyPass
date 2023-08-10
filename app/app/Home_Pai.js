@@ -111,7 +111,11 @@ const styles = StyleSheet.create({
     backgroundColor:"black",
     borderRadius:5,
   },
+  qrtxt:{
 
-
+  },
+  fontFamily:"Alata_Regular",
+  fontSize:18,
+  color:"white"
 
 });
