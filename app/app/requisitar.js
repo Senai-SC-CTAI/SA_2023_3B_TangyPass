@@ -3,7 +3,6 @@ import { Link } from 'expo-router';
 import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useNavigation } from '@react-navigation/native';
 
 export default function Requisitar() {
   return (
@@ -95,10 +94,13 @@ const styles = StyleSheet.create({
     left: 33,
     color: 'gray',
     fontFamily: 'alata',
+    maxWidth:140,
+    width:"100%",
   },
   buttonContainer: {
     backgroundColor: 'black',
-    width: 290,
+    maxWidth:290,
+    width:"100%",
     height: 50,
     right: 4,
     borderRadius: 3,
@@ -109,9 +111,9 @@ const styles = StyleSheet.create({
   textButton: {
     color: 'white',
     right: 92,
-    top: 13,
+    marginTop: 15,
     fontFamily: 'alata',
-    position: 'absolute',
+    textAlign:"center",
     cursor: 'pointer'
   },
   voltarText: {
