@@ -3,14 +3,9 @@ import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AntDesign } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { Link } from 'expo-router';
 
 export default function Agendar() {
-  function openScreen() {
-    const navigation = useNavigation();
-        navigation.navigate('agendar')
-  }
-
   return (
     <View style={styles.container}>
       <Image source={require('../Assets/img.png')} style={styles.img} />
@@ -50,7 +45,7 @@ export default function Agendar() {
       <View style={styles.buttonContainer}>
           <Text style={styles.textButton}>Agendar saída</Text>  
       </View>
-      <Text style={styles.voltarText}>VOLTAR</Text>
+      <Link href={"/Home_Pai"} style={styles.voltarText}>VOLTAR</Link>
       <Text style={styles.lastText}>Tangy.app @2023</Text>
       </View>
   );
