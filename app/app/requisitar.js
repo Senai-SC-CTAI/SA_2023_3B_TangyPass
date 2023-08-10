@@ -3,7 +3,6 @@ import { Link } from 'expo-router';
 import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useNavigation } from '@react-navigation/native';
 
 export default function Requisitar() {
   return (
