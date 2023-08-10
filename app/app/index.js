@@ -22,7 +22,7 @@ export default function Page() {
         <TouchableOpacity onPress={()=> "Home_Estudante"} style={styles.alingbtn} >
           <View style={styles.btn} >
             <Image source={require('../Assets/google.png')} style={styles.img}/>
-            <Link href="/Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
+            <Link href="/Home_Estudante" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </TouchableOpacity>
 
