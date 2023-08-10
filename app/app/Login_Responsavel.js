@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View,Image, TextInput, Pressable,TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
-
+import Logo from "./Logo";
 export default function Page() {
   let [fontsLoaded] = useFonts({
     Alata_400Regular,
@@ -13,7 +13,7 @@ export default function Page() {
  
   return (
     <View style={styles.container}>
-     <Image source={require('../Assets/img.png')} style={styles.logo}/>
+    <Logo/>
         <View>
             <Text style={styles.tex}>Responsável</Text>
         </View>
