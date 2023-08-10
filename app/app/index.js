@@ -39,7 +39,7 @@ export default function Page() {
       </View>
         
     </View>
-  );
+  );  
 }
 
 const styles = StyleSheet.create({
