@@ -20,7 +20,7 @@ export default function Page() {
 <View style={styles.tudo}>
    <View style={styles.btns2}>
     <TouchableOpacity style={styles.Qrbtn}>
-      <Text style={styles.escaneartxt}>Escanear</Text>
+      <Link style={styles.escaneartxt} href="Escanear">Escanear</Link>
       <MaterialIcons  name="qr-code-2" size={61} color="white" />
      </TouchableOpacity>
      </View>
