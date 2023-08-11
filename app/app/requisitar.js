@@ -98,12 +98,9 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: 'black',
-<<<<<<< HEAD
     width: "calc(100% - 10px)",
-=======
     maxWidth:290,
-    width:"100%",
->>>>>>> b2b5b4b20c242d139631efe08d5f9a5441564abf
+    // width:"100%",
     height: 50,
     right: 4,
     borderRadius: 3,
@@ -117,11 +114,7 @@ const styles = StyleSheet.create({
     right: 92,
     marginTop: 15,
     fontFamily: 'alata',
-<<<<<<< HEAD
     textAlign: 'center',
-=======
-    textAlign:"center",
->>>>>>> b2b5b4b20c242d139631efe08d5f9a5441564abf
     cursor: 'pointer'
   },
   voltarText: {

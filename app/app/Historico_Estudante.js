@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Div } from '../src/Components/HistoricoHoras';
 import { Footer } from '../src/Components/footer';
 import Logo from './Logo';
-
+import { Link } from 'expo-router';
 
 export default function Page() {
   let [fontsLoaded] = useFonts({
