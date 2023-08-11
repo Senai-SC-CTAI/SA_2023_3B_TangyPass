@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
+import { StyleSheet, Text, View } from 'react-native';
 import { Div } from '../src/Components/HistoricoHoras';
 import { Footer } from '../src/Components/footer';
-import { Header } from '../src/Components/header';
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
+import Logo from './Logo';
 
 
 export default function Page() {
@@ -15,8 +15,7 @@ export default function Page() {
   }
   return (
     <View style={styles.container}>
-      <Header/>
-
+    <Logo/>
       <Text style={styles.text}>
         Histórico
       </Text>
