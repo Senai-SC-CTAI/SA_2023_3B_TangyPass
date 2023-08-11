@@ -122,9 +122,10 @@ const styles = StyleSheet.create({
   },
 
   retangle:{
+    left:"91%",
     right:0,
     bottom:0,
-    
+    position:"absolute",
   },
   ty:{
     fontFamily:"Alata_400Regular",

@@ -1,8 +1,7 @@
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { Link } from "expo-router";
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function Page() {
   let [fontsLoaded] = useFonts({
     Alata_400Regular,
@@ -13,37 +12,40 @@ export default function Page() {
   }
   return (
     <View style={styles.container}>
-      <StatusBar></StatusBar>
-     <Text style={styles.title}>Tangy</Text>
-     <Text style={styles.usertitle}>Logado como{"\n"} Responsável</Text>
-     
-     <View style={styles.buttons}>
-    <Link href="Home_Estudante">
-     <TouchableOpacity style={styles.agendarbtn}>
-      <Text style={styles.agendartxt}>Agendar{"\n"}   Saída</Text>
-     </TouchableOpacity>
-     </Link>
-     
-        <TouchableOpacity style={styles.pedidosbtn1}>
-          <Text style={styles.pedidostxt}>Pedidos de {"\n"}     Saída</Text>
+      <Image source={require('../Assets/img.png')} style={styles.logo}/>
+
+      <Text style={styles.usertitle}>Logado Como</Text>
+      <View style={styles.botoes}>
+        <View style={styles.ostres}>
+
+          <TouchableOpacity style={styles.qr}>
+            <Text style={styles.qrtxt}>Escanear</Text>
+          </TouchableOpacity>
+
+          <View style={styles.osdois}>
+
+            <TouchableOpacity style={styles.rqs}>
+              <Text style={styles.rqstxt}> Requisitar saída</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.rqs}>
+              <Text style={styles.cronotxt}> Crônograma</Text>
+            </TouchableOpacity>
+
+          </View>
+        </View>
+        <Link href="Historico_Responsavel">
+        <TouchableOpacity style={styles.hs}>
+          <Text style={styles.hstxt}>Historico de entrada e saida</Text>
         </TouchableOpacity>
+        </Link>
       </View>
-
-      
-        <TouchableOpacity style={styles.cronogramabtn}>
-          <Text style={styles.cronotxt}>Crônograma do estudante</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.hitorico_entrada_saidabtn}>
-          <Text style={styles.hitoricotxt}>Historico de entradas e saídas</Text>
-        </TouchableOpacity>
-      
+      <Link href="/">
         <TouchableOpacity style={styles.saidabtn}>
           <Text style={styles.saidatxt}>Sair</Text>
         </TouchableOpacity>
-
-        <Text style={styles.tangy}>Tangy.app @2023</Text>
-
+      </Link>
+      <Text style={styles.tangy}>Tangy.app @2023</Text>
     </View>
   );
 }
@@ -53,115 +55,63 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
- title:{
-  fontFamily:"Alata_400Regular",
-  fontSize:36,
-  paddingTop:71
- },
- usertitle:{
-  fontFamily:"Alata_400Regular",
-  paddingTop:71,
-  fontSize:18,
- },
- buttons:{
-  flexDirection:"row",
-  width:"100%",
-  height:30,
-  marginBottom:50,
-  marginTop:40,
- },
- agendarbtn:{
-  backgroundColor:'black',
-  borderRadius:5,
-  width:"40%",
-  height:"230%",
-  justifyContent:'center',
-  alignItems:'center',
-  position:'relative',
-  marginRight:15,
-  marginLeft:30,
-  shadowColor:'#000010',
-  shadowOffset:{width:5, height:5},
-  shadowRadius:1,
-  borderRadius:5,
-  shadowOpacity:0.5,
-  marginBottom:0,
-  
- },
- agendartxt:{
-  color:'white',
-  fontFamily:'Alata_400Regular',
-  fontSize:18,
- },
- pedidosbtn1:{
-  backgroundColor:'black',
-  width:"40%",
-  height:"230%",
-  justifyContent:'center',
-  alignItems:'center',
-  shadowColor:'#000010',
-  shadowOffset:{width:5, height:5},
-  shadowRadius:1,
-  borderRadius:5,
-  shadowOpacity:0.5,
+  botoes:{
+    width:"calc(100% - 10px)",
+    marginTop:70,
+    marginBottom:70,
+    display:"flex",
+    maxWidth:"320px",
+    flexDirection:"column",
+    gap:15,
+  },
+  logo:{
+    width:110,
+    height:100,
+    display:'flex',
+    marginTop:15,
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'column', 
+  },
+  usertitle:{
+    fontFamily:"Alata_400Regular",
+    fontSize:18,
+    marginTop:40
+  },
+  hs:{
+    backgroundColor:"black",
+    width:"100%",
+    height:"calc(70px  - 15px)",
+    borderRadius:5
+    
+  },
+  ostres:{
+    width:"100%",
+    display:"flex",
+    flexDirection:"row",
+    gap:15
+  },
+  qr:{
+    width:"40%",
+    aspectRatio:1,
+    backgroundColor:"black",
+    borderRadius:5
+  },
 
- },
- pedidostxt:{
-  color:'white',
-  fontFamily:'Alata_400Regular',
-  fontSize:18,
-  marginLeft:8,
- },
- cronogramabtn:{
-  backgroundColor:'black',
-  justifyContent:'center',
-  alignItems:'center',
-  shadowColor:'#000010',
-  shadowOffset:{width:5, height:5},
-  shadowRadius:1,
-  borderRadius:5,
-  shadowOpacity:0.5,
-  width:"84%",
-  height:"7%",
-  
- },
- cronotxt:{
-  color:"white",
-  fontFamily:'Alata_400Regular',
-  fontSize:18,
- },
- hitorico_entrada_saidabtn:{
-  backgroundColor:'black',
-  justifyContent:'center',
-  alignItems:'center',
-  shadowColor:'#000010',
-  shadowOffset:{width:5, height:5},
-  shadowRadius:1,
-  borderRadius:5,
-  shadowOpacity:0.5,
-  width:"84%",
-  height:"7%",
-  marginTop:10,
- },
- hitoricotxt:{
-  color:"white",
-  fontFamily:'Alata_400Regular',
-  fontSize:18,
- },
- saidatxt:{
-  color:"black",
-  fontFamily:'Alata_400Regular',
-  fontSize:18,
- },
-saidabtn:{
-  width:"10%",
-  height:"10%",
-  marginTop:100,
-},
-tangy:{
-  color:"#B6B6B6",
-  fontFamily:'Alata_400Regular',
-  fontSize:15,
-}
+  osdois:{
+    width: "calc(60% - 15px)",
+    height:"calc(100% - 15px)",
+    display:"flex",
+    flexDirection:"column",
+    gap:15
+  },
+  rqs:{
+    width:"100%",
+    height:"calc(70px - 15px)",
+    backgroundColor:"black",
+    borderRadius:5,
+  },
+
+
 
 });

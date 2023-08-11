@@ -1,14 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
+import { Link } from 'expo-router';
 import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useNavigation } from '@react-navigation/native';
 
 export default function Requisitar() {
-    function openScreen(){
-      const navigation = useNavigation();
-        navigation.navigate('agendar')
-    }
   return (
     <View style={styles.container}>
       <Image source={require('../Assets/img.png')} style={styles.img} />
@@ -38,7 +34,7 @@ export default function Requisitar() {
       <View style={styles.buttonContainer}>
         <Text style={styles.textButton}>Requisitar Saída</Text>
       </View>      
-        <Text style={styles.voltarText}>VOLTAR</Text>
+        <Link href="/Home_Estudante" style={styles.voltarText}>VOLTAR</Link>
         <Text style={styles.lastText}>Tangy.app @2023</Text>
       </View>
   );
