@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     width: "calc(100% - 10px)",
     maxWidth:290,
-    // width:"100%",
     height: 50,
     right: 4,
     borderRadius: 3,
