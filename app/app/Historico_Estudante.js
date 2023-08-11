@@ -25,11 +25,11 @@ export default function Page() {
       <Div />
       <Div />
       <Div />
-
+      <Link href="Home_Estudante">
       <Text style={styles.text}>
         Voltar
       </Text>
-
+      </Link>
       <Footer/>
     </View>
   );

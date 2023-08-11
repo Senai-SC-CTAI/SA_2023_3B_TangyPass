@@ -39,7 +39,7 @@ export default function Page() {
             <Div />
 
 
-            <Link href="Home_Estudante">
+            <Link href="Home_Pai">
                 <Text style={styles.text}>
                     Voltar
                 </Text>
