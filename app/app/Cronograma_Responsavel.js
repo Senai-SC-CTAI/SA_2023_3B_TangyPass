@@ -5,6 +5,7 @@ import { Link } from 'expo-router';
 import { AntDesign } from '@expo/vector-icons';
 import { Footer } from '../src/Components/footer.js';
 import { Header } from '../src/Components/header.js';
+import Logo from './Logo';
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 
 
@@ -18,7 +19,7 @@ export default function Page() {
       }
     return (
         <View style={styles.container}>
-            <Header/>
+            <Logo/>
 
             <Text style={styles.text}>
                 Crônograma

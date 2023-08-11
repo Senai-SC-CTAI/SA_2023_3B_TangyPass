@@ -2,6 +2,7 @@ import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { Link } from "expo-router";
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Logo from "./Logo"
 export default function Page() {
   let [fontsLoaded] = useFonts({
     Alata_400Regular,
@@ -12,7 +13,7 @@ export default function Page() {
   }
   return (
     <View style={styles.container}>
-      <Image source={require('../Assets/img.png')} style={styles.logo}/>
+       <Logo/>
 
       <Text style={styles.usertitle}>Logado Como</Text>
       <View style={styles.botoes}>
@@ -111,7 +112,11 @@ const styles = StyleSheet.create({
     backgroundColor:"black",
     borderRadius:5,
   },
+  qrtxt:{
 
-
+  },
+  fontFamily:"Alata_Regular",
+  fontSize:18,
+  color:"white"
 
 });

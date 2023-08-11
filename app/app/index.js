@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View,Image, Pressable, TouchableOpacity } from "react-native";
 import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
 import { Link } from "expo-router";
+import Logo from "./Logo";
 
 export default function Page() {  
   let [fontsLoaded] = useFonts({
@@ -13,15 +14,15 @@ export default function Page() {
   
   return (
     <View style={styles.container}>
-      <Image source={require('../Assets/img.png')} style={styles.logo}/>
+     <Logo/>
       <View style={styles.main}>
         <Text style={styles.alingText}> Estudante</Text>
         <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
         
-        <TouchableOpacity onPress={()=> "Home_Estudante"} style={styles.alingbtn} >
+        <TouchableOpacity onPress={()=> "Home_pai"} style={styles.alingbtn} >
           <View style={styles.btn} >
             <Image source={require('../Assets/google.png')} style={styles.img}/>
-            <Link href="/Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
+            <Link href="Home_Pai" style={styles.texbtn}> Prosseguir com google</Link>
           </View>
         </TouchableOpacity>
 
@@ -38,7 +39,7 @@ export default function Page() {
       </View>
         
     </View>
-  );
+  );  
 }
 
 const styles = StyleSheet.create({

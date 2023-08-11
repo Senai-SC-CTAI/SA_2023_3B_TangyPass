@@ -3,6 +3,7 @@ import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { Link } from "expo-router";
+import Logo from "./Logo";
 export default function Page() {
   let [fontsLoaded] = useFonts({
     Alata_400Regular,
@@ -14,7 +15,7 @@ export default function Page() {
   return (
     <View style={styles.container}>
   
-    <Text style={styles.title}>Tangy</Text>
+   <Logo/>
     <Text style={styles.usertitle}>Logado como{"\n"}        Aluno</Text>
    
 <View style={styles.tudo}>
