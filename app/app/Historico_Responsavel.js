@@ -89,3 +89,5 @@ const styles = StyleSheet.create({
         fontFamily:"Alata_400Regular"
     }
 });
+
+

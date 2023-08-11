@@ -11,8 +11,7 @@ export default function Agendar() {
       <Image source={require('../Assets/img.png')} style={styles.img} />
       <Text style={styles.text}>Agendar saída</Text>
       <StatusBar style="auto" />
-      <View style={styles.inputContainer}>
-        <View style={styles.inputWrapper}>
+        <View style={styles.inputWrapperFirst}>
           <View style={styles.inputFirst}>
             <AntDesign name="user" size={20} color={"#888"} style={styles.iconFirstInput} />
             <AntDesign name="caretdown" size={16} color={"#888"} style={styles.iconSecond} />
@@ -22,24 +21,25 @@ export default function Agendar() {
             onChangeText={(text) => console.log(text)}
             />
             <View></View>
+          <View style={styles.inputWrapper}>
+      <View style={styles.input}>
+        <Icon name="calendar" size={20} color="#888" style={styles.icon} />
+          <TextInput
+            style={styles.inputText}
+            placeholder='Selecionar dia'
+            onChangeText={(text) => console.log(text)}
+          />
+          <View></View>
           </View>
           <View style={styles.input}>
-            <Icon name="calendar" size={20} color="#888" style={styles.icon} />
-            <TextInput
-              style={styles.inputText}
-              placeholder='Selecionar dia'
-              onChangeText={(text) => console.log(text)}
-            />
-            <View></View>
+          <Icon name="clock-outline" size={20} color="#888" style={styles.icon} />
+          <TextInput
+            style={styles.inputText}
+            placeholder='Selecionar hora'
+            onChangeText={(text) => console.log(text)}
+          />
           </View>
-          <View style={styles.input}>
-            <Icon name="clock-outline" size={20} color="#888" style={styles.icon} />
-            <TextInput
-              style={styles.inputText}
-              placeholder='Selecionar hora'
-              onChangeText={(text) => console.log(text)}
-            />
-          </View>
+        </View>
         </View>
       </View>
       <View style={styles.buttonContainer}>
@@ -62,33 +62,25 @@ const styles = StyleSheet.create({
     fontFamily: 'alata',
     fontWeight: 'bold',
     fontSize: 21,
-    bottom: 186
+    position: 'absolute',
+    top: 140,
   },
   img: {
     width: 200,
     height: 100,
-    bottom: 264,
-  },
-  inputContainer: {
-    marginBottom: 10,
-  },
-  inputWrapper: {
-    flexDirection: 'row',
+    top: 6,
+    position: 'absolute'
   },
   inputFirst: {
-    height: 50,
-    paddingLeft: 10,
-    position: 'absolute',
-    bottom: 100,
-    width: 290,
+    height: 50, 
+    bottom: 70,
     backgroundColor: 'white',
-    borderRadius: 3,
-    flex: 1,
-    marginRight: 10,
-    paddingRight: 6,
+    borderRadius: 3, 
     borderRightWidth: 4,
     borderBottomWidth: 4,
     borderColor: '#959595',
+    width: "calc(103% - 20px)",
+    position: 'absolute',
   },
   textInputFirst:{
     fontFamily: 'alata',
@@ -98,28 +90,41 @@ const styles = StyleSheet.create({
     left: 38,
   },
   iconFirstInput: {
-    marginRight: 101,
-    marginTop: 14,
+    left: 14,
+    top: 7,
+    position: 'absolute',
   },
   iconSecond: {
     position: 'absolute',
     right: 18,
     top: 13,
   },
+  inputWrapperFirst: {
+    flexDirection: 'row',
+    width: "calc(100% - 1px)",
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    gap: 15
+  },
   input: {
     height: 50,
-    paddingLeft: 10,
-    width: 140,
+    width: "calc(100% / 2 - 10px)",
     backgroundColor: 'white',
     borderRadius: 3,
-    flex: 1,
-    marginRight: 10,
-    textAlign: 'right',
-    paddingRight: 126,
-    bottom: 20,
+    top: 90,
     borderRightWidth: 4,
     borderBottomWidth: 4,
     borderColor: '#959595',
+    position: 'relative'
+  },
+  inputWrapper: {
+    flexDirection: 'row',
+    width: "calc(100% - 1px)",
+    display: "flex",
+    textAlign: 'center',
+    gap: 15
   },
   icon: {
     left: 5,
@@ -138,21 +143,20 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: 'black',
-    width: 290,
+    width: "calc(100% - 10px)",
     height: 50,
     right: 4,
     borderRadius: 3,
     borderRightWidth: 4,
     borderBottomWidth: 4,
     borderColor: '#959595',
+    right: 1,
   },
   textButton: {
     color: 'white',
     textAlign: 'center',
     fontFamily: 'alata',
-    position: 'absolute',
-    top: 14,
-    right: 98,
+    marginTop: 14,
   },
   voltarText: {
     bottom: 136,

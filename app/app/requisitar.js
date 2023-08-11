@@ -10,8 +10,7 @@ export default function Requisitar() {
       <Image source={require('../Assets/img.png')} style={styles.img} />
       <Text style={styles.text}>Requisitar saída</Text>
       <StatusBar style="auto" />
-      <View style={styles.inputContainer}>
-        <View style={styles.inputWrapper}>
+          <View style={styles.inputWrapper}>
       <View style={styles.input}>
         <Icon name="calendar" size={20} color="#888" style={styles.icon} />
           <TextInput
@@ -30,7 +29,6 @@ export default function Requisitar() {
           />
           </View>
         </View>
-      </View>
       <View style={styles.buttonContainer}>
         <Text style={styles.textButton}>Requisitar Saída</Text>
       </View>      
@@ -51,30 +49,31 @@ const styles = StyleSheet.create({
     fontFamily: 'alata',
     fontWeight: 'bold',
     fontSize: 20,
-    top: 210,
+    top: 150,
     position: 'absolute'
   },
   img: {
     width: 200,
     height: 100,
-    bottom: 270,
-  },
-  inputContainer: {
-    marginBottom: 10,
+    top: 30,
+    position: 'absolute'
   },
   inputWrapper: {
     flexDirection: 'row',
+    width: "calc(100% - 10px)",
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    gap: 15
   },
   input: {
     height: 50,
     paddingLeft: 10,
-    width: 140,
+    width: "calc(100% / 2 - 10px)",
     backgroundColor: 'white',
     borderRadius: 3,
-    flex: 1,
-    marginRight: 10,
     textAlign: 'right',
-    paddingRight: 126,
     bottom: 20,
     borderRightWidth: 4,
     borderBottomWidth: 4,
@@ -90,8 +89,8 @@ const styles = StyleSheet.create({
   },
   inputText: {
     position: 'absolute',
-    top: 10,
-    left: 33,
+    top: 15,
+    left: 30,
     color: 'gray',
     fontFamily: 'alata',
     maxWidth:140,
@@ -99,21 +98,30 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: 'black',
+<<<<<<< HEAD
+    width: "calc(100% - 10px)",
+=======
     maxWidth:290,
     width:"100%",
+>>>>>>> b2b5b4b20c242d139631efe08d5f9a5441564abf
     height: 50,
     right: 4,
     borderRadius: 3,
     borderRightWidth: 4,
     borderBottomWidth: 4,
     borderColor: '#959595',
+    right: 1,
   },
   textButton: {
     color: 'white',
     right: 92,
     marginTop: 15,
     fontFamily: 'alata',
+<<<<<<< HEAD
+    textAlign: 'center',
+=======
     textAlign:"center",
+>>>>>>> b2b5b4b20c242d139631efe08d5f9a5441564abf
     cursor: 'pointer'
   },
   voltarText: {
