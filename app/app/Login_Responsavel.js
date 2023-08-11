@@ -20,13 +20,15 @@ export default function Page() {
 
         <TextInput placeholder="Usúario" style={styles.inp}/>
         <TextInput placeholder="Insira sua senha" style={styles.inp} secureTextEntry={true}/>
-
+       
+        <Link href="Home_Pai" style={styles.btn}>
         <TouchableOpacity style={styles.btn}>
-            <View>
+              <View>
                 <Text style={styles.texPres}>ENTRAR</Text>
             </View>
         </TouchableOpacity>
-        
+        </Link>
+
         <Link href="/" style={styles.ty}>Entrar como estudante</Link>
 
         <View style={styles.retangle}>
