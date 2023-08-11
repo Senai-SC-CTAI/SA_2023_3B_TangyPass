@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
+import { StyleSheet, Text, View } from 'react-native';
 import { Div } from '../src/Components/HistoricoHoras';
 import { Footer } from '../src/Components/footer';
-import { Header } from '../src/Components/header';
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
-
+import Logo from './Logo';
+import { Link } from 'expo-router';
 
 export default function Page() {
   let [fontsLoaded] = useFonts({
@@ -15,8 +15,7 @@ export default function Page() {
   }
   return (
     <View style={styles.container}>
-      <Header/>
-
+    <Logo/>
       <Text style={styles.text}>
         Histórico
       </Text>
@@ -26,11 +25,11 @@ export default function Page() {
       <Div />
       <Div />
       <Div />
-
+      <Link href="Home_Estudante">
       <Text style={styles.text}>
         Voltar
       </Text>
-
+      </Link>
       <Footer/>
     </View>
   );

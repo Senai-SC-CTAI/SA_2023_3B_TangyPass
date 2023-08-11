@@ -1,8 +1,9 @@
-import { StyleSheet, Text, TouchableOpacity,View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity,View,Image } from "react-native";
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { MaterialIcons } from '@expo/vector-icons';
-
 import { Link } from "expo-router";
+import React from 'react';
+
 export default function Page() {
   let [fontsLoaded] = useFonts({
     Alata_400Regular,
@@ -13,41 +14,42 @@ export default function Page() {
   } 
   return (
     <View style={styles.container}>
-  
-    <Text style={styles.title}>Tangy</Text>
-    <Text style={styles.usertitle}>Logado como{"\n"}        Aluno</Text>
-   
-<View style={styles.tudo}>
-   <View style={styles.btns2}>
-    <TouchableOpacity style={styles.Qrbtn}>
-      <Link style={styles.escaneartxt} href="Escanear">Escanear</Link>
-      <MaterialIcons  name="qr-code-2" size={61} color="white" />
-     </TouchableOpacity>
-     </View>
+     <Image source={require('../Assets/img.png')} style={styles.logo}/>
 
-    <View style={styles.btns}>  
-     <TouchableOpacity style={styles.rqs}>
-      <Text style={styles.rqstxt} >Requisitar Saída</Text>
-     </TouchableOpacity>
-
-     <TouchableOpacity style={styles.cronogramabtn}>
-      <Text style={styles.cronogramatxt}>Cronograma</Text>
-     </TouchableOpacity>
-
-     </View>
-
-     </View>
-     <TouchableOpacity style={styles.entrada_saida_hs}>
-      <Text style={styles.hstxt}>Historico de entradas de saídas</Text>
-     </TouchableOpacity>
-
-     <TouchableOpacity style={styles.saidabtn}>
-          <Text style={styles.saidatxt}>Sair</Text>
-        </TouchableOpacity>
-
-        <Text style={styles.tangy}>Tangy.app @2023</Text>
-
-     </View>
+<Text style={styles.usertitle}>Logado Como</Text>
+<View style={styles.botoes}>
+  <View style={styles.ostres}>
+    <Link href="Escanear" style={styles.qr}>
+    <TouchableOpacity style={styles.qr}>
+      <Text style={styles.qrtxt}>Escanear</Text>
+    </TouchableOpacity>
+    </Link>
+    <View style={styles.osdois}>
+      <Link href="requisitar">
+      <TouchableOpacity style={styles.rqs}>
+        <Text style={styles.rqstxt}> Requisitar saída</Text>
+      </TouchableOpacity>
+      </Link>
+      <Link href="Cronograma_Estudante">
+      <TouchableOpacity style={styles.rqs}>
+        <Text style={styles.cronotxt}> Crônograma</Text>
+      </TouchableOpacity>
+      </Link>
+    </View>
+  </View>
+  <Link href="Historico_Estudante">
+  <TouchableOpacity style={styles.hs}>
+    <Text style={styles.hstxt}>Historico de entrada e saida</Text>
+  </TouchableOpacity>
+  </Link>
+</View>
+<Link href="/">
+  <TouchableOpacity style={styles.saidabtn}>
+    <Text style={styles.saidatxt}>Sair</Text>
+  </TouchableOpacity>
+</Link>
+<Text style={styles.tangy}>Tangy.app @2023</Text>
+    </View>
   );
 }
 
@@ -160,17 +162,15 @@ entrada_saida_hs:{
   shadowRadius:1,
   borderRadius:5,
   shadowOpacity:0.5,
+  width:"89%",
+  height:"7%",
   marginTop:45,
   marginLeft:13,
-  maxWidth: 312,
-  width: "100%",
-  padding: 10
 },
 hstxt:{
   color:"white",
   fontFamily:"Alata_400Regular",
   fontSize:18,
-  
 },
 saidatxt:{
   color:"black",

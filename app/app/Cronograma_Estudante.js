@@ -4,6 +4,7 @@ import { Link } from 'expo-router';
 import { Footer } from '../src/Components/footer.js';
 import { Header } from '../src/Components/header.js';
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
+import Logo from './Logo';
 
 
 
@@ -17,8 +18,7 @@ export default function PageE() {
       } 
     return (
         <View style={styles.container}>
-            <Header/>
-
+          <Logo/>
             <Text style={styles.text}>
                 Crônograma
             </Text>
