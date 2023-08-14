@@ -60,13 +60,14 @@ const styles = StyleSheet.create({
     display:'flex',
     alignItems:'center',
     justifyContent:'space-between',
-    flexDirection:'row'
+    flexDirection:'row',
+    width: "100%",
+    maxWidth: 300
   },
 
   formats:{
     padding:15,
     borderRadius:5,
-    maxWidth:164,
     width:"100%",
     margin:5,
     backgroundColor:'#fffff',
@@ -82,10 +83,11 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     flexDirection:'column',
+    width:"calc(100% - 10px)",
+    maxWidth: 300
   },
 
   formatspress:{
-    maxWidth:339,
     width:"100%",
     margin:5,
     padding:10,
