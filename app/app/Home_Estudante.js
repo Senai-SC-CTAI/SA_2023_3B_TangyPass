@@ -20,8 +20,9 @@ export default function Page() {
 <View style={styles.botoes}>
   <View style={styles.ostres}>
     <Link href="Escanear" style={styles.qr}>
-    <TouchableOpacity style={styles.qr}>
+    <TouchableOpacity style={styles.kjnn}>
       <Text style={styles.qrtxt}>Escanear</Text>
+      <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
     </TouchableOpacity>
     </Link>
     <View style={styles.osdois}>
@@ -90,7 +91,15 @@ const styles = StyleSheet.create({
   qr:{
     aspectRatio:1,
     backgroundColor:"black",
-    borderRadius:5
+    borderRadius:5,
+    alignItems:"center",
+    justifyContent:"center",
+    
+  },
+  kjnn:{
+  width:"100%",
+  height:"100%",
+  padding:5,
   },
 
   osdois:{
@@ -144,5 +153,7 @@ const styles = StyleSheet.create({
     color:"#B6B6B6",
     marginTop:50,
   },
-  
+  qrimg:{
+    margin:"auto"
+  }
 });

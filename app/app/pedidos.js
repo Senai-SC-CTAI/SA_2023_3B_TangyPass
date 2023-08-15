@@ -1,43 +1,89 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Touchable, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Link } from 'expo-router';
+import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
+import { Feather } from '@expo/vector-icons';
+
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Alata_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  } 
+  
   return (
     <View style={styles.container}>
       <Image source={require('../Assets/img.png')} style={styles.Image}/>
       <Text style={styles.Text}>Pedidos de saída</Text>
-      <StatusBar style="auto" />
-      <View style={styles.firstCardCont}>
-      <AntDesign name="user" size={20} color={"#888"} style={styles.iconFirstInput} />
-        <Text style={styles.textCard}>Email completo do aluno</Text>
-        <Text style={styles.diaText}>Dia</Text>
-        <Text style={styles.dataText}>05/07</Text>
-        <Text style={styles.horaText}>Horário</Text>
-        <Text style={styles.numHoraText}>12:30</Text>
-        <View style={styles.buttonCont}>
-        <Text style={styles.buttonText}>Negar</Text>
-        </View>
-        <View style={styles.buttonContTwo}>
-        <Text style={styles.buttonTextTwo}>Aceitar</Text>
-        </View>
+
+
+        <View style={styles.card}>
+
+      <View style={styles.top}>
+        <Feather name="user" size={24} color="#919191" />
+        <Text style={styles.txt}>Email completo do aluno</Text>
       </View>
 
-      <View style={styles.secondCardCont}>
-      <AntDesign name="user" size={20} color={"#888"} style={styles.iconSecondInput} />
-        <Text style={styles.textTwoCard}>Email completo do aluno</Text>
-        <Text style={styles.diaTwoText}>Dia</Text>
-        <Text style={styles.dataTwoText}>05/07</Text>
-        <Text style={styles.horaTwoText}>Horário</Text>
-        <Text style={styles.numHoraTwoText}>12:30</Text>
-        <View style={styles.buttonTwoCont}>
-        <Text style={styles.buttonTwoText}>Negar</Text>
+            <View style={styles.mid}>
+        <View style={styles.dia}>
+          <Text style={styles.txt1}>Dia</Text>
+          <Text style={styles.txt1}>12/04/2023</Text>
         </View>
-        <View style={styles.buttonContTwo2}>
-        <Text style={styles.buttonTextTwo2}>Aceitar</Text>
+
+        <View style={styles.dia}>
+          <Text style={styles.txt1}>Horario</Text>
+          <Text style={styles.txt1}>12:00</Text>
         </View>
+            </View>
+
+        <View style={styles.buttons}>
+          <TouchableOpacity style={styles.bt1}>
+            <Text style={styles.txt2}>Negar</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.bt1}>
+            <Text style={styles.txt2}>Aceitar</Text>
+          </TouchableOpacity>
+        </View>
+
+        </View>
+
+        <View style={styles.card1}>
+
+      <View style={styles.top}>
+        <Feather name="user" size={24} color="#919191" />
+        <Text style={styles.txt}>Email completo do aluno</Text>
       </View>
+
+            <View style={styles.mid}>
+        <View style={styles.dia}>
+          <Text style={styles.txt1}>Dia</Text>
+          <Text style={styles.txt1}>12/04/2023</Text>
+        </View>
+
+        <View style={styles.dia}>
+          <Text style={styles.txt1}>Horario</Text>
+          <Text style={styles.txt1}>12:00</Text>
+        </View>
+            </View>
+
+        <View style={styles.buttons}>
+          <TouchableOpacity style={styles.bt1}>
+            <Text style={styles.txt2}>Negar</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.bt1}>
+            <Text style={styles.txt2}>Aceitar</Text>
+          </TouchableOpacity>
+        </View>
+
+        </View>
+
+
       <Link href="/Home_Pai" style={styles.voltarText}>VOLTAR</Link>
       <Text style={styles.lastText}>Tangy.app @2023</Text>
     </View>
@@ -48,172 +94,93 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f6f6f6',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems:"center"
   },
-  Image: {
-    width: 200,
-    height: 100,
-    bottom: 170,
+  card:{
+    width:"90%",
+    height:170,
+    marginTop:70,
+    display:"flex",
+    borderRadius:5,
+    shadowOffset: { width: 4, height: 4 },
+    shadowColor: '#8C8C8C',
+    shadowOpacity: 1,
+    shadowRadius: 3,
   },
-  Text: {
-    fontFamily: 'alata',
-    fontWeight: 'bold',
-    fontSize: 20,
-    top: 150,
-    position: 'absolute',
+  card1:{
+    width:"90%",
+    height:170,
+    marginTop:40,
+    marginBottom:70,
+    display:"flex",
+    borderRadius:5,
+    shadowOffset: { width: 4, height: 4 },
+    shadowColor: '#8C8C8C',
+    shadowOpacity: 1,
+    shadowRadius: 3,
   },
-  iconFirstInput: {
-    top: 7,
-    left: 6,
+  top:{
+    width:"100%",
+    height:"20%",
+    flexDirection:"row",
+    marginLeft:20,
+    marginTop:15, 
   },
-  firstCardCont: {
-    backgroundColor: 'white',
-    width: 300,
-    height: 155,
-    bottom: 50,
-    borderRadius: 3,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
+  txt:{
+    fontFamily:"Alata_400Regular",
+    fontSize:16,
+    color:"#919191",
+    marginTop:2,
+    marginLeft:5
   },
-  textCard: {
-    fontFamily: 'alata',
-    color: '#919191',
-    bottom: 12,
-    left: 35,
+  mid:{
+    width:"100%",
+    height:"40%",
+    flexDirection:"row",
   },
-  buttonCont: {
-    backgroundColor: 'black',
-    width: 126,
-    height: 40,
-    bottom: 13,
-    left: 15,
-    borderRadius: 3,
+  dia:{
+    width:"50%",
+    height:"100%",
+    flexDirection:"colum",
+    alignItems:"center",
+    justifyContent:"center"
   },
-  buttonText: {
-    color: 'white',
-    fontFamily: 'alata',
-    textAlign: 'center',
-    top: 8,
+  txt1:{
+    fontFamily:"Alata_400Regular",
+    fontSize:14,
+    color:"#8C8C8C",
   },
-  buttonTextTwo: {
-    color: 'white',
+  txt2:{
+    fontFamily:"Alata_400Regular",
+    fontSize:14,
+    color:"white",
   },
-  buttonContTwo: {
-    backgroundColor: 'black',
-    width: 126,
-    height: 40,
-    bottom: 53,
-    left: 160,
-    borderRadius: 3,
+  buttons:{
+    width:"100%",
+    height:"30%",
+    flexDirection:"row",
+    gap:15,
+    alignItems:"center",
+    justifyContent:"center"
   },
-  buttonTextTwo: {
-   color: 'white',
-   top: 8,
-   textAlign: 'center', 
+
+  bt1:{
+    width:"40%",
+    height:"70%",
+    backgroundColor:"black",
+    justifyContent:"center",
+    alignItems:"center",
+    borderRadius:5,
   },
-  diaText: {
-    fontFamily: 'alata',
-    color: '#919191',
-    left: 63,
+  voltarText:{
+    fontFamily:"Alata_400Regular",
+    fontSize:18,
+    color:"black",
+    marginBottom:50,
   },
-  dataText: {
-    fontFamily: 'alata',
-    color: '#919191',
-    left: 55,
-  },
-  horaText: {
-    fontFamily: 'alata',
-    color: '#919191',
-    left: 197,
-    bottom: 36,
-  },
-  numHoraText: {
-    fontFamily: 'alata',
-    color: '#919191',
-    left: 202,
-    bottom: 38,
-  },
-  secondCardCont: {
-    backgroundColor: 'white',
-    width: 300,
-    height: 155,
-    bottom: 10,
-    borderRadius: 3,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
-  },
-  iconSecondInput: {
-    top: 7,
-    left: 6,
-  },
-  textTwoCard: {
-    fontFamily: 'alata',
-    color: '#919191',
-    bottom: 12,
-    left: 35,
-  },
-  diaTwoText: {
-    fontFamily: 'alata',
-    color: '#919191',
-    left: 63,
-  },
-  dataTwoText: {
-    fontFamily: 'alata',
-    color: '#919191',
-    left: 55,
-  },
-  horaTwoText: {
-    fontFamily: 'alata',
-    color: '#919191',
-    left: 197,
-    bottom: 36,
-  },
-  numHoraTwoText: {
-    fontFamily: 'alata',
-    color: '#919191',
-    left: 202,
-    bottom: 38,
-  },
-  buttonTwoCont: {
-    backgroundColor: 'black',
-    width: 126,
-    height: 40,
-    bottom: 13,
-    left: 15,
-    borderRadius: 3,
-  },
-  buttonTwoText: {
-    color: 'white',
-    fontFamily: 'alata',
-    textAlign: 'center',
-    top: 8,
-  },
-  buttonContTwo2: {
-    backgroundColor: 'black',
-    width: 126,
-    height: 40,
-    bottom: 53,
-    left: 160,
-    borderRadius: 3,
-  },
-  buttonTextTwo2: {
-   color: 'white',
-   top: 8,
-   textAlign: 'center', 
-  },
-  voltarText: {
-    bottom: 136,
-    fontFamily: 'alata',
-    position: 'absolute',
-    color: 'black',
-    cursor: 'pointer'
-  },
-  lastText: {
-    bottom: 70,
-    color: 'gray',
-    position: 'absolute'
+  lastText:{
+    fontFamily:"Alata_400Regular",
+    fontSize:18,
+    color:"#B6B6B6",
   }
 });
