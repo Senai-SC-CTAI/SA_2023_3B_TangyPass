@@ -3,38 +3,37 @@ import { Link } from 'expo-router';
 import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Logo from './Logo'
 
 export default function Requisitar() {
   return (
     <View style={styles.container}>
-      <Image source={require('../Assets/img.png')} style={styles.img} />
-      <Text style={styles.text}>Requisitar saída</Text>
-      <StatusBar style="auto" />
-          <View style={styles.inputWrapper}>
-      <View style={styles.input}>
-        <Icon name="calendar" size={20} color="#888" style={styles.icon} />
-          <TextInput
-            style={styles.inputText}
-            placeholder='Selecionar dia'
-            onChangeText={(text) => console.log(text)}
-          />
-          <View></View>
-          </View>
-          <View style={styles.input}>
-          <Icon name="clock-outline" size={20} color="#888" style={styles.icon} />
-          <TextInput
-            style={styles.inputText}
-            placeholder='Selecionar hora'
-            onChangeText={(text) => console.log(text)}
-          />
-          </View>
-        </View>
-      <View style={styles.buttonContainer}>
-        <Text style={styles.textButton}>Requisitar Saída</Text>
-      </View>      
-        <Link href="/Home_Estudante" style={styles.voltarText}>VOLTAR</Link>
-        <Text style={styles.lastText}>Tangy.app @2023</Text>
+
+      <View style={styles.subcontainer}>
+          <Logo/>
+          <Text style={styles.Rsd}>Requisitar Saida</Text>
+      </View> 
+     
+      <View style={styles.introductiontext}>
+          <TextInput style={styles.formats} placeholder='Selecionar Dia'>
+          
+          </TextInput>
+
+           <TextInput style={styles.formats} placeholder='Selecionar Hora'>
+  
+          </TextInput>
+      </View >
+      <View style={styles.subcontaineredunc}>
+
+        <TouchableOpacity style={styles.formatspress}>
+            <View style={styles.PressText}>
+                Requisitar Saida
+            </View>
+          </TouchableOpacity>
+
       </View>
+
+    </View>
   );
 }
 
@@ -45,88 +44,58 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontFamily: 'alata',
-    fontWeight: 'bold',
-    fontSize: 20,
-    top: 150,
-    position: 'absolute'
+  subcontainer:{
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'column',
+
   },
-  img: {
-    width: 200,
-    height: 100,
-    top: 30,
-    position: 'absolute'
+  Rsd:{
+    textAlign:'center',
+    fontSize:"1em",
   },
-  inputWrapper: {
-    flexDirection: 'row',
-    width: "calc(100% - 10px)",
-    display: "flex",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-    gap: 15
+
+  introductiontext:{
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'space-between',
+    flexDirection:'row',
+    width: "100%",
+    maxWidth: 300
   },
-  input: {
-    height: 50,
-    paddingLeft: 10,
-    width: "calc(100% / 2 - 10px)",
-    backgroundColor: 'white',
-    borderRadius: 3,
-    textAlign: 'right',
-    bottom: 20,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
-  },
-  icon: {
-    left: 7,
-    top: 15,
-    position: 'absolute'
-  },
-  footerContainer: {
-    marginTop: 10,
-  },
-  inputText: {
-    position: 'absolute',
-    top: 15,
-    left: 30,
-    color: 'gray',
-    fontFamily: 'alata',
-    maxWidth:140,
+
+  formats:{
+    padding:15,
+    borderRadius:5,
     width:"100%",
+    margin:5,
+    backgroundColor:'#fffff',
+    shadowOffset: { width: 5, height: 5 },
+    shadowColor: '#000010',
+    shadowOpacity: 0.6,
+    shadowRadius:5,
+    color:'#BFBFBF',
+    textAlign:'center'
   },
-  buttonContainer: {
-    backgroundColor: 'black',
-    width: "calc(100% - 10px)",
-    maxWidth:290,
-    // width:"100%",
-    height: 50,
-    right: 4,
-    borderRadius: 3,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
-    right: 1,
+  subcontaineredunc:{
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+    flexDirection:'column',
+    width:"calc(100% - 10px)",
+    maxWidth: 300
   },
-  textButton: {
-    color: 'white',
-    right: 92,
-    marginTop: 15,
-    fontFamily: 'alata',
-    textAlign: 'center',
-    cursor: 'pointer'
+
+  formatspress:{
+    width:"100%",
+    margin:5,
+    padding:10,
+    borderRadius:5,
+    backgroundColor:'black',
   },
-  voltarText: {
-    bottom: 136,
-    fontFamily: 'alata',
-    position: 'absolute',
-    color: 'black',
-    cursor: 'pointer'
+  PressText:{
+    color:'#fff',
+    textAlign:'center'
   },
-  lastText: {
-    bottom: 70,
-    color: 'gray',
-    position: 'absolute'
-  }
 });
