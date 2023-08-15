@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Link } from 'expo-router';
 import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { MaterialIcons } from '@expo/vector-icons';
 import Logo from './Logo'
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 
@@ -18,19 +18,17 @@ export default function Requisitar() {
  
   return (
     <View style={styles.container}>
+        <Logo style={styles.aling} />
+        <Text style={styles.Rsd}>Requisitar Saida</Text>
 
       <View style={styles.subcontainer}>
-          <Logo/>
-          <Text style={styles.Rsd}>Requisitar Saida</Text>
-      </View> 
-     
-      <View style={styles.introductiontext}>
+       <View style={styles.introductiontext}>
           <TextInput style={styles.formats} placeholder='Selecionar Dia'>
-          
+
           </TextInput>
 
-           <TextInput style={styles.formats} placeholder='Selecionar Hora'>
-  
+           <TextInput style={styles.formats} placeholder='Selecionar Hora' name='calendar' >
+           
           </TextInput>
       </View >
       <View style={styles.subcontaineredunc}>
@@ -41,8 +39,9 @@ export default function Requisitar() {
             </View>
           </TouchableOpacity>
 
-      </View>
-
+          <Link href={'Home_Estudante'} style={styles.Voltade}>Voltar</Link>  
+        </View>
+      </View> 
     </View>
   );
 }
@@ -52,21 +51,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f6f6f6',
     alignItems: 'center',
-    justifyContent:"center"
   },
+
   subcontainer:{
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
     flexDirection:'column',
-    marginTop: 30,
+    marginTop:180,
 
   },
   Rsd:{
     textAlign:'center',
     fontSize:"1em",
     fontFamily:"Alata_400Regular",
-    
+    marginTop:10,
   },
 
   introductiontext:{
@@ -113,4 +112,11 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontFamily:"Alata_400Regular",
   },
+  Voltade:{
+    textAlign:'center',
+    fontSize:"1em",
+    fontFamily:"Alata_400Regular",
+    marginTop:100,
+  },
+  
 });

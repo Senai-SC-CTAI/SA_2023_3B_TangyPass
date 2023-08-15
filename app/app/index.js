@@ -19,7 +19,7 @@ export default function Page() {
         <Text style={styles.alingText}> Estudante</Text>
         <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
         
-        <TouchableOpacity onPress={()=> "Home_pai"} style={styles.alingbtn} >
+        <TouchableOpacity style={styles.alingbtn} >
           <View style={styles.btn} >
             <Image source={require('../Assets/google.png')} style={styles.img}/>
             <Link href="/Home_Estudante" style={styles.texbtn}> Prosseguir com google</Link>
