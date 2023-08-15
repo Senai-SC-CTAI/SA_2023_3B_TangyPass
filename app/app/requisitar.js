@@ -4,8 +4,18 @@ import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Logo from './Logo'
+import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
+
 
 export default function Requisitar() {
+  let [fontsLoaded] = useFonts({
+    Alata_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  } 
+ 
   return (
     <View style={styles.container}>
 
@@ -42,18 +52,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f6f6f6',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent:"center"
   },
   subcontainer:{
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
     flexDirection:'column',
+    marginTop: 30,
 
   },
   Rsd:{
     textAlign:'center',
     fontSize:"1em",
+    fontFamily:"Alata_400Regular",
+    
   },
 
   introductiontext:{
@@ -62,7 +75,7 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     flexDirection:'row',
     width: "100%",
-    maxWidth: 300
+    maxWidth: 300,
   },
 
   formats:{
@@ -76,7 +89,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.6,
     shadowRadius:5,
     color:'#BFBFBF',
-    textAlign:'center'
+    textAlign:'center',
+    fontFamily:"Alata_400Regular",
   },
   subcontaineredunc:{
     display:'flex',
@@ -96,6 +110,7 @@ const styles = StyleSheet.create({
   },
   PressText:{
     color:'#fff',
-    textAlign:'center'
+    textAlign:'center',
+    fontFamily:"Alata_400Regular",
   },
 });
