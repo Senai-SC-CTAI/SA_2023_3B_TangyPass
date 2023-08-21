@@ -32,9 +32,9 @@ export default function Requisitar() {
             </TextInput>
 
           </View>
-          <View style={styles.alinginpt}>
+            <View style={styles.alinginpt}>
 
-            <ClockCircleOutlined />
+            <ClockCircleOutlined  style={styles.icon}/>
             <TextInput style={styles.formats} placeholder='Selecionar Hora' name='calendar' >
 
             </TextInput>
@@ -85,16 +85,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    width: "100%",
-    maxWidth: 300,
- 
+    width: "100%", 
+    maxWidth:300,
   },
 
   formats: {
     padding: 15,
     borderRadius: 5,
-    width: "60%",
-    margin: 5,
+    width: "100%",
     backgroundColor: '#fffff',
     shadowOffset: { width: 5, height: 5 },
     shadowColor: '#000010',
@@ -131,13 +129,11 @@ const styles = StyleSheet.create({
     marginTop: 100,
   },
   icon: {
-    marginRight:180,
+    left: 120,
+    top: 15,
+    position: 'absolute'
   },
-  // alinginpt: {
-  //   display: 'flex',
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   flexDirection: "column"
-  // }
-
+  alinginpt:{
+    width:"100%",
+  }
 });

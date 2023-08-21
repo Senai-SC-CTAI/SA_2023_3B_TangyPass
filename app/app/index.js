@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     margin:10,
   },
   alingbtn:{
-    display:'flex',
+    display:'flex', 
     justifyContent:'center',
     alignItems:'center',
     flexDirection:'column',
