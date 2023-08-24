@@ -1,139 +1,209 @@
-import { StatusBar } from 'expo-status-bar';
-import { Link } from 'expo-router';
-import React from 'react';
-import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Logo from './Logo'
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { CalendarOutlined, ClockCircleOutlined } from '@ant-design/icons';
+import {Text,View,StyleSheet,KeyboardAvoidingView,Platform,TouchableOpacity,Modal,} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
+import DatePicker from "react-native-modern-datepicker";
+import { getFormatedDate } from "react-native-modern-datepicker";
+
+export default function requisitar() {
 
 
-export default function Requisitar() {
-  let [fontsLoaded] = useFonts({
-    Alata_400Regular,
-  });
+  const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
+  const [openStartTimePicker, setOpenStartTimePicker] = useState(false)
+  const today = new Date();
+  const startDate = getFormatedDate(
+    today.setDate(today.getDate()), //today.getDate() + 1)
+    "YYYY/MM/DD"
+  );
+  const [selectedStartDate, setSelectedStartDate] = useState("");
+  const [startedDate, setStartedDate] = useState("12/12/2023");
 
-  if (!fontsLoaded) {
-    return null;
+  const [selectedStartTime, setSelectedStartTime] = useState("");
+  const [startedTime, setStartedTime] = useState("Hour:00 | Minute:00");
+
+  function handleChangeStartDate(propDate) {
+    setStartedDate(propDate);
   }
 
+  function handleChangeStartTime(propTime) {
+    setStartedTime(propTime);
+  }
+
+  const handleOnPressStartDate = () => {
+    setOpenStartDatePicker(!openStartDatePicker);
+  };
+
+  const handleOnPressStartTime = () => {
+    setOpenStartTimePicker(!openStartTimePicker)
+  };
   return (
-    <View style={styles.container}>
-      <Logo style={styles.aling} />
-      <Text style={styles.Rsd}>Requisitar Saida</Text>
+    <SafeAreaView style={{ flex: 1 }}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS == "ios" ? "padding" : ""}
+        style={{
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#fff",
+        }}
+      >
+        <View style={{ flex: 1, alignItems: "center" }}>
+          <Logo/>
+          <Text style={styles.textSubHeader}>Requisitar saída</Text>
 
-      <View style={styles.subcontainer}>
-        <View style={styles.introductiontext}>
+          <View style={{ width: "100%", paddingHorizontal: 22, marginTop: 64 }}>
+            <View>
+              <Text style={{ fontSize: 18 }}>Select Date</Text>
+              <TouchableOpacity
+                style={styles.inputBtn}
+                onPress={handleOnPressStartDate}
+              >
+                <Text>{selectedStartDate}</Text>
+              </TouchableOpacity>
 
-          <View style={styles.alinginpt} >
-
-            <CalendarOutlined style={styles.icon} />
-            <TextInput style={styles.formats} placeholder='Selecionar Dia'>
-
-            </TextInput>
-
-          </View>
-            <View style={styles.alinginpt}>
-
-            <ClockCircleOutlined  style={styles.icon}/>
-            <TextInput style={styles.formats} placeholder='Selecionar Hora' name='calendar' >
-
-            </TextInput>
-          </View>
-
-        </View >
-
-        <View style={styles.subcontaineredunc}>
-
-          <TouchableOpacity style={styles.formatspress}>
-            <View style={styles.PressText}>
-              Requisitar Saida
+              <TouchableOpacity
+                style={styles.inputBtn}
+                onPress={handleOnPressStartTime}
+              >
+                <Text>{selectedStartTime}</Text>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
 
-          <Link href={'Home_Estudante'} style={styles.Voltade}>Voltar</Link>
+            <TouchableOpacity
+              onPress={() => console.log("Subimit data")}
+              style={styles.submitBtn}
+            >
+              <Text style={{ fontSize: 20, color: "white" }}>Submit</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Create modal for date picker */}
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={openStartDatePicker}
+          >
+            <View style={styles.centeredView}>
+              <View style={styles.modalView}>
+                <DatePicker
+                  mode="calendar"
+                  minimumDate={startDate}
+                  selected={startedDate}
+                  onDateChanged={handleChangeStartDate}
+                  onSelectedChange={(date) => setSelectedStartDate(date)}
+                  options={{
+                    backgroundColor: "#080516",
+                    textHeaderColor: "#469ab6",
+                    textDefaultColor: "#FFFFFF",
+                    selectedTextColor: "#FFF",
+                    mainColor: "#469ab6",
+                    textSecondaryColor: "#FFFFFF",
+                    borderColor: "rgba(122, 146, 165, 0.1)",
+                  }}
+                />
+                <TouchableOpacity onPress={handleOnPressStartDate}>
+                  <Text style={{ color: "white" }}>Close</Text>
+                </TouchableOpacity>
+
+              </View>
+            </View>
+          </Modal>
+
+
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={openStartTimePicker}
+          >
+            <View style={styles.centeredView}>
+              <View style={styles.modalView}>
+                <DatePicker
+                  mode="time"
+                  minimumDate={startDate}
+                  selected={startedTime}
+                  onDateChanged={handleChangeStartTime}
+                  onSelectedChange={(date) => setSelectedStartTime(date)}
+                  options={{
+                    backgroundColor: "#080516",
+                    textHeaderColor: "#469ab6",
+                    textDefaultColor: "#FFFFFF",
+                    selectedTextColor: "#FFF",
+                    mainColor: "#469ab6",
+                    textSecondaryColor: "#FFFFFF",
+                    borderColor: "rgba(122, 146, 165, 0.1)",
+                  }}
+                />
+                <TouchableOpacity onPress={handleOnPressStartTime}>
+                  <Text style={{ color: "white" }}>Close</Text>
+                </TouchableOpacity>
+
+              </View>
+            </View>
+          </Modal>
+
+
         </View>
-      </View>
-    </View>
+      </KeyboardAvoidingView>
+
+        
+
+
+     
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f6f6f6',
-    alignItems: 'center',
-    justifyContent: 'center',
-
+  textHeader: {
+    fontSize: 36,
+    marginVertical: 60,
+    color: "#111",
   },
-
-  subcontainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    marginTop: 180,
-
-  },
-  Rsd: {
-    fontSize: "1em",
+  textSubHeader: {
+    fontSize: "1.3em",
     fontFamily: "Alata_400Regular",
     marginTop: 10,
   },
-
-  introductiontext: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    width: "100%", 
-    maxWidth:300,
+  inputBtn: {
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: "#222",
+    height: 50,
+    paddingLeft: 8,
+    fontSize: 18,
+    justifyContent: "center",
+    marginTop: 14,
   },
-
-  formats: {
-    padding: 15,
-    borderRadius: 5,
-    width: "100%",
-    backgroundColor: '#fffff',
-    shadowOffset: { width: 5, height: 5 },
-    shadowColor: '#000010',
-    shadowOpacity: 0.6,
-    shadowRadius: 5,
-    color: '#BFBFBF',
-    fontFamily: "Alata_400Regular",
+  submitBtn: {
+    backgroundColor: "#342342",
+    paddingVertical: 22,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    paddingVertical: 12,
+    marginVertical: 16,
   },
-  subcontaineredunc: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    width: "calc(100% - 10px)",
-    maxWidth: 300,
+  centeredView: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
-
-  formatspress: {
-    width: "100%",
-    margin: 5,
-    padding: 10,
-    borderRadius: 5,
-    backgroundColor: 'black',
+  modalView: {
+    margin: 20,
+    backgroundColor: "#080516",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
+    padding: 35,
+    width: "90%",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
-  PressText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontFamily: "Alata_400Regular",
-  },
-  Voltade: {
-    textAlign: 'center',
-    fontSize: "1em",
-    fontFamily: "Alata_400Regular",
-    marginTop: 100,
-  },
-  icon: {
-    left: 120,
-    top: 15,
-    position: 'absolute'
-  },
-  alinginpt:{
-    width:"100%",
-  }
 });
