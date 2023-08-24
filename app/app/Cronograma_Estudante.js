@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import {Crono} from '../src/Components/Cronograma';
 import { Link } from 'expo-router';
-import { Footer } from '../src/Components/footer.js';
 import { Header } from '../src/Components/header.js';
+import { Footer } from '../src/Components/footer.js';
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import Logo from './Logo';
 

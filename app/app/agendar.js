@@ -1,173 +1,121 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { Header } from '../src/Components/header.js';
+import { Footer } from '../src/Components/footer.js';
 
-export default function Agendar() {
+export default function App() {
   return (
     <View style={styles.container}>
-      <Image source={require('../Assets/img.png')} style={styles.img} />
-      <Text style={styles.text}>Agendar saída</Text>
-      <StatusBar style="auto" />
-        <View style={styles.inputWrapperFirst}>
-          <View style={styles.inputFirst}>
-            <AntDesign name="user" size={20} color={"#888"} style={styles.iconFirstInput} />
-            <AntDesign name="caretdown" size={16} color={"#888"} style={styles.iconSecond} />
-            <TextInput
-            style={styles.textInputFirst}
-            placeholder='Selecione o estudante'
-            onChangeText={(text) => console.log(text)}
-            />
-            <View></View>
-          <View style={styles.inputWrapper}>
-      <View style={styles.input}>
-        <Icon name="calendar" size={20} color="#888" style={styles.icon} />
-          <TextInput
-            style={styles.inputText}
-            placeholder='Selecionar dia'
-            onChangeText={(text) => console.log(text)}
-          />
-          <View></View>
-          </View>
-          <View style={styles.input}>
-          <Icon name="clock-outline" size={20} color="#888" style={styles.icon} />
-          <TextInput
-            style={styles.inputText}
-            placeholder='Selecionar hora'
-            onChangeText={(text) => console.log(text)}
-          />
-          </View>
-        </View>
-        </View>
+      <Header/>
+
+      <Text style={styles.text}>
+        Agendar Saída
+      </Text>
+
+      <View style={styles.total}>
+
       </View>
-      <View style={styles.buttonContainer}>
-          <Text style={styles.textButton}>Agendar saída</Text>  
+      <View style={[styles.ccontainer, styles.shadowProp]}>
+        <SimpleLineIcons name="user" size={18} color="#ADADAD" />
+
+        <Text style={styles.select}>
+          Selecione o estudante
+        </Text>
+
+        <AntDesign name="caretdown" size={18} color="#ADADAD" />
       </View>
-      <Link href={"/Home_Pai"} style={styles.voltarText}>VOLTAR</Link>
-      <Text style={styles.lastText}>Tangy.app @2023</Text>
+
+      <View style={styles.chooseArea}>
+        <TouchableOpacity style={[styles.choose, styles.shadowProp]}>
+          <AntDesign name="calendar" size={18} color="#ADADAD" />
+          <Text style={styles.select}>Selecionar Dia</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[styles.choose, styles.shadowProp]}>
+          <AntDesign name="clockcircleo" size={18} color="#ADADAD" />
+          <Text style={styles.select}>Selecionar Hora</Text>
+        </TouchableOpacity>
       </View>
+
+      <View style={styles.buttonarea}>
+        <TouchableOpacity style={[styles.button, styles.shadowProp]}>
+          <Text style={styles.buttontext}>
+            Agendar Saída
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      <Text style={styles.text}>
+        Voltar
+      </Text>
+
+      <Footer/>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f6f6f6',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontFamily: 'alata',
-    fontWeight: 'bold',
-    fontSize: 21,
-    position: 'absolute',
-    top: 140,
-  },
-  img: {
-    width: 200,
-    height: 100,
-    top: 6,
-    position: 'absolute'
-  },
-  inputFirst: {
-    height: 50, 
-    bottom: 70,
-    backgroundColor: 'white',
-    borderRadius: 3, 
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
-    width: "calc(103% - 20px)",
-    position: 'absolute',
-  },
-  textInputFirst:{
-    fontFamily: 'alata',
-    color: 'gray',
-    position: 'absolute',
-    top: 12,
-    left: 38,
-  },
-  iconFirstInput: {
-    left: 14,
-    top: 7,
-    position: 'absolute',
-  },
-  iconSecond: {
-    position: 'absolute',
-    right: 18,
-    top: 13,
-  },
-  inputWrapperFirst: {
-    flexDirection: 'row',
-    width: "calc(100% - 1px)",
-    display: "flex",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-    gap: 15
-  },
-  input: {
-    height: 50,
-    width: "calc(100% / 2 - 10px)",
-    backgroundColor: 'white',
-    borderRadius: 3,
-    top: 90,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
-    position: 'relative'
-  },
-  inputWrapper: {
-    flexDirection: 'row',
-    width: "calc(100% - 1px)",
-    display: "flex",
-    textAlign: 'center',
-    gap: 15
-  },
-  icon: {
-    left: 5,
-    top: 15,
-    position: 'absolute'
-  },
-  footerContainer: {
-    marginTop: 10,
-  },
-  inputText: {
-    position: 'absolute',
-    top: 12,
-    left: 32,
-    color: 'gray',
-    fontFamily: 'alata',
-  },
-  buttonContainer: {
-    backgroundColor: 'black',
-    width: "calc(100% - 10px)",
-    height: 50,
-    right: 4,
-    borderRadius: 3,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
-    right: 1,
-  },
-  textButton: {
-    color: 'white',
-    textAlign: 'center',
-    fontFamily: 'alata',
-    marginTop: 14,
-  },
-  voltarText: {
-    bottom: 136,
-    fontFamily: 'alata',
-    position: 'absolute',
+  text:{
     color: 'black',
-    cursor: 'pointer'
+    fontSize: 20,
+    padding: 10,
+    margin: 20
   },
-  lastText: {
-    position: 'absolute',
-    bottom: 80,
-    color: 'gray'
+  shadowProp: {  
+    shadowOffset: {width: 4, height: 4},  
+    shadowColor: '#696969',  
+    shadowOpacity: 0.5,  
+    shadowRadius: 3,  
+  },
+  ccontainer:{
+    width:'80%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: "#fff",
+    padding: 15,
+    margin: 5,
+    shadowColor: '#000',
+    borderRadius: 5,
+    marginBottom: 10,
+    alignItems: 'center'
+  },
+  select:{
+    color: '#BFBFBF'
+  },
+  chooseArea:{
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    width: '78%'
+  },
+  choose:{
+    width: '50%',
+    padding: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    margin: 5,
+    justifyContent: 'space-between',
+  },
+  button:{
+    backgroundColor: 'black',
+    padding: 8,
+    borderRadius: 5,
+    margin: 5,
+  },
+  buttontext:{
+    color: 'white',
+    padding: 5,
+    textAlign: 'center'
+  },
+  buttonarea:{
+    width: '84%'
   }
 });
