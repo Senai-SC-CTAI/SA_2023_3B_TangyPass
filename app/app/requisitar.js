@@ -39,7 +39,7 @@ export default function requisitar() {
     setOpenStartTimePicker(!openStartTimePicker)
   };
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1}}>
       <KeyboardAvoidingView
         behavior={Platform.OS == "ios" ? "padding" : ""}
         style={{
@@ -48,7 +48,7 @@ export default function requisitar() {
           backgroundColor: "#fff",
         }}
       >
-        <View style={{ flex: 1, alignItems: "center" }}>
+        <View style={{ flex: 1, alignItems: "center",}}>
           <Logo/>
           <Text style={styles.textSubHeader}>Requisitar saída</Text>
 
@@ -172,8 +172,9 @@ const styles = StyleSheet.create({
     height: 50,
     paddingLeft: 8,
     fontSize: 18,
-    justifyContent: "center",
     marginTop: 14,
+    maxWidth:300,
+    width: "100% ",
   },
   submitBtn: {
     backgroundColor: "#342342",
@@ -183,11 +184,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 12,
     marginVertical: 16,
+    maxWidth:300,
+    width: "100% ",
   },
   centeredView: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   modalView: {
     margin: 20,
@@ -196,7 +197,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 20,
     padding: 35,
-    width: "90%",
+    maxWidth:300,
+    width: "100% ",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
