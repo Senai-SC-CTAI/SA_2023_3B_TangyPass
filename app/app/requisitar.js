@@ -52,8 +52,8 @@ export default function requisitar() {
           <Logo/>
           <Text style={styles.textSubHeader}>Requisitar saída</Text>
 
-          <View style={{ width: "100%", paddingHorizontal: 22, marginTop: 64 }}>
-            <View>
+          <View style={styles.alinginp}>
+            <View style={styles.alinginp}>
               <Text style={{ fontSize: 18 }}>Select Date</Text>
               <TouchableOpacity
                 style={styles.inputBtn}
@@ -207,5 +207,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+  },
+  alinginp:{
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'column',
+    width:'100%',
+    marginTop:50,
   },
 });
