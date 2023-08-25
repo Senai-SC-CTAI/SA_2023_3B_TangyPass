@@ -54,7 +54,6 @@ export default function requisitar() {
 
           <View style={styles.alinginp}>
             <View style={styles.alinginp}>
-              <Text style={{ fontSize: 18 }}>Select Date</Text>
               <TouchableOpacity
                 style={styles.inputBtn}
                 onPress={handleOnPressStartDate}
@@ -74,7 +73,7 @@ export default function requisitar() {
               onPress={() => console.log("Subimit data")}
               style={styles.submitBtn}
             >
-              <Text style={{ fontSize: 20, color: "white" }}>Submit</Text>
+              <Text style={styles.btn}>Requisitar saída</Text>
             </TouchableOpacity>
           </View>
 
@@ -103,7 +102,7 @@ export default function requisitar() {
                   }}
                 />
                 <TouchableOpacity onPress={handleOnPressStartDate}>
-                  <Text style={{ color: "white" }}>Close</Text>
+                  <Text style={styles.textbtn}>Close</Text>
                 </TouchableOpacity>
 
               </View>
@@ -135,7 +134,7 @@ export default function requisitar() {
                   }}
                 />
                 <TouchableOpacity onPress={handleOnPressStartTime}>
-                  <Text style={{ color: "white" }}>Close</Text>
+                  <Text style={styles.textbtn}>Close</Text>
                 </TouchableOpacity>
 
               </View>
@@ -175,9 +174,10 @@ const styles = StyleSheet.create({
     marginTop: 14,
     maxWidth:300,
     width: "100% ",
+  
   },
   submitBtn: {
-    backgroundColor: "#342342",
+    backgroundColor: "#000000",
     paddingVertical: 22,
     alignItems: "center",
     justifyContent: "center",
@@ -193,11 +193,9 @@ const styles = StyleSheet.create({
   modalView: {
     margin: 20,
     backgroundColor: "#080516",
-    alignItems: "center",
-    justifyContent: "center",
     borderRadius: 20,
     padding: 35,
-    maxWidth:300,
+    maxWidth:350,
     width: "100% ",
     shadowColor: "#000",
     shadowOffset: {
@@ -214,6 +212,18 @@ const styles = StyleSheet.create({
     alignItems:'center',
     flexDirection:'column',
     width:'100%',
-    marginTop:50,
+    marginTop:80,
   },
+
+  btn:{
+    fontSize: "1.1em",
+    fontFamily: "Alata_400Regular",
+    color:'#fff'
+  },
+  textbtn:{
+    textAlign:'center',
+    color:'#fff',
+    marginTop:10,
+
+  }
 });
