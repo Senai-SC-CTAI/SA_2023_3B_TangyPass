@@ -8,6 +8,7 @@ import DatePicker from "react-native-modern-datepicker";
 import { getFormatedDate } from "react-native-modern-datepicker";
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { Link } from "expo-router";
 
 
 export default function requisitar() {
@@ -22,12 +23,14 @@ export default function requisitar() {
         today.setDate(today.getDate()), //today.getDate() + 1)
         "YYYY/MM/DD"
     );
+
+
     const [selectedStartDate, setSelectedStartDate] = useState("");
     const [startedDate, setStartedDate] = useState("12/12/2023");
 
 
     const [selectedStartTime, setSelectedStartTime] = useState("");
-    const [startedTime, setStartedTime] = useState("Hour:00 | Minute:00");
+    const [startedTime, setStartedTime] = useState("15:23");
 
 
     function handleChangeStartDate(propDate) {
@@ -51,7 +54,7 @@ export default function requisitar() {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <KeyboardAvoidingView
-                behavior={Platform.OS == "ios" ? "padding" : ""}
+                behavior={Platform.OS == "android" ? "padding" : ""}
                 style={{
                     width: "100%",
                     height: "100%",
@@ -63,7 +66,7 @@ export default function requisitar() {
                     <Text style={styles.textSubHeader}>Requisitar saída</Text>
 
 
-                    <View>
+                    <View style={styles.alinginp}>
                         <View style={styles.alinginp}>
                             <TouchableOpacity
                                 style={styles.inputBtn}
@@ -82,9 +85,19 @@ export default function requisitar() {
                         </View>
 
 
+                        <TouchableOpacity
+                                onPress={() => console.log("Subimit data")}
+                                style={styles.submitBtn}
+                            >
+                                <Text style={styles.btn}>Requisitar saída</Text>
+                            </TouchableOpacity>
 
+                       
                     </View>
 
+                 <View>
+                    <Link href="Home_Estudante"  style={styles.linktext}>VOLTAR</Link>
+                 </View>
 
 
                     {/* Create modal for date picker */}
@@ -118,6 +131,7 @@ export default function requisitar() {
 
                             </View>
                         </View>
+
                     </Modal>
 
 
@@ -136,6 +150,7 @@ export default function requisitar() {
                                     selected={startedTime}
                                     onDateChanged={handleChangeStartTime}
                                     onSelectedChange={(date) => setSelectedStartTime(date)}
+                                    locale=''
                                     options={{
                                         backgroundColor: "#080516",
                                         textHeaderColor: "#469ab6",
@@ -157,12 +172,8 @@ export default function requisitar() {
 
 
 
-
                 </View>
-
-
             </KeyboardAvoidingView>
-
         </SafeAreaView>
     );
 }
@@ -175,20 +186,22 @@ const styles = StyleSheet.create({
         color: "#111",
     },
     textSubHeader: {
-        fontSize: "1.3em",
+        fontSize: "1.4em",
         fontFamily: "Alata_400Regular",
         marginTop: 10,
     },
     inputBtn: {
+        justifyContent: 'center',
         borderWidth: 1,
         borderRadius: 4,
         borderColor: "#222",
         height: 50,
         fontSize: 18,
         marginTop: 14,
-        maxWidth: 300,
+        maxWidth:340,
         width: "100% ",
-        margin:5,
+        margin: 5,
+        marginTop:33,
     },
     submitBtn: {
         backgroundColor: "#000000",
@@ -199,19 +212,22 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         padding: 10,
         height: 50,
-        maxWidth: 300,
+        maxWidth:350,
         width: "100% ",
-        marginTop: 12,
+        marginTop: 10,
     },
     centeredView: {
-        flex: 1,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
     },
     modalView: {
         margin: 20,
         backgroundColor: "#080516",
         borderRadius: 20,
         padding: 35,
-        maxWidth: 350,
+        maxWidth: 330,
         width: "100% ",
         shadowColor: "#000",
         shadowOffset: {
@@ -223,15 +239,14 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     alinginp: {
-        display: 'flex',
+        flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
         padding: 5,
         margin: 10,
-        maxWidth: 300,
-        width: "100% ",
-        right:5.8,
+        width: "100%",
+
 
     },
 
@@ -249,11 +264,21 @@ const styles = StyleSheet.create({
 
     },
     icntex: {
-        marginTop: 10,
+        marginTop: 5,
         padding: 2,
         margin: 5,
+    },
+
+    linktext:{
+        fontSize:"1.2em",
+        fontFamily: "Alata_400Regular",
+        marginTop:100,
     }
 
 
 });
-;
+
+
+
+
+
