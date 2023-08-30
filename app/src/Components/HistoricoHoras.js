@@ -4,13 +4,30 @@ import { AntDesign } from '@expo/vector-icons';
 
 export function Div() {
     return (
+        <>
+        
         <View style={[styles.container, styles.shadowProp]}>
             <Text>
-                12:30
+                8:30
             </Text>
 
             <AntDesign name="caretup" size={18} color="#88D699" />
         </View>
+        <View style={[styles.container, styles.shadowProp]}>
+            <Text>
+                14:30
+            </Text>
+
+            <AntDesign name="caretup" size={18} color="#88D699" />
+        </View>
+        <View style={[styles.container, styles.shadowProp]}>
+            <Text>
+                16:30
+            </Text>
+
+            <AntDesign name="caretup" size={18} color="#ef3b3b" />
+        </View>
+        </>
     );
 }
 

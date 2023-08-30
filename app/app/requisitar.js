@@ -1,295 +1,130 @@
-import Logo from './Logo'
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
-import { CalendarOutlined, ClockCircleOutlined } from '@ant-design/icons';
-import { Text, View, StyleSheet, KeyboardAvoidingView, Platform, TouchableOpacity, Modal, } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { useState } from "react";
-import DatePicker from "react-native-modern-datepicker";
-import { getFormatedDate } from "react-native-modern-datepicker";
-import { AntDesign } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { Link } from "expo-router";
+import { StatusBar } from 'expo-status-bar';
+import { Link } from 'expo-router';
+import React from 'react';
+import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-
-export default function requisitar() {
-
-
-
-
-    const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
-    const [openStartTimePicker, setOpenStartTimePicker] = useState(false)
-    const today = new Date();
-    const startDate = getFormatedDate(
-        today.setDate(today.getDate()), //today.getDate() + 1)
-        "YYYY/MM/DD"
-    );
-
-
-    const [selectedStartDate, setSelectedStartDate] = useState("");
-    const [startedDate, setStartedDate] = useState("12/12/2023");
-
-
-    const [selectedStartTime, setSelectedStartTime] = useState("");
-    const [startedTime, setStartedTime] = useState("15:23");
-
-
-    function handleChangeStartDate(propDate) {
-        setStartedDate(propDate);
-    }
-
-
-    function handleChangeStartTime(propTime) {
-        setStartedTime(propTime);
-    }
-
-
-    const handleOnPressStartDate = () => {
-        setOpenStartDatePicker(!openStartDatePicker);
-    };
-
-
-    const handleOnPressStartTime = () => {
-        setOpenStartTimePicker(!openStartTimePicker)
-    };
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <KeyboardAvoidingView
-                behavior={Platform.OS == "android" ? "padding" : ""}
-                style={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "#fff",
-                }}
-            >
-                <View style={{ flex: 1, alignItems: "center", }}>
-                    <Logo />
-                    <Text style={styles.textSubHeader}>Requisitar saída</Text>
-
-
-                    <View style={styles.alinginp}>
-                        <View style={styles.alinginp}>
-                            <TouchableOpacity
-                                style={styles.inputBtn}
-                                onPress={handleOnPressStartDate}
-                            >
-                                <Text style={styles.icntex}>{selectedStartDate} <AntDesign name="calendar" size={20} color={"black"} /> </Text>
-                            </TouchableOpacity>
-
-
-                            <TouchableOpacity
-                                style={styles.inputBtn}
-                                onPress={handleOnPressStartTime}
-                            >
-                                <Text style={styles.icntex}>{selectedStartTime} <Ionicons name="time-outline" size={24} color="black" /> </Text>
-                            </TouchableOpacity>
-                        </View>
-
-
-                        <TouchableOpacity
-                                onPress={() => console.log("Subimit data")}
-                                style={styles.submitBtn}
-                            >
-                                <Text style={styles.btn}>Requisitar saída</Text>
-                            </TouchableOpacity>
-
-                       
-                    </View>
-
-                 <View>
-                    <Link href="Home_Estudante"  style={styles.linktext}>VOLTAR</Link>
-                 </View>
-
-                 <View>
-                    <Text style={styles.tangy}>Tangy.app @2023</Text>
-                 </View>
-
-
-                    {/* Create modal for date picker */}
-                    <Modal
-                        animationType="slide"
-                        transparent={true}
-                        visible={openStartDatePicker}
-                    >
-                        <View style={styles.centeredView}>
-                            <View style={styles.modalView}>
-                                <DatePicker
-                                    mode="calendar"
-                                    minimumDate={startDate}
-                                    selected={startedDate}
-                                    onDateChanged={handleChangeStartDate}
-                                    onSelectedChange={(date) => setSelectedStartDate(date)}
-                                    options={{
-                                        backgroundColor: "#080516",
-                                        textHeaderColor: "#469ab6",
-                                        textDefaultColor: "#FFFFFF",
-                                        selectedTextColor: "#FFF",
-                                        mainColor: "#469ab6",
-                                        textSecondaryColor: "#FFFFFF",
-                                        borderColor: "rgba(122, 146, 165, 0.1)",
-                                    }}
-                                />
-                                <TouchableOpacity onPress={handleOnPressStartDate}>
-                                    <Text style={styles.textbtn}>Close</Text>
-                                </TouchableOpacity>
-
-
-                            </View>
-                        </View>
-
-                    </Modal>
-
-
-
-
-                    <Modal
-                        animationType="slide"
-                        transparent={true}
-                        visible={openStartTimePicker}
-                    >
-                        <View style={styles.centeredView}>
-                            <View style={styles.modalView}>
-                                <DatePicker
-                                    mode="time"
-                                    minimumDate={startDate}
-                                    selected={startedTime}
-                                    onDateChanged={handleChangeStartTime}
-                                    onSelectedChange={(date) => setSelectedStartTime(date)}
-                                    locale=''
-                                    options={{
-                                        backgroundColor: "#080516",
-                                        textHeaderColor: "#469ab6",
-                                        textDefaultColor: "#FFFFFF",
-                                        selectedTextColor: "#FFF",
-                                        mainColor: "#469ab6",
-                                        textSecondaryColor: "#FFFFFF",
-                                        borderColor: "rgba(122, 146, 165, 0.1)",
-                                    }}
-                                />
-                                <TouchableOpacity onPress={handleOnPressStartTime}>
-                                    <Text style={styles.textbtn}>Close</Text>
-                                </TouchableOpacity>
-
-
-                            </View>
-                        </View>
-                    </Modal>
-
-
-
-                </View>
-            </KeyboardAvoidingView>
-        </SafeAreaView>
-    );
+export default function Requisitar() {
+  return (
+    <View style={styles.container}>
+      <Image source={require('../Assets/img.png')} style={styles.img} />
+      <Text style={styles.text}>Requisitar saída</Text>
+      <StatusBar style="auto" />
+          <View style={styles.inputWrapper}>
+      <View style={styles.input}>
+        <Icon name="calendar" size={20} color="#888" style={styles.icon} />
+          <TextInput
+            style={styles.inputText}
+            placeholder='Selecionar dia'
+            onChangeText={(text) => console.log(text)}
+          />
+          <View></View>
+          </View>
+          <View style={styles.input}>
+          <Icon name="clock-outline" size={20} color="#888" style={styles.icon} />
+          <TextInput
+            style={styles.inputText}
+            placeholder='Selecionar hora'
+            onChangeText={(text) => console.log(text)}
+          />
+          </View>
+        </View>
+      <View style={styles.buttonContainer}>
+        <Text style={styles.textButton}>Requisitar Saída</Text>
+      </View>      
+        <Link href="/Home_Estudante" style={styles.voltarText}>VOLTAR</Link>
+        <Text style={styles.lastText}>Tangy.app @2023</Text>
+      </View>
+  );
 }
 
-
 const styles = StyleSheet.create({
-    textHeader: {
-        fontSize: 36,
-        marginVertical: 60,
-        color: "#111",
-    },
-    textSubHeader: {
-        fontSize: "1.4em",
-        fontFamily: "Alata_400Regular",
-        marginTop: 10,
-    },
-    inputBtn: {
-        justifyContent: 'center',
-        borderWidth: 1,
-        borderRadius: 4,
-        borderColor: "#222",
-        height: 50,
-        fontSize: 18,
-        marginTop: 14,
-        maxWidth:340,
-        width: "100% ",
-        margin: 5,
-        marginTop:33,
-    },
-    submitBtn: {
-        backgroundColor: "#000000",
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        borderRadius: 8,
-        padding: 10,
-        height: 50,
-        maxWidth:350,
-        width: "100% ",
-        marginTop: 10,
-    },
-    centeredView: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-    },
-    modalView: {
-        margin: 20,
-        backgroundColor: "#080516",
-        borderRadius: 20,
-        padding: 35,
-        maxWidth: 330,
-        width: "100% ",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-    },
-    alinginp: {
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-        padding: 5,
-        margin: 10,
-        width: "100%",
-
-
-    },
-
-
-    btn: {
-        fontSize: "1.1em",
-        fontFamily: "Alata_400Regular",
-        color: '#fff'
-    },
-    textbtn: {
-        textAlign: 'center',
-        color: '#fff',
-        marginTop: 10,
-
-
-    },
-    icntex: {
-        marginTop: 5,
-        padding: 2,
-        margin: 5,
-    },
-
-    linktext:{
-        fontSize:"1.1em",
-        fontFamily: "Alata_400Regular",
-        marginTop:100,
-    },
-
-    tangy:{
-        fontFamily:"Alata_400Regular",
-        fontSize:18,
-        color:"#B6B6B6",
-        marginTop:50,
-      },
-
-
+  container: {
+    flex: 1,
+    backgroundColor: '#f6f6f6',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontFamily: 'alata',
+    fontWeight: 'bold',
+    fontSize: 20,
+    top: 150,
+    position: 'absolute'
+  },
+  img: {
+    width: 200,
+    height: 100,
+    top: 30,
+    position: 'absolute'
+  },
+  inputWrapper: {
+    flexDirection: 'row',
+    width: "calc(100% - 10px)",
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    gap: 15
+  },
+  input: {
+    height: 50,
+    paddingLeft: 10,
+    width: "calc(100% / 2 - 10px)",
+    backgroundColor: 'white',
+    borderRadius: 3,
+    textAlign: 'right',
+    bottom: 20,
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderColor: '#959595',
+  },
+  icon: {
+    left: 7,
+    top: 15,
+    position: 'absolute'
+  },
+  footerContainer: {
+    marginTop: 10,
+  },
+  inputText: {
+    position: 'absolute',
+    top: 15,
+    left: 30,
+    color: 'gray',
+    fontFamily: 'alata',
+    maxWidth:140,
+    width:"100%",
+  },
+  buttonContainer: {
+    backgroundColor: 'black',
+    width: "calc(100% - 10px)",
+    height: 50,
+    right: 4,
+    borderRadius: 3,
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderColor: '#959595',
+    right: 1,
+  },
+  textButton: {
+    color: 'white',
+    right: 92,
+    marginTop: 15,
+    fontFamily: 'alata',
+    textAlign: 'center',
+    cursor: 'pointer'
+  },
+  voltarText: {
+    bottom: 136,
+    fontFamily: 'alata',
+    position: 'absolute',
+    color: 'black',
+    cursor: 'pointer'
+  },
+  lastText: {
+    bottom: 70,
+    color: 'gray',
+    position: 'absolute'
+  }
 });
-
-
-
-
-

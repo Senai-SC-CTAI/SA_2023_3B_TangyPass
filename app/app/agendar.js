@@ -3,6 +3,7 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Header } from '../src/Components/header.js';
 import { Footer } from '../src/Components/footer.js';
+import { Link } from 'expo-router';
 
 export default function App() {
   return (
@@ -46,9 +47,7 @@ export default function App() {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.text}>
-        Voltar
-      </Text>
+    <Link href="Home_Pai" style={styles.text}> Voltar</Link>
 
       <Footer/>
     </View>
