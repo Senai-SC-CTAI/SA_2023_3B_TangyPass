@@ -99,6 +99,10 @@ export default function requisitar() {
                     <Link href="Home_Estudante"  style={styles.linktext}>VOLTAR</Link>
                  </View>
 
+                 <View>
+                    <Text style={styles.tangy}>Tangy.app @2023</Text>
+                 </View>
+
 
                     {/* Create modal for date picker */}
                     <Modal
@@ -270,10 +274,17 @@ const styles = StyleSheet.create({
     },
 
     linktext:{
-        fontSize:"1.2em",
+        fontSize:"1.1em",
         fontFamily: "Alata_400Regular",
         marginTop:100,
-    }
+    },
+
+    tangy:{
+        fontFamily:"Alata_400Regular",
+        fontSize:18,
+        color:"#B6B6B6",
+        marginTop:50,
+      },
 
 
 });
