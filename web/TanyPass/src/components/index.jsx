@@ -3,10 +3,9 @@ import React from 'react'
 const index = () => {
   return (
     <div>   
-            <div className='aling'>
-                <div className='form1'></div>
-                <div className='form2'></div>
-            </div>
+         
+
+
     </div>
   )
 }

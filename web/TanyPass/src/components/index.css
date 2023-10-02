@@ -8,12 +8,26 @@
 
 .aling{
     
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }
 
 .form1{
-   
+   background-color: antiquewhite;
+    width:600px ;
+    height: 500px;
+    padding: 10px;
+
 }
 
 .form2{
+    background-color: antiquewhite;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    float: right;
 
 }
+
