@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import logo from '../assets/Logo.png'
 import college from '../assets/college project-pana (1) 1.png'
+import { Link } from 'react-router-dom'
 const index = () => {
   return (
     <div>
@@ -33,7 +34,7 @@ const index = () => {
             <input type="text" className='inp' placeholder='Usuário( Email )' />
             <input type="email" className='inp' placeholder='Insira sua senha' />
             <button className='btn'>Enviar</button>
-            <a href="" className='yper'> Esqueceu a senha? </a>
+            <Link to="/recuperar" className='yper'> <p>Esqueceu a senha? </p> </Link>
             <p className='textfooter'>Tangy.app @2023</p>
           </div>
 

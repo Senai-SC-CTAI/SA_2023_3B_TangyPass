@@ -8,7 +8,7 @@
 
 
 
-.aling {
+.alingSenrecu  {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +18,7 @@
 /*alinhamento dos containes que terão conteudo */
 
 
-.logo {
+.logoSenrecu  {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,19 +26,19 @@
 
 /* alinhamento das imagens dentro do container  */
 
-.logo2 {
+.logo2Senrecu  {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.logo2 img {
+.logo2Senrecu img{
     width: 100%;
-    max-width: 470px;
+    max-width: 360px;
     margin-top: 3px;
 }
 
-.logo img {
+.logoSenrecu  img {
     width: 100%;
     max-width: 200px;
     margin-top: 10px;
@@ -46,7 +46,7 @@
 
 /*logo do site */
 
-.text h2 {
+.textSenrecu h2 {
     font-family: 'Alata', sans-serif;
     text-align: center;
     font-size: 31px;
@@ -54,12 +54,12 @@
     margin-bottom: 0.5em;
 }
 
-.form1 {
+.form1Senrecu {
     width: calc(100% - 10px);
     max-width: 663px;
     height: 643px;
     padding: 10px;
-    background-color: #131313;
+    background-color: #fdfdfd;
 
 }
 
@@ -73,8 +73,8 @@
 
 
 
-.form2 {
-    background-color: #fdfdfd;
+.form2Senrecu  {
+    background-color: #131313;
     width: calc(100% - 10px);
     max-width: 663px;
     height: 643px;
@@ -85,7 +85,7 @@
 /* forma do container 2 */
 
 
-.formulario{
+.formularioSenrecu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,14 +94,14 @@
 
 
 
-.text2 h2 {
+.text2Senrecu  h2 {
     font-family: 'Alata', sans-serif;
     text-align: center;
     margin-top: 130px;
-    padding: 10px;
+    padding: 20px;
 }
 
-.inp {
+.inpSenrecu {
     padding: 12px;
     margin: 10px;
     width: calc(100% - 10px);
@@ -114,7 +114,7 @@
 
 
 
-.btn{
+.btnSenrecu {
     padding: 12px;
     margin: 5px;
     width: calc(100% - 10px);
@@ -125,10 +125,11 @@
     border-radius: 5px;
     color: #fff;
     margin-top:30px;
+    font-size: 18px;
     
 } /*estilho do botão*/
 
-.yper{
+.yperSenrecu {
     color:#000;
     font-family: 'Alata', sans-serif;
     text-decoration: none;
@@ -136,7 +137,7 @@
     font-size: 15px;
 } /* lin de passagem*/
 
-.textfooter{
+.textfooterSenrecu {
     color: #B6B6B6;
     font-family: 'Alata', sans-serif;
     text-decoration: none;
