@@ -1,4 +1,6 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     border: none;
@@ -6,28 +8,138 @@
 
 
 
-.aling{
-    
+.aling {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
 }
 
-.form1{
-   background-color: antiquewhite;
-    width:600px ;
-    height: 500px;
+/*alinhamento dos containes que terão conteudo */
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* alinhamento das imagens dentro do container  */
+
+.logo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo2 img {
+    width: 100%;
+    max-width: 470px;
+    margin-top: 3px;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+/*logo do site */
+
+.text h2 {
+    font-family: 'Alata', sans-serif;
+    text-align: center;
+    font-size: 31px;
+    color: #FFFFFFCC;
+    margin-bottom: 0.5em;
+}
+
+.form1 {
+    width: calc(100% - 10px);
+    max-width: 663px;
+    height: 643px;
+    padding: 10px;
+    background-color: #131313;
+
+}
+
+/* forma do container 1 */
+
+
+/* fim do container */
+
+
+/* Começo do container 2 */
+
+
+
+.form2 {
+    background-color: #fdfdfd;
+    width: calc(100% - 10px);
+    max-width: 663px;
+    height: 643px;
     padding: 10px;
 
 }
 
-.form2{
-    background-color: antiquewhite;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    float: right;
+/* forma do container 2 */
 
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+
+
+.text2 h2 {
+    font-family: 'Alata', sans-serif;
+    text-align: center;
+    margin-top: 130px;
+    padding: 10px;
+}
+
+.inp {
+    padding: 12px;
+    margin: 10px;
+    width: calc(100% - 10px);
+    max-width: 330px;
+    height: 25px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+
+.btn{
+    padding: 12px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    max-width: 355px;
+    height: 58px;
+    background: #000;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    color: #fff;
+    margin-top:30px;
+    
+}
+
+.yper{
+    color:#000;
+    font-family: 'Alata', sans-serif;
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.textfooter{
+    color: #B6B6B6;
+    font-family: 'Alata', sans-serif;
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 13px;
+}
