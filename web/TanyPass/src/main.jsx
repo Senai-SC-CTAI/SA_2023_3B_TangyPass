@@ -9,6 +9,8 @@ import {
 import App from "./App"
 import Home from "./components/home";
 import Senrecu from "./components/Senrecu";
+import QRcode from "./components/QRcode";
+import Listaestu from "./components/Listaestu";
 
 import "./index.css"
 
@@ -25,6 +27,16 @@ const router = createBrowserRouter([
     path: "home",
     element: <Home/>,
   },
+  {
+    path: "qrcode",
+    element: <QRcode/>,
+  }, 
+  {
+    path: "listaedu",
+    element: <Listaestu/>,
+  },
+
+ 
  
   
 ]);
