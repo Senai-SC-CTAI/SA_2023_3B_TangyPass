@@ -31,9 +31,9 @@ const index = () => {
 
 
           <div className='formulario'>
-            <input type="text" className='inp' placeholder='Usuário( Email )' />
-            <input type="email" className='inp' placeholder='Insira sua senha' />
-            <button className='btn'>Enviar</button>
+            <input type="email" className='inp' placeholder='Usuário( Email )' />
+            <input type="password" className='inp' placeholder='Insira sua senha' />
+              <Link to="/home" className='btn'> <h4>Enviar</h4> </Link>
             <Link to="/recuperar" className='yper'> <p>Esqueceu a senha? </p> </Link>
             <p className='textfooter'>Tangy.app @2023</p>
           </div>
@@ -42,7 +42,7 @@ const index = () => {
       </div>
 
     </div>
-  )
+  ) 
 }
 
 export default index

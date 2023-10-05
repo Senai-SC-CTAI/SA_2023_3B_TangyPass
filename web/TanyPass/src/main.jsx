@@ -7,7 +7,7 @@ import {
   Link,
 } from "react-router-dom";
 import App from "./App"
-import index from "./components/index";
+import Home from "./components/home";
 import Senrecu from "./components/Senrecu";
 
 import "./index.css"
@@ -18,13 +18,12 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "home",
-    element: <index/>,
-  },
-
-  {
     path: "recuperar",
     element:<Senrecu/>,
+  },
+  {
+    path: "home",
+    element: <Home/>,
   },
  
   
