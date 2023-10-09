@@ -8,9 +8,9 @@ const home = () => {
       <div className='container'>
         <div className='alingdirection'>
           <div className="mtp">
-            <Link className='yperdirection'>Home</Link>
-            <Link to="./qrcode" className='yperdirection'>Qrcode</Link>
-            <Link to="./listaedu" className='yperdirection'>Lista-Estudante</Link>
+            <Link className='yperdirection' to="">Home</Link>
+            <Link to="/qrcode" className='yperdirection'>Qrcode</Link>
+            <Link to="/listaesdu" className='yperdirection'>Lista-Estudante</Link>
           </div>
         </div>
 

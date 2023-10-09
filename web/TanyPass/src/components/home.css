@@ -36,10 +36,12 @@
 .mtp a:hover{
     color:#B6B6B6;
     transition: 0.5s all;
+
 }
 
 .mtp{
     margin-top: 10px;
+
 }
 
 .logohome{

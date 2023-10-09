@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+
+
+.containerQr{
+    background-color: #fdfdfd;
+    width: calc(100% - 1px);
+    height: 400px;
+}
+
+
+.alingdirectionQr{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.yperdirectionQr{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: #131313;
+    font-family: 'Alata', sans-serif;
+    font-size: 1.5em;
+    transition: 0.5s all;
+}
+
+
+.mtpQr a:hover{
+    color:#B6B6B6;
+    transition: 0.5s all;
+
+}
+
+.mtpQr{
+    margin-top: 10px;
+
+}
+
+
+.alingcontainerQr{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.container2Qr{
+    background-color: rgb(255, 255, 255);
+    width: calc(100% - 10px);
+    max-width: 430px;
+    height: 270px;
+    margin-top: 150px;
+    padding: 10px;
+    border-radius: 1px;
+    box-shadow: 0px 2px 0px 0px rgba(30, 30, 30, 0.80) inset;
+}
+
+.container2Qr h2{
+    font-family: 'Alata', sans-serif;
+    font-size: 1.5em;
+}
+
+.container2Qr p{
+    font-family: 'Alata', sans-serif;
+    font-size: 1.6em;
+    margin: 5px;
+    margin-top: 20px;
+}
+
+.alingfooteQr{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.footerQr h2{
+    color: #b6b6b69d;
+    font-family: 'Alata', sans-serif;
+    margin-top: 100px;
+    font-size: 0.9em;
+
+}

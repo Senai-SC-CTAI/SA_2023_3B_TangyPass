@@ -9,8 +9,8 @@ import {
 import App from "./App"
 import Home from "./components/home";
 import Senrecu from "./components/Senrecu";
-import QRcode from "./components/QRcode";
-import Listaestu from "./components/Listaestu";
+import Qrcode from "./components/Qrcode";
+import Listaesdu from "./components/Listaesdu";
 
 import "./index.css"
 
@@ -28,12 +28,12 @@ const router = createBrowserRouter([
     element: <Home/>,
   },
   {
-    path: "qrcode",
-    element: <QRcode/>,
+    path: "/qrcode",
+    element: <Qrcode/>,
   }, 
   {
-    path: "listaedu",
-    element: <Listaestu/>,
+    path: "/listaesdu",
+    element: <Listaesdu/>,
   },
 
  
