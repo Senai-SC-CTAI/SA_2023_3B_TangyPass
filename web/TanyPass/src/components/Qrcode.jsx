@@ -7,8 +7,8 @@ const Qrcode = () => {
        <div className='containerQr'>
         <div className='alingdirectionQr'>
           <div className="mtpQr">
-            <Link className='yperdirectionQr' to="">Home</Link>
-            <Link to="/qrcode" className='yperdirectionQr'>Qrcode</Link>
+          <Link to="/home" className='yperdirectionQr active'>Home</Link>
+            <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
             <Link to="/listaesdu" className='yperdirectionQr'>Lista-Estudante</Link>
           </div>
         </div>
@@ -17,8 +17,18 @@ const Qrcode = () => {
 
         <div className='alingcontainerQr'>
           <div className='containerQr2'>
-            
+              <div className="cardform">
+                <h2> QRCODE</h2>
+                <p>Leia o Qrcode Para Sua intentificação</p>
+              </div>
           </div>
+
+        <div className='border'> 
+          <div className="Qrformscan">
+      
+          </div>
+        </div>
+
         </div>
 
           <div className='alingfooterQr'>
