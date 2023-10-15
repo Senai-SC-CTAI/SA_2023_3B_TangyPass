@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+
+
+.containerlist{
+    background-color: #fdfdfd;
+    width: calc(100% - 1px);
+    height: 400px;
+}
+
+
+.alingdirectionlist{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+
+
+.yperdirectionlist{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: #131313;
+    font-family: 'Alata', sans-serif;
+    font-size: 1.5em;
+    transition: 0.5s all;
+}
+
+
+
+.mtpQr a:hover{
+    color:#B6B6B6;
+    transition: transform 0.3s ease;
+}
+
+.mtpQr{
+    margin-top: 10px;
+}
+
+
+.alingcontainerlist{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+}
+
+
+.containerlist h2{
+    font-family: 'Alata', sans-serif;
+    font-size: 1.5em;
+}
+
+.containerlist p{
+    font-family: 'Alata', sans-serif;
+    font-size: 1.6em;
+    margin: 5px;
+    margin-top: 20px;
+}
+
+
+.footerlist h2{
+    color: #b6b6b69d;
+    font-family: 'Alata', sans-serif;
+    margin-top: 330px;
+    font-size: 0.9em;
+    text-align: end;
+    padding: 10px;
+
+}
+
+.form{
+    background-color: rgb(255, 255, 255);
+    width:600px;
+    height: 50px;
+    margin-top: 152px;
+    padding: 10px;
+    border-radius: 1px;
+    box-shadow: 0px 2px 0px 0px rgba(30, 30, 30, 0.80) ;
+}
+
+
+
+
+
+
+
+
+.btnlist{
+    padding: 17px;
+    margin: 15px;
+    margin-top: 170px;
+}

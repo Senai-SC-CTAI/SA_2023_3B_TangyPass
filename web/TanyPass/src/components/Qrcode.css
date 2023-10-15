@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
+
+
 *{
     padding: 0;
     margin: 0;
@@ -35,8 +37,7 @@
 
 .mtpQr a:hover{
     color:#B6B6B6;
-    transition: 0.5s all;
-
+    transition: transform 0.3s ease;
 }
 
 .mtpQr{
