@@ -5,10 +5,10 @@ import { useState, useEffect } from 'react';
 import { SimpleLineIcons } from '@expo/vector-icons';
 
 
-export function Crono() {
+export function Pedidos() {
 
     const [crono, setcrono] = useState([])
-    const url = "http://localhost:3000/Datas"
+    const url = "http://localhost:3000/Saida"
 
     useEffect(() => {   
         async function fectCrono() {
@@ -28,10 +28,10 @@ export function Crono() {
                 renderItem={({ item }) => (
                     <View style={styles.init}>
                         <SimpleLineIcons name="user" size={18} color="#919191" />
-                        <Text style={styles.text}>Email completo do estudante</Text>
+                        <Text style={styles.text}>Email: {item.nomeEstudante}</Text>
                         <View style={styles.ccontainer}>
                             <View style={styles.area}>
-                                <Text style={styles.content}>{item.dia}</Text>
+                                <Text style={styles.content}>{item.data}</Text>
                                 <View style={styles.area}>
                                     <Text style={styles.content}>{item.hora}</Text>
                                 </View>
