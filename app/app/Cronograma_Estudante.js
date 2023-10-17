@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import {Crono} from '../src/Components/Cronograma';
 import { Link } from 'expo-router';
 import { Header } from '../src/Components/header.js';
 import { Footer } from '../src/Components/footer.js';
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
+import { useState,useEffect } from 'react';
+
 import Logo from './Logo';
 
 
 
 export default function PageE() {
+
+
+
+
+
     let [fontsLoaded] = useFonts({
         Alata_400Regular,
       });
@@ -22,10 +29,8 @@ export default function PageE() {
             <Text style={styles.text}>
                 Crônograma
             </Text>
-
-            <Crono />
-            <Crono />
-            <Crono />
+ 
+            <Crono/>
 
             <Link href="Home_Estudante">
                 <Text style={styles.text}>
@@ -53,4 +58,9 @@ const styles = StyleSheet.create({
         margin: 20,
         fontFamily:"Alata_400Regular",
     },
+    form:{
+        padding:10,
+        margin:10,
+        backgroundColor:"red"
+    }
 });

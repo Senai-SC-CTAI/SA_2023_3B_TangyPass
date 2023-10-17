@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { Feather } from '@expo/vector-icons';
-
+import { Pedidos } from '../src/Components/pedidos';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -20,69 +20,7 @@ export default function App() {
       <Image source={require('../Assets/img.png')} style={styles.Image}/>
       <Text style={styles.Text}>Pedidos de saída</Text>
 
-
-        <View style={styles.card}>
-
-      <View style={styles.top}>
-        <Feather name="user" size={24} color="#919191" />
-        <Text style={styles.txt}>Email completo do aluno</Text>
-      </View>
-
-            <View style={styles.mid}>
-        <View style={styles.dia}>
-          <Text style={styles.txt1}>Dia</Text>
-          <Text style={styles.txt1}>12/04/2023</Text>
-        </View>
-
-        <View style={styles.dia}>
-          <Text style={styles.txt1}>Horario</Text>
-          <Text style={styles.txt1}>12:00</Text>
-        </View>
-            </View>
-
-        <View style={styles.buttons}>
-          <TouchableOpacity style={styles.bt1}>
-            <Text style={styles.txt2}>Negar</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.bt1}>
-            <Text style={styles.txt2}>Aceitar</Text>
-          </TouchableOpacity>
-        </View>
-
-        </View>
-
-        <View style={styles.card1}>
-
-      <View style={styles.top}>
-        <Feather name="user" size={24} color="#919191" />
-        <Text style={styles.txt}>Email completo do aluno</Text>
-      </View>
-
-            <View style={styles.mid}>
-        <View style={styles.dia}>
-          <Text style={styles.txt1}>Dia</Text>
-          <Text style={styles.txt1}>12/04/2023</Text>
-        </View>
-
-        <View style={styles.dia}>
-          <Text style={styles.txt1}>Horario</Text>
-          <Text style={styles.txt1}>12:00</Text>
-        </View>
-            </View>
-
-        <View style={styles.buttons}>
-          <TouchableOpacity style={styles.bt1}>
-            <Text style={styles.txt2}>Negar</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.bt1}>
-            <Text style={styles.txt2}>Aceitar</Text>
-          </TouchableOpacity>
-        </View>
-
-        </View>
-
+      <Pedidos/>
 
       <Link href="/Home_Pai" style={styles.voltarText}>VOLTAR</Link>
       <Text style={styles.lastText}>Tangy.app @2023</Text>

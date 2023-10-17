@@ -36,6 +36,7 @@ export default function Page() {
             </View>
 
             <Div />
+            
             <Link href="Home_Pai">
                 <Text style={styles.text}>
                     Voltar

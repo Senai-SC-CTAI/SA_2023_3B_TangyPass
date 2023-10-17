@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Div } from '../src/Components/HistoricoHoras';
+import {Crono} from '../src/Components/Cronograma';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { AntDesign } from '@expo/vector-icons';
@@ -35,8 +35,7 @@ export default function Page() {
                 <AntDesign name="caretdown" size={18} color="#ADADAD" />
             </View>
 
-            <Div />
-            <Div />
+            <Crono/>
 
 
             <Link href="Home_Pai">
