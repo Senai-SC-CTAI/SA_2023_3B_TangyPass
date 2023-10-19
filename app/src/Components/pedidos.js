@@ -27,7 +27,7 @@ export function Pedidos() {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.init}>
-                        <SimpleLineIcons name="user" size={18} color="#919191" />
+                          <SimpleLineIcons name="user" size={18} color="#919191" />
                         <Text style={styles.text}>Email: {item.nomeEstudante}</Text>
                         <View style={styles.ccontainer}>
                             <View style={styles.area}>
