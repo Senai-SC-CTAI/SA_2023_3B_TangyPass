@@ -26,7 +26,7 @@ export function Div() {
                 renderItem={({ item }) => (
                     <View style={[styles.container, styles.shadowProp]}> 
                         <Text style={styles.text}>Nome: {item.nomeEstudante} Hora: {item.horaEstudante} Dia: {item.data}</Text>
-                        <AntDesign name="caretup" size={18} color="#88D699" />
+                        <AntDesign name="caretup" size={18} color="#88D699" style={styles.icon} />
                     </View>
                 )}
             />
@@ -44,12 +44,11 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         padding: 10,
         margin: 10,
-        shadowColor: '#000',
         borderRadius: 5,
         alignItems: 'center'
     },
     shadowProp: {
-        shadowOffset: { width: 4, height: 4 },
+        shadowOffset: { width: 1, height: 3 },
         shadowColor: '#696969',
         shadowOpacity: 0.5,
         shadowRadius: 3,
@@ -57,5 +56,13 @@ const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
         margin: 'auto',
+        color:'#131313'
+    },
+
+    icon:{
+        margin:10,
+        padding:1,
+
     }
 });
+

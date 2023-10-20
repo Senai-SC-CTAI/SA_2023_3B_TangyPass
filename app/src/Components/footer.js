@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: "center",
         position: 'fixed',
-        bottom: 5
+        bottom:7,
+   
     }
 });

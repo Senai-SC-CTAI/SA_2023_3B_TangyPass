@@ -27,7 +27,7 @@ export function Pedidos() {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.init}>
-                          <SimpleLineIcons name="user" size={18} color="#919191" />
+                          <SimpleLineIcons name="user" size={18} color="#919191" style={styles.icon} />
                         <Text style={styles.text}>Email: {item.nomeEstudante}</Text>
                         <View style={styles.ccontainer}>
                             <View style={styles.area}>
@@ -47,49 +47,55 @@ export function Pedidos() {
 
 const styles = StyleSheet.create({
     container: {
-        width: '70%',
+        width: '30%',
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        backgroundColor: "#fff",
         padding: 10,
         margin: 10,
         shadowColor: '#000',
-        borderRadius: 5
+        borderRadius: 5,
     },
     shadowProp: {
-        shadowOffset: { width: 4, height: 4 },
+        shadowOffset: { width: 0, height: 4 },
         shadowColor: '#696969',
         shadowOpacity: 0.5,
         shadowRadius: 3,
     },
     ccontainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
+       
     },
     area: {
         margin: 'auto',
         padding: 10,
-        textAlign: 'center'
+        textAlign: 'center',
+        display: 'flex',
+        alignItems:"center",
+        justifyContent:"space-between",
+        flexDirection:"row"
     },
     input: {
-        display: 'flex',
-        flexDirection: 'column'
+      
     },
     init: {
         display: 'flex',
-        flexDirection: 'row',
-        padding: 5,
-        justifyContent: 'space-evenly',
-        alignSelf: 'center',
-        alignItems: 'center'
+        alignItems:'center',
+        justifyContent:'center',
+        flexDirection: 'column',
+        padding:5,
+    
     },
     text: {
         color: '#919191',
-        marginLeft: 5
+        marginTop:-16,
+   
     },
+
+    icon:{
+        marginRight:190,
+    },
+
     content: {
-        color: '#8C8C8C'
+        color: '#8C8C8C',
+        padding:10,
+        textAlign:'center'
     }
 });
