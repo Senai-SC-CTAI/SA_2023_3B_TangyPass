@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'black',
-        fontSize: 20,
+        fontSize: 16,
         padding: 10,
         margin: 20,
         fontFamily:"Alata_400Regular",
