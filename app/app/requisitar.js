@@ -8,7 +8,7 @@ import axios from "axios"
 
 export default function Requisitar() {
 
-  axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
+  axios.get('https://nbrasirl.online/aluno/saida?data=325678&repeat=true&id=20')
   .then(function (response) {
     console.log(response);
   })
