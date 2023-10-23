@@ -1,12 +1,18 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Modal, StyleSheet, Text, View,Image, Alert } from 'react-native';
 import { useState,useEffect } from 'react';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import axios from 'axios';
+import { Link } from 'expo-router';
+import{ useRouter } from 'expo-router';
+import qr from '../Assets/qrcode.png'
 
 export default function App() {
   const [permissao,setPermissao] = useState(null);
   const [scanned, setScanned] = useState(false);
   const [text,setText] = useState('')
+
+
+  const router = useRouter()
 
   const Camerapermission = () =>{
     (async () =>{
@@ -27,9 +33,14 @@ export default function App() {
           axios.get(`https://nbrasil.online/qrcode/read?codigo=${data}`)
           .then(e=>{
             console.log(e.data)
-            // aqui dentro leu o qrcode
+            Alert.alert('TangPass', 'Dados Recebidos', [
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ]);
+     
           })
-      } // tratamento de dados do scanned
+      } 
+      // tratamento de dados do scanned
+  
   };
 
     if(permissao=== false) {
@@ -44,8 +55,11 @@ export default function App() {
       <View style={styles.barqrbox}>
         <BarCodeScanner
           onBarCodeScanned={ tratementScannedBar }
-          style={{width:890, height:290}}
+          style={{width:250, height:200, marginTop:330}}
+          
         />
+          <Image source={require('../Assets/qrcode.png')} style={styles.img}/>
+          <Link href="/Home_Estudante" style={styles.colortext}>VOLTAR</Link>
       </View>
       <Text style={styles.maintext}>{text}</Text>
     </View>
@@ -55,7 +69,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#131313',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -66,7 +80,15 @@ const styles = StyleSheet.create({
     width: "100%",
     overflow: 'hidden',
     borderRadius:0,
-    backgroundColor:"#fff",
+    backgroundColor:"#131313",
     padding:10,
+  },
+  colortext:{
+    color:'#fff',
+    bottom:230,
+  },
+  img:{
+    bottom:270,
+    width:300,
   }
 });
