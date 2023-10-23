@@ -3,8 +3,16 @@ import { Link } from 'expo-router';
 import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import axios from "axios"
+
 
 export default function Requisitar() {
+
+  axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
+  .then(function (response) {
+    console.log(response);
+  })
+
   return (
     <View style={styles.container}>
       <Image source={require('../Assets/img.png')} style={styles.img} />
