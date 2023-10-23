@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     marginTop:70,
     marginBottom:70,
     display:"flex",
-    maxWidth:"320px",
+    maxWidth:320,
     flexDirection:"column",
     gap:15,
  },

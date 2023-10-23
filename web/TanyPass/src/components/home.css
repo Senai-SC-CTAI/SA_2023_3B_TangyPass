@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+
+
+.container{
+    background-color: #fdfdfd;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.alingdirection{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.yperdirection{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: #131313;
+    font-family: 'Alata', sans-serif;
+    font-size: 1.5em;
+    transition: 0.5s all;
+}
+
+
+.mtp a:hover{
+    color:#B6B6B6;
+    transition: 0.5s all;
+
+}
+
+.mtp{
+    margin-top: 10px;
+
+}
+
+.logohome{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logohome img{
+    margin: 1em;
+    padding: 3em;
+    margin-top: 5em;
+    margin-right:102px;
+    width: calc(100% - 1px);
+    max-width: 400px;
+}
+
+.alingcontainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.container2{
+    background-color: rgb(255, 255, 255);
+    width: calc(100% - 10px);
+    max-width: 430px;
+    height: 270px;
+    margin-top: 150px;
+    padding: 10px;
+    border-radius: 1px;
+    box-shadow: 0px 2px 0px 0px rgba(30, 30, 30, 0.80) inset;
+}
+
+.container2 h2{
+    font-family: 'Alata', sans-serif;
+    font-size: 1.5em;
+}
+
+.container2 p{
+    font-family: 'Alata', sans-serif;
+    font-size: 1.6em;
+    margin: 5px;
+    margin-top: 20px;
+}
+
+.alingfooter{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.footer h2{
+    color: #b6b6b69d;
+    font-family: 'Alata', sans-serif;
+    margin-top: 100px;
+    font-size: 0.9em;
+
+}

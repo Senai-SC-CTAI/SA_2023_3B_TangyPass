@@ -1,0 +1,48 @@
+{
+    "estudantes": [
+        {
+            "nome": "",
+            "turma": ""
+        },
+        {
+            "nome": "João",
+            "turma": "A"
+        },
+        {
+            "nome": "Maria",
+            "turma": "B"
+        },
+        {
+            "nome": "Pedro",
+            "turma": "A"
+        },
+        {
+            "nome": "Ana",
+            "turma": "C"
+        },
+        {
+            "nome": "Luís",
+            "turma": "B"
+        },
+        {
+            "nome": "Sofia",
+            "turma": "A"
+        },
+        {
+            "nome": "Rafael",
+            "turma": "C"
+        },
+        {
+            "nome": "Carla",
+            "turma": "B"
+        },
+        {
+            "nome": "Miguel",
+            "turma": "A"
+        },
+        {
+            "nome": "Beatriz",
+            "turma": "C"
+        }
+    ]
+}

@@ -3,8 +3,16 @@ import { Link } from 'expo-router';
 import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import axios from "axios"
+
 
 export default function Requisitar() {
+
+  axios.get('https://nbrasirl.online/aluno/saida?data=325678&repeat=true&id=20')
+  .then(function (response) {
+    console.log(response);
+  })
+
   return (
     <View style={styles.container}>
       <Image source={require('../Assets/img.png')} style={styles.img} />
@@ -99,8 +107,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: 'black',
     width: "calc(100% - 10px)",
-    maxWidth:290,
-    // width:"100%",
     height: 50,
     right: 4,
     borderRadius: 3,

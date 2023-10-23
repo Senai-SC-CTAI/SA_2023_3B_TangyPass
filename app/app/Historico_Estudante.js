@@ -19,11 +19,6 @@ export default function Page() {
       <Text style={styles.text}>
         Histórico
       </Text>
-
-      <Div />
-      <Div />
-      <Div />
-      <Div />
       <Div />
       <Link href="Home_Estudante">
       <Text style={styles.text}>
@@ -44,7 +39,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 16,
     padding: 10,
     margin: 20,
     fontFamily:"Alata_400Regular",

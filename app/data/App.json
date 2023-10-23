@@ -1,0 +1,129 @@
+{
+    "Historico": [
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "09:00",
+            "nomeEstudante": "João"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "10:30",
+            "nomeEstudante": "Maria"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "11:45",
+            "nomeEstudante": "Carlos"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "13:15",
+            "nomeEstudante": "Ana"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "14:30",
+            "nomeEstudante": "Pedro"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "15:45",
+            "nomeEstudante": "Sofia"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "16:00",
+            "nomeEstudante": "Paulo"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "17:30",
+            "nomeEstudante": "Lara"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "18:45",
+            "nomeEstudante": "Mariana"
+        },
+        {
+            "data": "2023-10-17",
+            "horaEstudante": "19:15",
+            "nomeEstudante": "Lucas"
+        }
+    ],
+    "Datas": [
+        {
+            "hora": "Hora: 14:30",
+            "dia": "Dia: 16/10"
+        },
+        {
+            "hora": "Hora: 10:10",
+            "dia": "Dia: 12/12"
+        },
+        {
+            "hora": "Hora; 07:40",
+            "dia": "Dia: 15/02"
+        },
+        {
+            "hora": "Hora: 16:20",
+            "dia": "Dia: 28/04"
+        },
+        {
+            "hora": "Hora: 18:05",
+            "dia": "Dia: 18/05"
+        }
+    ],
+    "Saida": [
+        {
+            "data": "17/10/2023",
+            "hora": "08:00",
+            "nomeEstudante": "joao@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "09:30",
+            "nomeEstudante": "maria@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "11:15",
+            "nomeEstudante": "carlos@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "13:45",
+            "nomeEstudante": "ana@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "15:00",
+            "nomeEstudante": "pedro@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "16:15",
+            "nomeEstudante": "sofia@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "16:30",
+            "nomeEstudante": "paulo@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "18:00",
+            "nomeEstudante": "lara@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "19:15",
+            "nomeEstudante": "mariana@email.com"
+        },
+        {
+            "data": "17/10/2023",
+            "hora": "19:45",
+            "nomeEstudante": "lucas@email.com"
+        }
+    ]
+    
+}

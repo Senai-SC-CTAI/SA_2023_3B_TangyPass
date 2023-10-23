@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   tex:{
     fontSize:25,
-    marginTop:120,
+    marginTop:90,
     padding:10,
     fontFamily:"Alata_400Regular",
   }, 
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   btn:{
     backgroundColor:'#000',
-    padding:10,
+    padding:5,
     maxWidth:262,
     width:"100%",
     borderRadius:5,
@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
     fontFamily:"Alata_400Regular",
   },
   ty:{
-    top:10,
     fontSize:16,
     padding:10,
     fontFamily:"Alata_400Regular",

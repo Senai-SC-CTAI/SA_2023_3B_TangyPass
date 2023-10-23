@@ -1,6 +1,7 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useState,useEffect } from 'react';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import axios from 'axios';
 
 export default function App() {
   const [permissao,setPermissao] = useState(null);
@@ -19,17 +20,17 @@ export default function App() {
   }, []);
 
   const tratementScannedBar = ({type,data}) =>{
-      setScanned(true)
-      setText(data)
-      console.log('Type: ' + type + '\nData: ' + data) // tratamento de dados do scanned
+      if(!scanned){
+        setScanned(true)
+        setText(data)
+        console.log('Type: ' + type + '\nData: ' + data)
+          axios.get(`https://nbrasil.online/qrcode/read?codigo=${data}`)
+          .then(e=>{
+            console.log(e.data)
+            // aqui dentro leu o qrcode
+          })
+      } // tratamento de dados do scanned
   };
-
-    // if (permissao === null){
-    //   return(
-    //   <View style={styles.container}>
-  
-    //   </View>)
-    // }
 
     if(permissao=== false) {
       return(
@@ -42,16 +43,11 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.barqrbox}>
         <BarCodeScanner
-        onBarCodeScanned={ scanned ? undefined : tratementScannedBar}
-        style={{width:890, height:890}}
+          onBarCodeScanned={ tratementScannedBar }
+          style={{width:890, height:290}}
         />
       </View>
       <Text style={styles.maintext}>{text}</Text>
-        {/* {scanned && <Button title='DESEJA SCANNEAR' onPress={() => setScanned(false)} color="blue"/>} */}
-
-        <View>
-            
-        </View>
     </View>
   );
 }
