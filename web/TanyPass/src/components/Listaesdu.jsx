@@ -37,7 +37,7 @@ const Listaesdu = () => {
           <select className='form'>
             {namealunos.map((aluno) => (  //sintaxe do uso do map
               <option key={aluno.id} className='form2' >
-                Alino: {aluno.nome} Sala: {aluno.turma} 
+                Aluno: {aluno.nome} Sala: {aluno.turma} 
               </option>
             ))}
           </select>

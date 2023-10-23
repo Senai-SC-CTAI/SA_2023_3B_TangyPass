@@ -13,7 +13,8 @@
 .containerQr{
     background-color: #fdfdfd;
     width: calc(100% - 1px);
-    height: 400px;
+    max-width: 100vw;
+    height: 60vh;
 }
 
 
@@ -105,5 +106,14 @@
     background-image: url(../assets/qrcode.png);
     width: 400px;
     height: 300px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+}
+
+.qr{
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    margin-left: 73px;
+    margin-top: 60px;
 }

@@ -50,11 +50,12 @@ const Qrcode = () => {
           </div>
 
         <div className='border'> 
-          <div className="Qrformscan">
       
-          </div>
         </div>
- <QRCodeSVG value={time}/>
+        <div className="Qrformscan">
+            <QRCodeSVG value={time} className='qr'/>
+
+          </div>
         </div>
 
           <div className='alingfooterQr'>
