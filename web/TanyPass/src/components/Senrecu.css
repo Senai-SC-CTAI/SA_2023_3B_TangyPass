@@ -56,8 +56,8 @@
 
 .form1Senrecu {
     width: calc(100% - 10px);
-    max-width: 663px;
-    height: 643px;
+    max-width: 100vw;
+    height: 100vh;
     padding: 10px;
     background-color: #fdfdfd;
 
@@ -76,8 +76,8 @@
 .form2Senrecu  {
     background-color: #131313;
     width: calc(100% - 10px);
-    max-width: 663px;
-    height: 643px;
+    max-width: 100vw;
+    height: 100vh;
     padding: 10px;
 
 }
@@ -147,3 +147,14 @@
     margin-top: 30px;
     font-size: 13px;
 } /* mensagem abaixo no coonteudo*/
+
+
+@media screen  and (min-width:1500px) and (max-width:1990px){
+    .formularioSenrecu{
+        margin-top: 160px;
+    }
+
+    .form1Senrecu h2{
+        margin-top: 200px;
+    }
+}
