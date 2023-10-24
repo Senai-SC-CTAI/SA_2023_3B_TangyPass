@@ -5,51 +5,51 @@ import { Link } from "expo-router";
 import React from 'react';
 
 export default function Page() {
-  let [fontsLoaded] = useFonts({
-    Alata_400Regular,
-  });
+  // let [fontsLoaded] = useFonts({
+  //   Alata_400Regular,
+  // });
 
-  if (!fontsLoaded) {
-    return null;
-  } 
+  // if (!fontsLoaded) {
+  //   return null;
+  // } 
   return (
     <View style={styles.container}>
-     <Image source={require('../Assets/img.png')} style={styles.logo}/>
+      <Image source={require('../Assets/img.png')} style={styles.logo}/>
 
-<Text style={styles.usertitle}>Logado Como</Text>
-<View style={styles.botoes}>
-  <View style={styles.ostres}>
-    <Link href="Escanear" style={styles.qr}>
-    <TouchableOpacity style={styles.kjnn}>
-      <Text style={styles.qrtxt}>Escanear</Text>
-      <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
-    </TouchableOpacity>
-    </Link>
-    <View style={styles.osdois}>
-      <Link href="requisitar">
-      <TouchableOpacity style={styles.rqs}>
-        <Text style={styles.rqstxt}> Requisitar saída</Text>
-      </TouchableOpacity>
-      </Link>
-      <Link href="Cronograma_Estudante">
-      <TouchableOpacity style={styles.rqs}>
-        <Text style={styles.cronotxt}> Crônograma</Text>
-      </TouchableOpacity>
-      </Link>
-    </View>
-  </View>
-  <Link href="Historico_Estudante">
-  <TouchableOpacity style={styles.hs}>
-    <Text style={styles.hstxt}>Historico de entrada e saida</Text>
-  </TouchableOpacity>
-  </Link>
-</View>
-<Link href="/">
-  <TouchableOpacity style={styles.saidabtn}>
-    <Text style={styles.saidatxt}>Sair</Text>
-  </TouchableOpacity>
-</Link>
-<Text style={styles.tangy}>Tangy.app @2023</Text>
+      <Text style={styles.usertitle}>Logado Como</Text>
+      <View style={styles.botoeees}>
+        <View style={styles.ostres}>
+          <Link href="Escanear" style={styles.qr}>
+          <TouchableOpacity style={styles.kjnn}>
+            <Text style={styles.qrtxt}>Escanear</Text>
+            <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
+          </TouchableOpacity>
+          </Link>
+          <View style={styles.osdois}>
+            <Link href="requisitar">
+            <TouchableOpacity style={styles.rqs}>
+              <Text style={styles.rqstxt}> Requisitar saída</Text>
+            </TouchableOpacity>
+            </Link>
+            <Link href="Cronograma_Estudante">
+            <TouchableOpacity style={styles.rqs}>
+              <Text style={styles.cronotxt}> Crônograma</Text>
+            </TouchableOpacity>
+            </Link>
+          </View>
+        </View>
+      </View>
+        <Link href="Historico_Estudante">
+          <TouchableOpacity style={styles.hs}> 
+            <Text style={styles.hstxt}>Historico de entrada e saida</Text>
+          </TouchableOpacity>
+        </Link>
+      <Link href="/">
+        <TouchableOpacity style={styles.saidabtn}>
+          <Text style={styles.saidatxt}>Sair</Text>
+        </TouchableOpacity>
+        </Link>
+      <Text style={styles.tangy}>Tangy.app @2023</Text> 
     </View>
   );
 }
@@ -60,12 +60,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 24,
   },
-  botoes:{
-    width:"calc(100% - 10px)",
+  botoeees:{
+    width:320,
     marginTop:70,
     marginBottom:70,
     display:"flex",
-    maxWidth:"320px",
     flexDirection:"column",
     gap:15,
   },
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
   hs:{
     backgroundColor:"black",
     width:"100%",
-    height:"calc(70px  - 15px)",
+    height:55,
     borderRadius:5,
     justifyContent:"center",
     alignItems:"center",
@@ -91,27 +90,19 @@ const styles = StyleSheet.create({
   qr:{
     aspectRatio:1,
     backgroundColor:"black",
-    borderRadius:5,
-    alignItems:"center",
-    justifyContent:"center",
-    
-  },
-  kjnn:{
-  width:"100%",
-  height:"100%",
-  padding:5,
+    borderRadius:5
   },
 
   osdois:{
-    width: "calc(60% - 15px)",
-    height:"calc(100% - 15px)",
+    width: 300,
+    height:305,
     display:"flex",
     flexDirection:"column",
     gap:15
   },
   rqs:{
     width:"100%",
-    height:"calc(70px - 15px)",
+    height:55,
     backgroundColor:"black",
     borderRadius:5,
     justifyContent:"center",
@@ -153,7 +144,5 @@ const styles = StyleSheet.create({
     color:"#B6B6B6",
     marginTop:50,
   },
-  qrimg:{
-    margin:"auto"
-  }
+  
 });

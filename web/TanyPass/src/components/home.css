@@ -11,8 +11,8 @@
 
 .container{
     background-color: #fdfdfd;
-    width: calc(100% - 1px);
-    height: 400px;
+    width: 100vw;
+    height: 100vh;
 }
 
 

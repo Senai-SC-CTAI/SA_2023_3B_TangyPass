@@ -56,8 +56,8 @@
 
 .form1 {
     width: calc(100% - 10px);
-    max-width: 663px;
-    height: 647.9px;
+    max-width:100vw;
+    height: 100vh;
     padding: 10px;
     background-color: #131313;
 
@@ -76,8 +76,8 @@
 .form2 {
     background-color: #fdfdfd;
     width: calc(100% - 10px);
-    max-width: 663px;
-    height: 647.9px;
+    max-width: 100vw;
+    height: 100vh;
     padding: 10px;
 
 }
@@ -154,3 +154,20 @@
     margin-top: 30px;
     font-size: 13px;
 } /* mensagem abaixo no coonteudo*/
+
+
+
+@media screen and (min-width:1400px) and (max-width: 1990px) {
+    .formulario{
+        margin-top: 140px;
+    }
+
+    .logo{
+        margin-top: 145px;
+    }
+
+
+    .form2 h2{
+        margin-top: 205px;
+    }
+}
