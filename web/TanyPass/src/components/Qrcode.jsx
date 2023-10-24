@@ -18,6 +18,7 @@ const Qrcode = () => {
   })
 
 
+
   React.useEffect(() =>{
     async function axiosData(){
       const qr =  axios.get("https://nbrasil.online/qrcode/qr")
