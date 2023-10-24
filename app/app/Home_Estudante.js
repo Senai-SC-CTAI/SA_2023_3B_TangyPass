@@ -19,31 +19,32 @@ export default function Page() {
       <Text style={styles.usertitle}>Logado Como</Text>
       <View style={styles.botoeees}>
         <View style={styles.ostres}>
-          <Link href="Escanear" style={styles.qr}>
-          <TouchableOpacity style={styles.kjnn}>
+          <Link href="Escanear">
+          <TouchableOpacity style={styles.qr}>
             <Text style={styles.qrtxt}>Escanear</Text>
             <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
           </TouchableOpacity>
           </Link>
           <View style={styles.osdois}>
             <Link href="requisitar">
-            <TouchableOpacity style={styles.rqs}>
-              <Text style={styles.rqstxt}> Requisitar saída</Text>
-            </TouchableOpacity>
+              <TouchableOpacity style={styles.rqs}>
+                <Text style={styles.rqstxt}> Requisitar saída</Text>
+              </TouchableOpacity>
             </Link>
             <Link href="Cronograma_Estudante">
-            <TouchableOpacity style={styles.rqs}>
-              <Text style={styles.cronotxt}> Crônograma</Text>
-            </TouchableOpacity>
+              <TouchableOpacity style={styles.rqs}>
+                <Text style={styles.cronotxt}> Crônograma</Text>
+              </TouchableOpacity>
             </Link>
           </View>
         </View>
-      </View>
         <Link href="Historico_Estudante">
           <TouchableOpacity style={styles.hs}> 
             <Text style={styles.hstxt}>Historico de entrada e saida</Text>
           </TouchableOpacity>
         </Link>
+      </View>
+        
       <Link href="/">
         <TouchableOpacity style={styles.saidabtn}>
           <Text style={styles.saidatxt}>Sair</Text>
@@ -61,12 +62,14 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   botoeees:{
-    width:320,
+    width:"80%",
     marginTop:70,
     marginBottom:70,
     display:"flex",
     flexDirection:"column",
     gap:15,
+    justifyContent: "center",
+    alignItems: "center",
   },
   usertitle:{
     fontFamily:"Alata_400Regular",
@@ -75,33 +78,35 @@ const styles = StyleSheet.create({
   },
   hs:{
     backgroundColor:"black",
-    width:"100%",
+    width: 345,
     height:55,
     borderRadius:5,
     justifyContent:"center",
     alignItems:"center",
   },
   ostres:{
-    width:"100%",
     display:"flex",
     flexDirection:"row",
     gap:15
   },
   qr:{
     aspectRatio:1,
+    width: 130,
+    height: "100%",
     backgroundColor:"black",
-    borderRadius:5
+    borderRadius:5,
+    justifyContent:"center",
+    alignItems:"center"
   },
 
   osdois:{
-    width: 300,
-    height:305,
+    height:"10%",
     display:"flex",
     flexDirection:"column",
     gap:15
   },
   rqs:{
-    width:"100%",
+    width: 200,
     height:55,
     backgroundColor:"black",
     borderRadius:5,
@@ -113,7 +118,7 @@ const styles = StyleSheet.create({
     fontFamily:"Alata_400Regular",
     color:"white",
     fontSize:18,
-    marginLeft:25,
+   marginBottom:10,
   },
   rqstxt:{
     fontFamily:"Alata_400Regular",

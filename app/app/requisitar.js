@@ -3,12 +3,14 @@ import { Link } from 'expo-router';
 import React from 'react';
 import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import axios from "axios"
+import axios from "axios";
+
+
 
 
 export default function Requisitar() {
 
-  axios.get('https://nbrasirl.online/aluno/saida?data=325678&repeat=true&id=20')
+  axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
   .then(function (response) {
     console.log(response);
   })
