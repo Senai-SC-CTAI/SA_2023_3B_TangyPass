@@ -107,6 +107,7 @@
     width: 400px;
     height: 300px;
     margin-bottom: 50px;
+    
 }
 
 .qr{
@@ -116,4 +117,6 @@
     height: 200px;
     margin-left: 73px;
     margin-top: 60px;
+    position: fixed;
+    
 }
