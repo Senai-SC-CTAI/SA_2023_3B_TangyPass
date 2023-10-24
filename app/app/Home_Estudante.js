@@ -19,7 +19,7 @@ export default function Page() {
       <Text style={styles.usertitle}>Logado Como</Text>
       <View style={styles.botoeees}>
         <View style={styles.ostres}>
-          <Link href="Escanear">
+          <Link href="/Escanear">
           <TouchableOpacity style={styles.qr}>
             <Text style={styles.qrtxt}>Escanear</Text>
             <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
@@ -38,17 +38,21 @@ export default function Page() {
             </Link>
           </View>
         </View>
-        <Link href="Historico_Estudante">
-          <TouchableOpacity style={styles.hs}> 
-            <Text style={styles.hstxt}>Historico de entrada e saida</Text>
-          </TouchableOpacity>
-        </Link>
+        <View style={styles.asdasd}>
+
+          <Link href="Historico_Estudante">
+            <TouchableOpacity style={styles.hs}> 
+              <Text style={styles.hstxt}>Historico de entrada e saida</Text>
+            </TouchableOpacity>
+          </Link>
+        </View>
+      
       </View>
         
-      <Link href="/">
-        <TouchableOpacity style={styles.saidabtn}>
-          <Text style={styles.saidatxt}>Sair</Text>
-        </TouchableOpacity>
+        <Link href="/">
+          <TouchableOpacity style={styles.saidabtn}>
+            <Text style={styles.saidatxt}>Sair</Text>
+          </TouchableOpacity>
         </Link>
       <Text style={styles.tangy}>Tangy.app @2023</Text> 
     </View>
@@ -76,13 +80,20 @@ const styles = StyleSheet.create({
     fontSize:18,
     marginTop:40
   },
+  asdasd: {
+    display: "flex",
+    // backgroundColor: "red",
+    marginLeft: -35,
+  },
   hs:{
     backgroundColor:"black",
-    width: 345,
+    width: 350,
     height:55,
     borderRadius:5,
     justifyContent:"center",
     alignItems:"center",
+    marginLeft: -10,
+
   },
   ostres:{
     display:"flex",
@@ -90,9 +101,8 @@ const styles = StyleSheet.create({
     gap:15
   },
   qr:{
-    aspectRatio:1,
+    height:130,
     width: 130,
-    height: "100%",
     backgroundColor:"black",
     borderRadius:5,
     justifyContent:"center",
@@ -100,7 +110,7 @@ const styles = StyleSheet.create({
   },
 
   osdois:{
-    height:"10%",
+    height:"100%",
     display:"flex",
     flexDirection:"column",
     gap:15
@@ -124,6 +134,7 @@ const styles = StyleSheet.create({
     fontFamily:"Alata_400Regular",
     fontSize:18,
     color:"white",
+    // height:2424
   },
   cronotxt:{
     fontFamily:"Alata_400Regular",

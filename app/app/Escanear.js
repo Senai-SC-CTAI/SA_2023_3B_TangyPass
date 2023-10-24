@@ -29,7 +29,7 @@ export default function App() {
         setScanned(true)
         setText(data)
         console.log('Type: ' + type + '\nData: ' + data)
-          axios.post(`https://nbrasil.online/qrcode/read`, {id: 3, codigo: data})
+          axios.post(`https://nbrasil.online/qrcode/read`, {id: Math.floor(Math.random() * 5 + 1), codigo: data})
           .then(e=>{
             console.log(e.data)
             Alert.alert('TangPass', `${e.data.nome}\n${e.data.email}`, [
