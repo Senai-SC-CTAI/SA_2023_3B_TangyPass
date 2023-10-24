@@ -29,15 +29,15 @@ export default function App() {
         setScanned(true)
         setText(data)
         console.log('Type: ' + type + '\nData: ' + data)
-          axios.get(`https://nbrasil.online/qrcode/read?codigo=${data}`)
+          axios.post(`https://nbrasil.online/qrcode/read`, {id: 3, codigo: data})
           .then(e=>{
             console.log(e.data)
-            Alert.alert('TangPass', 'Dados Recebidos', [
+            Alert.alert('TangPass', `${e.data.nome}\n${e.data.email}`, [
               {text: 'OK', onPress: () => {
                 setTimeout(()=>{
                     setScanned(false)
                 },3000);
-                console.log("a")
+                console.log(e.data)
               }},
             ]);
      

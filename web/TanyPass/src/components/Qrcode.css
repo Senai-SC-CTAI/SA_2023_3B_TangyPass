@@ -91,6 +91,12 @@
 
 }
 
+.cardform span{
+    display: block;
+    margin: 30px 0;
+    font-family: sans-serif;
+}
+
 .cardform p{
     font-family: 'Alata', sans-serif;
     margin-top: 10px;

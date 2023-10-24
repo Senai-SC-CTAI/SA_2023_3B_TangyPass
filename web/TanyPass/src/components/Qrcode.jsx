@@ -11,26 +11,35 @@ import { useState,useEffect } from 'react';
 const Qrcode = () => {
 
   const [time, setTime] = useState("asd");
-
+  const [lastLogin, setLastLogin] = useState("");
  
 
 
+  let lastId = 0;
+
+  const verifyEntry = (cod) => {
+    if(cod != 0){
+      axios.get(`https://nbrasil.online/guarda/verify?cod=${cod}`)
+      .then(function (response) {
+        console.log("asd", response.data.nome)
+        setLastLogin(response.data.nome)
+      })
+    }
+  }
 
   useEffect(() =>{
-    async function axiosData(){
+    setInterval(()=>{
         axios.get('https://nbrasil.online/qrcode/qr')
         .then(function (response) {
-          setTime(`${response.data[0]}`);
+          if(lastId != response.data[0]){
+            verifyEntry(lastId);
+            setTime(`${response.data[0]}`);
+            lastId = response.data[0];
+          }
         })
-    }
-    setInterval(()=>{
-      axiosData()
-    },2000)
+      },2000)
 
-    axiosData()
-
-
-  },[time])
+  },[setTime])
 
   
 
@@ -53,6 +62,7 @@ const Qrcode = () => {
               <div className="cardform">
                 <h2> QRCODE</h2>
                 <p>Leia o Qrcode Para Sua intentificação</p>
+                <span>{lastLogin}</span>
               </div>
           </div>
 
