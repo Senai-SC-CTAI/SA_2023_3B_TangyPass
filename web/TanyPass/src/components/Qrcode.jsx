@@ -12,19 +12,25 @@ const Qrcode = () => {
 
   const [time, setTime] = useState("asd");
 
-  axios.get('https://nbrasil.online/qrcode/qr')
-  .then(function (response) {
-    setTime(`${response.data[0]}`);
-  })
+ 
 
 
 
-  React.useEffect(() =>{
+  useEffect(() =>{
     async function axiosData(){
-      const qr =  axios.get("https://nbrasil.online/qrcode/qr")
+        axios.get('https://nbrasil.online/qrcode/qr')
+        .then(function (response) {
+          setTime(`${response.data[0]}`);
+        })
     }
+    setInterval(()=>{
+      axiosData()
+    },2000)
+
     axiosData()
-  },[])
+
+
+  },[time])
 
   
 

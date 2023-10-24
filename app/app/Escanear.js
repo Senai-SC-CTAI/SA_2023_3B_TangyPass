@@ -4,7 +4,6 @@ import { BarCodeScanner } from 'expo-barcode-scanner';
 import axios from 'axios';
 import { Link } from 'expo-router';
 import{ useRouter } from 'expo-router';
-import qr from '../Assets/qrcode.png'
 
 export default function App() {
   const [permissao,setPermissao] = useState(null);
@@ -34,7 +33,12 @@ export default function App() {
           .then(e=>{
             console.log(e.data)
             Alert.alert('TangPass', 'Dados Recebidos', [
-              {text: 'OK', onPress: () => console.log('OK Pressed')},
+              {text: 'OK', onPress: () => {
+                setTimeout(()=>{
+                    setScanned(false)
+                },3000);
+                console.log("a")
+              }},
             ]);
      
           })
@@ -55,7 +59,7 @@ export default function App() {
       <View style={styles.barqrbox}>
         <BarCodeScanner
           onBarCodeScanned={ tratementScannedBar }
-          style={{width:250, height:200, marginTop:330}}
+          style={styles.qrCode}
           
         />
           <Image source={require('../Assets/qrcode.png')} style={styles.img}/>
@@ -73,10 +77,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  qrCode: {
+    position: 'absolute',
+    width: "100%",
+    height: "100%",
+    opacity: .5
+  },
   barqrbox:{
     alignItems: 'center',
     justifyContent: 'center',
-    height: "110%",
+    height: "100%",
     width: "100%",
     overflow: 'hidden',
     borderRadius:0,
@@ -85,10 +95,10 @@ const styles = StyleSheet.create({
   },
   colortext:{
     color:'#fff',
-    bottom:230,
+    bottom:-170,
   },
   img:{
-    bottom:270,
+    // bottom:2,
     width:300,
   }
 });
