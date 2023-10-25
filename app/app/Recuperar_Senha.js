@@ -26,7 +26,7 @@ export default function Page() {
                 <Text style={styles.texPres}>Solicitar nova senha</Text>
             </View>
         </TouchableOpacity>
-        <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
+        <Link href="/" style={styles.ty}>Ir Para o Login</Link>
 
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>
