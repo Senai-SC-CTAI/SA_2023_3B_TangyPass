@@ -10,8 +10,12 @@ import { useState,useEffect } from 'react';
 
 const Qrcode = () => {
 
-  const [time, setTime] = useState("asd");
+  const [time, setTime] = useState("");
   const [lastLogin, setLastLogin] = useState("");
+  const [lastNameC, setLastName] = useState("");
+  const [lastSala, setLastSala] = useState("");
+  const [changeView, setChangeView] = useState("");
+  const [changeQR, setChangeQR] = useState("");
  
 
 
@@ -23,6 +27,11 @@ const Qrcode = () => {
       .then(function (response) {
         console.log("asd", response.data.nome)
         setLastLogin(response.data.nome)
+        setLastName(response.data.user)
+        setLastSala(response.data.sala)
+        
+        setChangeView("readedOpen")
+        setChangeQR("readedQR")
       })
     }
   }
@@ -41,6 +50,10 @@ const Qrcode = () => {
 
   },[setTime])
 
+  const closeReaded = () => {
+    setChangeView("");
+    setChangeQR("");
+  }  
   
 
 
@@ -55,24 +68,39 @@ const Qrcode = () => {
           </div>
         </div>
 
-     
+        <div className={"readedUserOut "+changeView}>
+          <div className='readedUser'>
+            <div className='content-readed'>
+              <h1>Dados recebidos</h1>
+
+              <div className="infos">
+                <h3>Nome Estudante</h3>
+                <p>{lastLogin}</p>
+              </div>
+              <div className="infos">
+                <h3>Usuário</h3>
+                <p>{lastNameC}</p>
+              </div>
+              <div className="infos">
+                <h3>Sala</h3>
+                <p>{lastSala}</p>
+              </div>
+            </div>
+            <button className='close' onClick={() => closeReaded()}>confirmar</button>
+          </div>
+        </div>
 
         <div className='alingcontainerQr'>
           <div className='containerQr2'>
               <div className="cardform">
                 <h2> QRCODE</h2>
                 <p>Leia o Qrcode Para Sua intentificação</p>
-                <span>{lastLogin}</span>
+
+                <QRCodeSVG value={time} className="qr"/>
+
               </div>
           </div>
 
-        <div className='border'> 
-      
-        </div>
-        <div className="Qrformscan">
-            <QRCodeSVG value={time} className='qr'/>
-
-          </div>
         </div>
 
           <div className='alingfooterQr'>
