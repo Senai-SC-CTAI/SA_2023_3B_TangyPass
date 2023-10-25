@@ -11,7 +11,7 @@ export default function App() {
   const [text,setText] = useState('')
 
 
-  const router = useRouter()
+  const router = useRouter();
 
   const Camerapermission = () =>{
     (async () =>{
@@ -29,14 +29,14 @@ export default function App() {
         setScanned(true)
         setText(data)
         console.log('Type: ' + type + '\nData: ' + data)
-          axios.post(`https://nbrasil.online/qrcode/read`, {id: 3, codigo: data})
+          axios.post(`https://nbrasil.online/qrcode/read`, {id: Math.floor(Math.random() * 5 + 1), codigo: data})
           .then(e=>{
             console.log(e.data)
             Alert.alert('TangPass', `${e.data.nome}\n${e.data.email}`, [
               {text: 'OK', onPress: () => {
                 setTimeout(()=>{
                     setScanned(false)
-                },3000);
+                },1000);
                 console.log(e.data)
               }},
             ]);

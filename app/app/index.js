@@ -40,27 +40,21 @@ export default function Page() {
  
   return (
     <View style={styles.container}>
-    <Logo/>
-        <View>
-            <Text style={styles.tex}>Login</Text>
-        </View>
-
-        <TextInput 
-        placeholder="Usúario(Email)" 
-        style={styles.inp}
+     <Logo/>
+      <View style={styles.main}>
+        <Text style={styles.alingText}> Estudante</Text>
+        <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
         
-        />
-        <TextInput 
-        placeholder="Insira sua senha" 
-        style={styles.inp} 
-        secureTextEntry={true}
-        onChange={e => setPassword(e)}
-        />
-       
-        <Link href="Home_Estudante" style={styles.btn}>
-        <TouchableOpacity style={styles.btn}>
-              <View>
-                <Text style={styles.texPres}>ENTRAR</Text>
+        <TouchableOpacity style={styles.alingbtn} >
+          <View style={styles.btn} >
+            <Image source={require('../Assets/google.png')} style={styles.img}/>
+            <Link href="/Home_Estudante" style={styles.texbtn}> Prosseguir com google</Link>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+            <View style={styles.aling}>
+             <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
             </View>
         </TouchableOpacity>
         </Link>

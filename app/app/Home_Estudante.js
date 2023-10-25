@@ -19,37 +19,49 @@ export default function Page() {
       <Text style={styles.usertitle}>Logado Como</Text>
       <View style={styles.botoeees}>
         <View style={styles.ostres}>
-          <Link href="Escanear">
+          
           <TouchableOpacity style={styles.qr}>
-            <Text style={styles.qrtxt}>Escanear</Text>
-            <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
+            <Link href="Escanear">
+              <Text style={styles.qrtxt}>Escanear</Text>
+              <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
+            </Link>
           </TouchableOpacity>
-          </Link>
+          
           <View style={styles.osdois}>
-            <Link href="requisitar">
+            
               <TouchableOpacity style={styles.rqs}>
-                <Text style={styles.rqstxt}> Requisitar saída</Text>
+                <Link href="requisitar">
+                  <Text style={styles.rqstxt}> Requisitar saída</Text>
+                </Link>
               </TouchableOpacity>
-            </Link>
-            <Link href="Cronograma_Estudante">
+            
+            
               <TouchableOpacity style={styles.rqs}>
-                <Text style={styles.cronotxt}> Crônograma</Text>
+                <Link href="Cronograma_Estudante">
+                  <Text style={styles.cronotxt}> Crônograma</Text>
+                </Link>
               </TouchableOpacity>
-            </Link>
+            
           </View>
         </View>
-        <Link href="Historico_Estudante">
-          <TouchableOpacity style={styles.hs}> 
-            <Text style={styles.hstxt}>Historico de entrada e saida</Text>
-          </TouchableOpacity>
-        </Link>
+        <View style={styles.asdasd}>
+
+          
+            <TouchableOpacity style={styles.hs}> 
+              <Link href="Historico_Estudante">
+                <Text style={styles.hstxt}>Historico de entrada e saida</Text>
+              </Link>
+            </TouchableOpacity>
+          
+        </View>
+      
       </View>
         
-      <Link href="/">
-        <TouchableOpacity style={styles.saidabtn}>
-          <Text style={styles.saidatxt}>Sair</Text>
-        </TouchableOpacity>
-        </Link>
+        
+          <TouchableOpacity style={styles.saidabtn}>
+          <Link href="/"><Text style={styles.saidatxt}>Sair</Text></Link>
+          </TouchableOpacity>
+        
       <Text style={styles.tangy}>Tangy.app @2023</Text> 
     </View>
   );
@@ -76,13 +88,20 @@ const styles = StyleSheet.create({
     fontSize:18,
     marginTop:40
   },
+  asdasd: {
+    display: "flex",
+    // backgroundColor: "red",
+    // marginLeft: -35,
+  },
   hs:{
     backgroundColor:"black",
-    width: 345,
+    width: 350,
     height:55,
     borderRadius:5,
     justifyContent:"center",
     alignItems:"center",
+    // marginLeft: -10,
+
   },
   ostres:{
     display:"flex",
@@ -90,9 +109,8 @@ const styles = StyleSheet.create({
     gap:15
   },
   qr:{
-    aspectRatio:1,
+    height:130,
     width: 130,
-    height: "100%",
     backgroundColor:"black",
     borderRadius:5,
     justifyContent:"center",
@@ -100,7 +118,7 @@ const styles = StyleSheet.create({
   },
 
   osdois:{
-    height:"10%",
+    height:"100%",
     display:"flex",
     flexDirection:"column",
     gap:15
@@ -124,6 +142,7 @@ const styles = StyleSheet.create({
     fontFamily:"Alata_400Regular",
     fontSize:18,
     color:"white",
+    // height:2424
   },
   cronotxt:{
     fontFamily:"Alata_400Regular",
