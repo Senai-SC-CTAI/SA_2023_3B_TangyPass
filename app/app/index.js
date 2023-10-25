@@ -2,11 +2,15 @@ import { StyleSheet, Text, View,Image, TextInput, Pressable,TouchableOpacity } f
 import { Link } from "expo-router";
 import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
 import Logo from "./Logo";
-import { useState,useEffect } from "react";
-import axios from "axios";
-
 export default function Page() {
 
+  let [fontsLoaded] = useFonts({
+    Alata_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
 
   const  [password,setPassword]  = useState('')
@@ -19,8 +23,8 @@ export default function Page() {
   const datareturn = async () =>{
           try{
             const res = await axios.post('https://nbrasil.online/aluno/login',{
-              User:email,
-              password:password
+              user:"bruno_wotzke",
+              password:"123"
           })
 
            console.log(res.data);
@@ -29,35 +33,36 @@ export default function Page() {
           }
   }
  
-
-  let [fontsLoaded] = useFonts({
-    Alata_400Regular,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
  
   return (
     <View style={styles.container}>
-     <Logo/>
-      <View style={styles.main}>
-        <Text style={styles.alingText}> Estudante</Text>
-        <Text style={styles.tex}> Entre com sua conta google para continuar.</Text>
-        
-        <TouchableOpacity style={styles.alingbtn} >
-          <View style={styles.btn} >
-            <Image source={require('../Assets/google.png')} style={styles.img}/>
-            <Link href="/Home_Estudante" style={styles.texbtn}> Prosseguir com google</Link>
-          </View>
-        </TouchableOpacity>
+    <Logo/>
+        <View>
+            <Text style={styles.tex}>Responsável</Text>
+        </View>
 
-        <TouchableOpacity>
-            <View style={styles.aling}>
-             <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
+        <TextInput 
+        placeholder="Usúario" 
+        style={styles.inp}
+        onChange={e => setEmail(e)}
+        />
+        <TextInput 
+          placeholder="Insira sua senha" 
+          style={styles.inp} 
+          secureTextEntry={true}
+          onChange={e => setPassword(e)}
+        />
+       
+        <Link href="Home_Estudante" style={styles.btn}>
+        <TouchableOpacity style={styles.btn}>
+              <View>
+                <Text style={styles.texPres}>ENTRAR</Text>
             </View>
         </TouchableOpacity>
         </Link>
+
+        <Link href="/" style={styles.ty}>Entrar como estudante</Link>
+
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>
         </View>

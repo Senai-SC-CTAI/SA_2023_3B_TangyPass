@@ -11,6 +11,7 @@ export default function Page() {
   if (!fontsLoaded) {
     return null;
   }
+
  
   return (
     <View style={styles.container}>
