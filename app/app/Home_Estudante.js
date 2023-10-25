@@ -19,41 +19,49 @@ export default function Page() {
       <Text style={styles.usertitle}>Logado Como</Text>
       <View style={styles.botoeees}>
         <View style={styles.ostres}>
-          <Link href="/Escanear">
+          
           <TouchableOpacity style={styles.qr}>
-            <Text style={styles.qrtxt}>Escanear</Text>
-            <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
+            <Link href="Escanear">
+              <Text style={styles.qrtxt}>Escanear</Text>
+              <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
+            </Link>
           </TouchableOpacity>
-          </Link>
+          
           <View style={styles.osdois}>
-            <Link href="requisitar">
+            
               <TouchableOpacity style={styles.rqs}>
-                <Text style={styles.rqstxt}> Requisitar saída</Text>
+                <Link href="requisitar">
+                  <Text style={styles.rqstxt}> Requisitar saída</Text>
+                </Link>
               </TouchableOpacity>
-            </Link>
-            <Link href="Cronograma_Estudante">
+            
+            
               <TouchableOpacity style={styles.rqs}>
-                <Text style={styles.cronotxt}> Crônograma</Text>
+                <Link href="Cronograma_Estudante">
+                  <Text style={styles.cronotxt}> Crônograma</Text>
+                </Link>
               </TouchableOpacity>
-            </Link>
+            
           </View>
         </View>
         <View style={styles.asdasd}>
 
-          <Link href="Historico_Estudante">
+          
             <TouchableOpacity style={styles.hs}> 
-              <Text style={styles.hstxt}>Historico de entrada e saida</Text>
+              <Link href="Historico_Estudante">
+                <Text style={styles.hstxt}>Historico de entrada e saida</Text>
+              </Link>
             </TouchableOpacity>
-          </Link>
+          
         </View>
       
       </View>
         
-        <Link href="/">
+        
           <TouchableOpacity style={styles.saidabtn}>
-            <Text style={styles.saidatxt}>Sair</Text>
+          <Link href="/"><Text style={styles.saidatxt}>Sair</Text></Link>
           </TouchableOpacity>
-        </Link>
+        
       <Text style={styles.tangy}>Tangy.app @2023</Text> 
     </View>
   );
@@ -83,7 +91,7 @@ const styles = StyleSheet.create({
   asdasd: {
     display: "flex",
     // backgroundColor: "red",
-    marginLeft: -35,
+    // marginLeft: -35,
   },
   hs:{
     backgroundColor:"black",
@@ -92,7 +100,7 @@ const styles = StyleSheet.create({
     borderRadius:5,
     justifyContent:"center",
     alignItems:"center",
-    marginLeft: -10,
+    // marginLeft: -10,
 
   },
   ostres:{

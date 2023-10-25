@@ -11,7 +11,7 @@ export default function App() {
   const [text,setText] = useState('')
 
 
-  const router = useRouter()
+  const router = useRouter();
 
   const Camerapermission = () =>{
     (async () =>{
@@ -36,7 +36,7 @@ export default function App() {
               {text: 'OK', onPress: () => {
                 setTimeout(()=>{
                     setScanned(false)
-                },3000);
+                },1000);
                 console.log(e.data)
               }},
             ]);

@@ -82,7 +82,7 @@ const Qrcode = () => {
                 <p>{lastNameC}</p>
               </div>
               <div className="infos">
-                <h3>Sala</h3>
+                <h3>Turma</h3>
                 <p>{lastSala}</p>
               </div>
             </div>
@@ -94,7 +94,7 @@ const Qrcode = () => {
           <div className='containerQr2'>
               <div className="cardform">
                 <h2> QRCODE</h2>
-                <p>Leia o Qrcode Para Sua intentificação</p>
+                <p>Leia o código QR para se identificar</p>
 
                 <QRCodeSVG value={time} className="qr"/>
 

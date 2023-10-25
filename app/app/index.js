@@ -28,7 +28,7 @@ export default function Page() {
 
         <TouchableOpacity>
             <View style={styles.aling}>
-             <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
+              <Link href="Login_Responsavel" style={styles.ty}>Entrar como responsável</Link>
             </View>
         </TouchableOpacity>
   
