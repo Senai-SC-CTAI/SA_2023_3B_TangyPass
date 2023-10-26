@@ -1,16 +1,8 @@
 import { StyleSheet, Text, View,Image, TextInput, Pressable,TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
-import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
 import Logo from "./Logo";
 
 export default function Page() {
-  let [fontsLoaded] = useFonts({
-    Alata_400Regular,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
 
  
   return (
@@ -18,9 +10,9 @@ export default function Page() {
       <Logo/>
         <View>
             <Text style={styles.tex}>Recuperar</Text>
-        </View>
+        </View> 
 
-        <TextInput placeholder="Email" style={styles.inp} autoComplete="email"/>
+         <TextInput placeholder="Email" style={styles.inp} autoComplete="email"/>
 
         <TouchableOpacity style={styles.btn}>
             <View>
@@ -31,7 +23,7 @@ export default function Page() {
 
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>
-        </View>
+        </View> 
     </View>
 
     
@@ -56,8 +48,6 @@ const styles = StyleSheet.create({
     fontSize:25,
     marginTop:120,
     padding:10,
-    width:"",
-    fontFamily:"Alata_400Regular",
   }, 
   inp:{
     color:'#9A9A9A', 
@@ -72,7 +62,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 5, height:5},
     shadowRadius:30,
     elevation:5,
-    fontFamily:"Alata_400Regular",
 
   },
   btn:{
@@ -86,15 +75,11 @@ const styles = StyleSheet.create({
     color:'#fff',
     textAlign:'center',
     padding:5,
-    fontFamily:"Alata_400Regular",
-
   },
   ty:{
     top:10,
     fontSize:16,
     padding:10,
-    fontFamily:"Alata_400Regular",
-
   },
   retangle:{
     left:"91%",

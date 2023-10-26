@@ -1,17 +1,10 @@
 import { StyleSheet, Text, TouchableOpacity,View,Image } from "react-native";
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import React from 'react';
 
 export default function Page() {
-  // let [fontsLoaded] = useFonts({
-  //   Alata_400Regular,
-  // });
 
-  // if (!fontsLoaded) {
-  //   return null;
-  // } 
   return (
     <View style={styles.container}>
       <Image source={require('../Assets/img.png')} style={styles.logo}/>
@@ -84,7 +77,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   usertitle:{
-    fontFamily:"Alata_400Regular",
     fontSize:18,
     marginTop:40
   },
@@ -133,29 +125,24 @@ const styles = StyleSheet.create({
     paddingBottom:3
   },
   qrtxt:{
-    fontFamily:"Alata_400Regular",
     color:"white",
     fontSize:18,
    marginBottom:10,
   },
   rqstxt:{
-    fontFamily:"Alata_400Regular",
     fontSize:18,
     color:"white",
     // height:2424
   },
   cronotxt:{
-    fontFamily:"Alata_400Regular",
     fontSize:18,
     color:"white",
   },
   hstxt:{
-    fontFamily:"Alata_400Regular",
     fontSize:18,
     color:"white",
   },
   saidatxt:{
-    fontFamily:"Alata_400Regular",
     fontSize:18,
     color:"black",
   },
@@ -163,7 +150,6 @@ const styles = StyleSheet.create({
     marginTop:50,
   },
   tangy:{
-    fontFamily:"Alata_400Regular",
     fontSize:18,
     color:"#B6B6B6",
     marginTop:50,

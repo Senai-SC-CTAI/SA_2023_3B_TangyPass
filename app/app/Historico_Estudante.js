@@ -6,13 +6,7 @@ import Logo from './Logo';
 import { Link } from 'expo-router';
 
 export default function Page() {
-  let [fontsLoaded] = useFonts({
-    Alata_400Regular,
-  });
 
-  if (!fontsLoaded) {
-    return null;
-  }
   return (
     <View style={styles.container}>
     <Logo/>
@@ -42,6 +36,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 10,
     margin: 20,
-    fontFamily:"Alata_400Regular",
   }
 });

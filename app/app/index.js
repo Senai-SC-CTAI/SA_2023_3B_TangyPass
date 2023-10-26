@@ -1,67 +1,73 @@
-import { StyleSheet, Text, View,Image, TextInput, Pressable,TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View,Image, TextInput, Pressable,TouchableOpacity, Alert } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useState,useEffect } from "react";
+import{ useRouter } from 'expo-router';
 import { Link } from "expo-router";
-import { useFonts, Alata_400Regular } from '@expo-google-fonts/alata';
+import axios from "axios";
 import Logo from "./Logo";
+import { useNavigation } from '@react-navigation/native';
+
 export default function Page() {
 
-  let [fontsLoaded] = useFonts({
-    Alata_400Regular,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
 
 
-  const  [password,setPassword]  = useState('')
+  const [Password,setPassword]  = useState('')
   const [email,setEmail] = useState('')
+  const navigation = useNavigation();
+ 
 
-  useEffect(() =>{
-      datareturn()
-  },[])
+  const clicked = () =>{
+    axios.post(`https://nbrasil.online/aluno/login`, {user: email, password:Password})
 
-  const datareturn = async () =>{
-          try{
-            const res = await axios.post('https://nbrasil.online/aluno/login',{
-              user:"bruno_wotzke",
-              password:"123"
-          })
+    .then(e =>{
+        if(clicked){ //login não esta autenticando ainda, mas a parentemente os dados ja estão sendo salvos
+            // e necessario setar algum valor aqui dentro para pegar o user e o passeword da api, mas não descobri aqual seria ainda.  
+          AsyncStorage.setItem('useEmail',JSON.stringify(email))
+          AsyncStorage.setItem('usePassord',JSON.stringify(Password))
+          navigation.navigate('Home_Estudante');
+        } else{
+          Alert.alert('Erro', 'Credenciais inválidas');
+        }
 
-           console.log(res.data);
-          } catch(erro){
-              console.log(erro);
-          }
+
+      console.log(e.data)
+      
+    })
+    .catch(error => {
+      // Trate erros na solicitação
+      console.error('Erro na solicitação:', error);
+    });
+      
+        console.log(email, Password)
+        console.log(AsyncStorage.setItem('useEmail',JSON.stringify(email)))
+        console.log( AsyncStorage.setItem('usePassord',JSON.stringify(Password)));
+    
   }
+
  
  
   return (
     <View style={styles.container}>
     <Logo/>
         <View>
-            <Text style={styles.tex}>Responsável</Text>
+            <Text style={styles.tex}>login</Text>
         </View>
 
         <TextInput 
         placeholder="Usúario" 
         style={styles.inp}
-        onChange={e => setEmail(e)}
+        onChange={e => setEmail(e.nativeEvent.text)}
         />
         <TextInput 
           placeholder="Insira sua senha" 
           style={styles.inp} 
           secureTextEntry={true}
-          onChange={e => setPassword(e)}
+          onChange={e => setPassword(e.nativeEvent.text)}
         />
-       
-        <Link href="Home_Estudante" style={styles.btn}>
-        <TouchableOpacity style={styles.btn}>
-              <View>
+   
+        <TouchableOpacity style={styles.btn} onPress={clicked}>
                 <Text style={styles.texPres}>ENTRAR</Text>
-            </View>
         </TouchableOpacity>
-        </Link>
-
-        <Link href="/" style={styles.ty}>Entrar como estudante</Link>
 
         <View style={styles.retangle}>
           <Image source={require('../Assets/Polygon2.png')}></Image>
@@ -92,7 +98,6 @@ const styles = StyleSheet.create({
     fontSize:25,
     marginTop:90,
     padding:10,
-    fontFamily:"Alata_400Regular",
   }, 
   inp:{
     color:'#9A9A9A', 
@@ -107,7 +112,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 5, height:5},
     shadowRadius:30,
     elevation:5,
-    fontFamily:"Alata_400Regular",
 
   },
   btn:{
@@ -121,12 +125,10 @@ const styles = StyleSheet.create({
     color:'#fff',
     textAlign:'center',
     padding:5,
-    fontFamily:"Alata_400Regular",
   },
   ty:{
     fontSize:16,
     padding:10,
-    fontFamily:"Alata_400Regular",
   },
   retangle:{
 

@@ -1,5 +1,4 @@
 import { StyleSheet, Text, TouchableOpacity,View,Image } from "react-native";
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import React from 'react';
