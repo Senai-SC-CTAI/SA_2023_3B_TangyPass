@@ -7,7 +7,7 @@ const Listaesdu = () => {
   const [count, setCount] = useState(0)
   const [namealunos, setnameAlunos] = useState([])
 
-  const url = "http://localhost:3000/estudantes"
+  const url = "https://nbrasil.online/adm/listaEstudantes"
 
   useEffect (() =>{
     async function fecthData(){
@@ -34,10 +34,11 @@ const Listaesdu = () => {
 
         <div className='alingcontainerlist'>
           <div className='containerlists'>
-          <select className='form'>
+          <select onChange={e => console.log(e)} className='form'>
+            <option>Selecione</option>
             {namealunos.map((aluno) => (  //sintaxe do uso do map
-              <option key={aluno.id} className='form2' >
-                Aluno: {aluno.nome} Sala: {aluno.turma} 
+              <option onClick={e => console.log(e)} value={aluno.id} key={aluno.id} className='form2' >
+                Aluno: {aluno.nome} Sala: {aluno.sala}
               </option>
             ))}
           </select>
