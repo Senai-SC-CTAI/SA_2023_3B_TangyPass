@@ -26,7 +26,7 @@ export default function Page() {
 
   async function armItem(email, id){
     try {
-      await AsyncStorage.setItem('emailUser',JSON.stringify(email));
+      await AsyncStorage.setItem('emailUser',email);
       await AsyncStorage.setItem('idUser',id);
       navigation.navigate('Home_Estudante');
     } catch (e){
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
   tex:{
     fontSize:25,
-    marginTop:90,
+    marginTop:40,
     padding:10,
   }, 
   inp:{
@@ -131,6 +131,10 @@ const styles = StyleSheet.create({
     maxWidth:262,
     width:"100%",
     borderRadius:5,
+    height: 50,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
   texPres:{
     color:'#fff',

@@ -29,7 +29,7 @@ export default function Page() {
       {/* <Image source={require('../Assets/img.png')} style={styles.logo}/> */}
       <Logo/>
       <Text style={styles.usertitle}>Logado como</Text>
-      <Text style={styles.usertitle}>{logUser}</Text>
+      <Text style={styles.usertitle2}>{logUser}</Text>
       <View style={styles.botoeees}>
         <View style={styles.ostres}>
           
@@ -99,6 +99,9 @@ const styles = StyleSheet.create({
   usertitle:{
     fontSize:18,
     marginTop:20
+  },
+  usertitle2:{
+    color: "gray"
   },
   asdasd: {
     display: "flex",
