@@ -1,10 +1,19 @@
-import { StyleSheet, Text, TouchableOpacity,View,Image } from "react-native";
+import { StyleSheet, Text, TouchableOpacity,View,Image, Alert } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from "expo-router";
 
 export default function Page() {
 
+  const navigation = useNavigation();
+  
+  async function logout(){
+    await AsyncStorage.setItem("emailUser", "");
+    navigation.navigate("index");
+  }
+  
   return (
     <View style={styles.container}>
       <Image source={require('../Assets/img.png')} style={styles.logo}/>
@@ -51,8 +60,8 @@ export default function Page() {
       </View>
         
         
-          <TouchableOpacity style={styles.saidabtn}>
-          <Link href="/"><Text style={styles.saidatxt}>Sair</Text></Link>
+          <TouchableOpacity onPress={e => logout()}  style={styles.saidabtn}>
+            <Text style={styles.saidatxt}>Sair</Text>
           </TouchableOpacity>
         
       <Text style={styles.tangy}>Tangy.app @2023</Text> 

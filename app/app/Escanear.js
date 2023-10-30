@@ -4,11 +4,26 @@ import { BarCodeScanner } from 'expo-barcode-scanner';
 import axios from 'axios';
 import { Link } from 'expo-router';
 import{ useRouter } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function App() {
   const [permissao,setPermissao] = useState(null);
   const [scanned, setScanned] = useState(false);
+  const [idUser, setIdUser] = useState(0);
   const [text,setText] = useState('')
+
+  useEffect(()=>{
+    const getIdAcc = async () => {
+      let id = await AsyncStorage.getItem("idUser");
+      if(id){
+        setIdUser(id);
+      }
+    }
+    getIdAcc();
+  },[idUser])
+
+  
+
 
 
   const router = useRouter();
@@ -29,7 +44,7 @@ export default function App() {
         setScanned(true)
         setText(data)
         console.log('Type: ' + type + '\nData: ' + data)
-          axios.post(`https://nbrasil.online/qrcode/read`, {id: Math.floor(Math.random() * 5 + 1), codigo: data})
+          axios.post(`https://nbrasil.online/qrcode/read`, {id: idUser, codigo: data})
           .then(e=>{
             console.log(e.data)
             Alert.alert('TangPass', `${e.data.nome}\n${e.data.email}`, [

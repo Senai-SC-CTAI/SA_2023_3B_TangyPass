@@ -14,24 +14,35 @@ export default function Page() {
   const [Password,setPassword]  = useState('')
   const [email,setEmail] = useState('')
   const navigation = useNavigation();
+
+  async function getEmail(){
+    const email = await AsyncStorage.getItem("emailUser");
+    if(email){
+      navigation.navigate('Home_Estudante');
+    }
+  }
+
+  getEmail()
+
+  async function armItem(email, id){
+    try {
+      await AsyncStorage.setItem('emailUser',JSON.stringify(email));
+      await AsyncStorage.setItem('idUser',id);
+      navigation.navigate('Home_Estudante');
+    } catch (e){
+      console.log(e);
+    }
+  }
  
 
-  const clicked = () =>{
+  const clicked = ()  =>{
     axios.post(`https://nbrasil.online/aluno/login`, {user: email, password:Password})
-
     .then(e =>{
-        if(clicked){ //login não esta autenticando ainda, mas a parentemente os dados ja estão sendo salvos
-            // e necessario setar algum valor aqui dentro para pegar o user e o passeword da api, mas não descobri aqual seria ainda.  
-          AsyncStorage.setItem('useEmail',JSON.stringify(email))
-          AsyncStorage.setItem('usePassord',JSON.stringify(Password))
-          navigation.navigate('Home_Estudante');
-        } else{
+        if(e.data.status != "error"){
+          armItem(email, e.data.id)
+        } else {
           Alert.alert('Erro', 'Credenciais inválidas');
         }
-
-
-      console.log(e.data)
-      
     })
     .catch(error => {
       // Trate erros na solicitação
@@ -39,8 +50,8 @@ export default function Page() {
     });
       
         console.log(email, Password)
-        console.log(AsyncStorage.setItem('useEmail',JSON.stringify(email)))
-        console.log( AsyncStorage.setItem('usePassord',JSON.stringify(Password)));
+        console.log(AsyncStorage.getItem('useEmail'))
+        console.log(AsyncStorage.getItem('usePassord'));
     
   }
 
@@ -50,11 +61,11 @@ export default function Page() {
     <View style={styles.container}>
     <Logo/>
         <View>
-            <Text style={styles.tex}>login</Text>
+            <Text style={styles.tex}>Login</Text>
         </View>
 
         <TextInput 
-        placeholder="Usúario" 
+        placeholder="Usuário" 
         style={styles.inp}
         onChange={e => setEmail(e.nativeEvent.text)}
         />
