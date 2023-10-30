@@ -1,11 +1,14 @@
 import { StyleSheet, Text, TouchableOpacity,View,Image, Alert } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link } from "expo-router";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from "expo-router";
+import Logo from "./Logo";
 
 export default function Page() {
+
+  const [logUser, setLogUser] = useState("");
 
   const navigation = useNavigation();
   
@@ -14,11 +17,19 @@ export default function Page() {
     navigation.navigate("index");
   }
   
+  useEffect(()=>{
+    const getUser = async () => {
+      setLogUser(await AsyncStorage.getItem("emailUser"))
+    }
+    getUser();
+  },[logUser])
+
   return (
     <View style={styles.container}>
-      <Image source={require('../Assets/img.png')} style={styles.logo}/>
-
-      <Text style={styles.usertitle}>Logado Como</Text>
+      {/* <Image source={require('../Assets/img.png')} style={styles.logo}/> */}
+      <Logo/>
+      <Text style={styles.usertitle}>Logado como</Text>
+      <Text style={styles.usertitle}>{logUser}</Text>
       <View style={styles.botoeees}>
         <View style={styles.ostres}>
           
@@ -87,7 +98,7 @@ const styles = StyleSheet.create({
   },
   usertitle:{
     fontSize:18,
-    marginTop:40
+    marginTop:20
   },
   asdasd: {
     display: "flex",
