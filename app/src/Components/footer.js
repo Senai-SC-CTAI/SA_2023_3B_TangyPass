@@ -13,9 +13,6 @@ export function Footer() {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: "center",
-        position: 'fixed',
-        bottom:7,
-   
+        alignItems: "center",   
     }
 });

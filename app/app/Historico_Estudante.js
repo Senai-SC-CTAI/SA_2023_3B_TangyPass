@@ -1,11 +1,11 @@
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import { StyleSheet, Text, View } from 'react-native';
-import { Div } from '../src/Components/HistoricoHoras';
+import Div from '../src/Components/HistoricoHoras';
 import { Footer } from '../src/Components/footer';
 import Logo from './Logo';
 import { Link } from 'expo-router';
 
 export default function Page() {
+  
 
   return (
     <View style={styles.container}>
