@@ -13,7 +13,7 @@ export default function Page() {
       <Text style={styles.text}>
         Histórico
       </Text>
-      <Div />
+      <Div/>
       <Link href="Home_Estudante">
       <Text style={styles.text}>
         Voltar

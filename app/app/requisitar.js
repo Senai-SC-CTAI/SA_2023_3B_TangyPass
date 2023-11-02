@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Link } from 'expo-router';
 import React from 'react';
-import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button } from 'react-native';
+import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button, Pressable } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import axios from "axios";
 
@@ -39,9 +39,9 @@ export default function Requisitar() {
           />
           </View>
         </View>
-      <View style={styles.buttonContainer}>
+      <Pressable style={styles.buttonContainer}>
         <Text style={styles.textButton}>Requisitar Saída</Text>
-      </View>      
+      </Pressable>      
         <Link href="/Home_Estudante" style={styles.voltarText}>VOLTAR</Link>
         <Text style={styles.lastText}>Tangy.app @2023</Text>
       </View>
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontFamily: 'alata',
     fontWeight: 'bold',
     fontSize: 20,
     top: 150,
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
   },
   inputWrapper: {
     flexDirection: 'row',
-    width: "calc(100% - 10px)",
+    width:"68%",
     display: "flex",
     justifyContent: "center",
     alignContent: "center",
@@ -80,7 +79,7 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     paddingLeft: 10,
-    width: "calc(100% / 2 - 10px)",
+    width: "68%",
     backgroundColor: 'white',
     borderRadius: 3,
     textAlign: 'right',
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     left: 7,
-    top: 15,
+    top: 19,
     position: 'absolute'
   },
   footerContainer: {
@@ -102,13 +101,12 @@ const styles = StyleSheet.create({
     top: 15,
     left: 30,
     color: 'gray',
-    fontFamily: 'alata',
     maxWidth:140,
     width:"100%",
   },
   buttonContainer: {
     backgroundColor: 'black',
-    width: "calc(100% - 10px)",
+    width: "68%",
     height: 50,
     right: 4,
     borderRadius: 3,
@@ -119,18 +117,13 @@ const styles = StyleSheet.create({
   },
   textButton: {
     color: 'white',
-    right: 92,
-    marginTop: 15,
-    fontFamily: 'alata',
     textAlign: 'center',
-    cursor: 'pointer'
+    marginTop:12,
   },
   voltarText: {
     bottom: 136,
-    fontFamily: 'alata',
     position: 'absolute',
     color: 'black',
-    cursor: 'pointer'
   },
   lastText: {
     bottom: 70,

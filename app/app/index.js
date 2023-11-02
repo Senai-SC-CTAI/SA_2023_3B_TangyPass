@@ -85,6 +85,7 @@ export default function Page() {
         </View>
 
         <Link href="Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>
+        <Link href="Home_Pai" style={styles.ty}> Entrar como responsável</Link>
     </View>
 
     

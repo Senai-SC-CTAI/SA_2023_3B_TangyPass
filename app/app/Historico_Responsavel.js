@@ -1,49 +1,56 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { Div } from '../src/Components/HistoricoHoras';
+import { StyleSheet, Text, View, Image, Pressable, FlatList } from 'react-native';
+import Div from '../src/Components/HistoricoHoras';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { Footer } from '../src/Components/footer';
-import { Header } from '../src/Components/header';
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
 import Logo from './Logo';
+import { useState,useEffect } from 'react';
+import RNPickerSelect from 'react-native-picker-select';
+
+
+
+export const Dropdown = () => {
+    return (
+        <RNPickerSelect 
+            onValueChange={(value) => console.log(value)}
+            items={[
+                { label: 'Anselmo', value: 'estudante1' },
+                { label: 'Bruno', value: 'estudante2' },
+                { label: 'Beca', value: 'estudante3' },
+                { label: 'Alex', value: 'estudante4' },
+                { label: 'Arthur', value: 'estudante5' },
+                { label: 'Liara', value: 'estudante6' },
+                
+            ]}
+        />
+    );
+};
 
 
 export default function Page() {
-    let [fontsLoaded] = useFonts({
-        Alata_400Regular,
-      });
-    
-      if (!fontsLoaded) {
-        return null;
-      }
+
     return (
         <View style={styles.container}>
-         <Logo/>
+            <View style={styles.alinglogo}>
+                <Logo />
+            </View>
 
             <Text style={styles.text}>
                 Histórico
             </Text>
 
-            <View style={[styles.ccontainer, styles.shadowProp]}>
-                <SimpleLineIcons name="user" size={18} color="#ADADAD" />
+            <Dropdown/>
 
-                <Text style={styles.select}>
-                    Selecione o estudante
-                </Text>
-
-                <AntDesign name="caretdown" size={18} color="#ADADAD" />
-            </View>
-
-            <Div />
-            
             <Link href="Home_Pai">
-                <Text style={styles.text}>
+                <Text style={styles.textvolt}>
                     Voltar
                 </Text>
             </Link>
 
-            <Footer/>
+            <View style={styles.alingfooter}>
+                <Footer />
+            </View>
         </View>
     );
 }
@@ -57,10 +64,16 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'black',
-        fontSize: 20,
+        fontSize: 16,
         padding: 10,
         margin: 20,
-        fontFamily:"Alata_400Regular",
+        bottom:190,
+    },
+    textvolt: {
+        color: 'black',
+        fontSize: 16,
+        padding: 10,
+        margin: 20, 
     },
     shadowProp: {
         shadowOffset: { width: 4, height: 4 },
@@ -68,23 +81,13 @@ const styles = StyleSheet.create({
         shadowOpacity: 1,
         shadowRadius: 3,
     },
-    ccontainer: {
-        width: '80%',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        backgroundColor: "#fff",
-        padding: 10,
-        margin: 5,
-        shadowColor: '#000',
-        borderRadius: 5,
-        marginBottom: 0,
-        alignItems: 'center'
-    },
     select: {
         color: '#BFBFBF',
-        fontFamily:"Alata_400Regular"
+    },
+    alinglogo:{
+        bottom:200,
+    },
+    alingfooter:{
+        top:50,
     }
 });
-
-
