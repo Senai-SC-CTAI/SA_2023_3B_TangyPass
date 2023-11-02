@@ -15,9 +15,9 @@ export default function Page() {
       </Text>
       <Div/>
       <Link href="Home_Estudante">
-      <Text style={styles.text}>
-        Voltar
-      </Text>
+        <Text style={styles.text}>
+          Voltar
+        </Text>
       </Link>
       <Footer/>
     </View>

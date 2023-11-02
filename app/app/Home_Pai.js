@@ -34,7 +34,7 @@ export default function Page() {
               </TouchableOpacity>
             </Link>
 
-            <Link href="Historico_Responsavel" style={styles.hst}>
+            <Link href="Historico_Responsavel">
               <TouchableOpacity >
                 <Text style={styles.hstxt}>Historico de entradas e saidas</Text>
               </TouchableOpacity>

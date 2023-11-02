@@ -33,38 +33,30 @@ export default function Page() {
       <View style={styles.botoeees}>
         <View style={styles.ostres}>
           
-          <TouchableOpacity style={styles.qr}>
-            <Link href="Escanear">
-              <Text style={styles.qrtxt}>Escanear</Text>
-              <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
-            </Link>
-          </TouchableOpacity>
+          <Link href="Escanear" style={styles.qr}>
+            <Text style={styles.qrtxt}>Escanear</Text>
+            <MaterialIcons name="qr-code-2" size={67} color="white" style={styles.qrimg} />
+          </Link>
           
           <View style={styles.osdois}>
             
-              <TouchableOpacity style={styles.rqs}>
-                <Link href="requisitar">
-                  <Text style={styles.rqstxt}> Requisitar saída</Text>
-                </Link>
-              </TouchableOpacity>
+              <Link href="requisitar" style={styles.rqs}>
+                <Text style={styles.rqstxt}> Requisitar saída</Text>
+              </Link>
             
             
-              <TouchableOpacity style={styles.rqs}>
-                <Link href="Cronograma_Estudante">
-                  <Text style={styles.cronotxt}> Crônograma</Text>
-                </Link>
-              </TouchableOpacity>
+              <Link href="Cronograma_Estudante" style={styles.rqs}>
+                <Text style={styles.cronotxt}> Crônograma</Text>
+              </Link>
             
           </View>
         </View>
         <View style={styles.asdasd}>
 
           
-            <TouchableOpacity style={styles.hs}> 
-              <Link href="Historico_Estudante">
-                <Text style={styles.hstxt}>Historico de entrada e saida</Text>
-              </Link>
-            </TouchableOpacity>
+          <Link style={styles.hs} href="Historico_Estudante">
+            <Text style={styles.hstxt}>Historico de entrada e saida</Text>
+          </Link>
           
         </View>
       
@@ -84,7 +76,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    padding: 24,
+    // padding: 24,
   },
   botoeees:{
     width:"80%",
@@ -109,9 +101,12 @@ const styles = StyleSheet.create({
     // marginLeft: -35,
   },
   hs:{
+    display: "flex",
+    alignContent: "center",
     backgroundColor:"black",
+    textAlign: "center",
     width: 350,
-    height:55,
+    padding: 20,
     borderRadius:5,
     justifyContent:"center",
     alignItems:"center",
@@ -124,12 +119,16 @@ const styles = StyleSheet.create({
     gap:15
   },
   qr:{
-    height:130,
+    // height:130,
+    textAlign: "center",
     width: 130,
+    display: "flex",
+    padding: 20,
     backgroundColor:"black",
     borderRadius:5,
     justifyContent:"center",
-    alignItems:"center"
+    alignItems:"center",
+    flexDirection: "column",
   },
 
   osdois:{
@@ -139,13 +138,14 @@ const styles = StyleSheet.create({
     gap:15
   },
   rqs:{
+    textAlign: "center",
+    padding: 17,
     width: 200,
-    height:55,
+    // height:55,
     backgroundColor:"black",
     borderRadius:5,
     justifyContent:"center",
     alignItems:"center",
-    paddingBottom:3
   },
   qrtxt:{
     color:"white",
