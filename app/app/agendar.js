@@ -4,6 +4,28 @@ import { AntDesign } from '@expo/vector-icons';
 import { Header } from '../src/Components/header.js';
 import { Footer } from '../src/Components/footer.js';
 import { Link } from 'expo-router';
+import RNPickerSelect from 'react-native-picker-select';
+import DatePicker from "react-native-modern-datepicker";
+import { getFormatedDate } from "react-native-modern-datepicker";
+
+
+export const Dropdown = () => {
+  return (
+      <RNPickerSelect 
+          onValueChange={(value) => console.log(value)}
+          items={[
+              { label: 'Anselmo', value: 'estudante1' },
+              { label: 'Bruno', value: 'estudante2' },
+              { label: 'Beca', value: 'estudante3' },
+              { label: 'Alex', value: 'estudante4' },
+              { label: 'Arthur', value: 'estudante5' },
+              { label: 'Liara', value: 'estudante6' },
+              
+          ]}
+      />
+  );
+};
+
 
 export default function App() {
   return (
@@ -17,36 +39,10 @@ export default function App() {
       <View style={styles.total}>
 
       </View>
-      <View style={[styles.ccontainer, styles.shadowProp]}>
-        <SimpleLineIcons name="user" size={18} color="#ADADAD" />
-
-        <Text style={styles.select}>
-          Selecione o estudante
-        </Text>
-
-        <AntDesign name="caretdown" size={18} color="#ADADAD" />
-      </View>
-
-      <View style={styles.chooseArea}>
-        <TouchableOpacity style={[styles.choose, styles.shadowProp]}>
-          <AntDesign name="calendar" size={18} color="#ADADAD" />
-          <Text style={styles.select}>Selecionar Dia</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.choose, styles.shadowProp]}>
-          <AntDesign name="clockcircleo" size={18} color="#ADADAD" />
-          <Text style={styles.select}>Selecionar Hora</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.buttonarea}>
-        <TouchableOpacity style={[styles.button, styles.shadowProp]}>
-          <Text style={styles.buttontext}>
-            Agendar Saída
-          </Text>
-        </TouchableOpacity>
-      </View>
-
+    
+            <Dropdown/>
+  
+      
     <Link href="Home_Pai" style={styles.text}> Voltar</Link>
 
       <Footer/>
@@ -116,5 +112,15 @@ const styles = StyleSheet.create({
   },
   buttonarea:{
     width: '84%'
-  }
+  },
+  pickerInput: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+  },
+
 });
