@@ -4,7 +4,30 @@ import { AntDesign } from '@expo/vector-icons';
 import { useState,useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
 export default function Div() {
+  
+
+    const converterHorario = (e) => {
+        let unix = e;
+        let date = new Date(unix * 1000)
+        let ano = date.getFullYear();
+        let hora = date.getHours();
+        let dia = date.getDay();
+        let mes = date.getMonth();
+
+        return{
+            year: ano,
+            hour: hora,
+            day: dia,
+            month: mes
+
+        }
+    }
+
+
+  
+  
     const [histori, setHistori] = useState([])
     const [idUser, setIdUser] = useState(0);
     
@@ -34,7 +57,11 @@ export default function Div() {
                     data={histori}
                     renderItem={({ item }) => (
                         <View style={[styles.container, styles.shadowProp]}> 
-                            <Text style={styles.text}>Data: {item.horario}</Text>
+                            <Text style={styles.text}>Data: {converterHorario(item.horario).day}/</Text>
+                            <Text style={styles.text}>/{converterHorario(item.horario).month}</Text>
+                            <Text style={styles.text}>/{converterHorario(item.horario).year}</Text>
+                            <Text style={styles.text}>{converterHorario(item.horario).hour}</Text>
+
                             <AntDesign name="caretup" size={18} color="#88D699" style={styles.icon} />
                         </View>
                     )}
@@ -46,10 +73,10 @@ export default function Div() {
 const styles = StyleSheet.create({
     asdd: {
         height: 300,
-        // width: 100,
+        width: 300,
     },
     container: {
-        width: '100%',
+        width: '90%',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -70,7 +97,7 @@ const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
         margin: 'auto',
-        color:'#131313'
+        color:'#131313',
     },
 
     icon:{

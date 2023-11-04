@@ -10,11 +10,11 @@ export default function Page() {
   return (
     <View style={styles.container}>
     <Logo/>
-      <Text style={styles.text}>
+      <Text style={styles.text1}>
         Histórico
       </Text>
       <Div />
-      <Link href="Home_Estudante">
+      <Link style={styles.Link} href="Home_Estudante" >
       <Text style={styles.text}>
         Voltar
       </Text>
@@ -35,6 +35,14 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 16,
     padding: 10,
-    margin: 20,
+    margin: 40,
+  },
+
+  Link:{
+    marginTop:30,
+  },
+  text1: {
+    color: 'black',
+    fontSize: 16,
   }
 });
