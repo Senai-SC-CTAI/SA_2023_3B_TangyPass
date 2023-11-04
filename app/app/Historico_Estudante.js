@@ -18,6 +18,11 @@ export default function Page() {
       <Text style={styles.text}>
         Voltar
       </Text>
+      <Div/>
+      <Link href="Home_Estudante">
+        <Text style={styles.text}>
+          Voltar
+        </Text>
       </Link>
       <Footer/>
     </View>
