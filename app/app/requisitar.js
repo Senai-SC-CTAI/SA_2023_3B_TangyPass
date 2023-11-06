@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, KeyboardAvoidingView, Platform, TouchableOpacity, Modal, Image} from "react-native";
+import { Text, View, StyleSheet, KeyboardAvoidingView, Platform, TouchableOpacity, Modal, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import DatePicker from "react-native-modern-datepicker";
@@ -7,9 +7,9 @@ import { Link } from "expo-router";
 import axios from 'axios';
 
 axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
-.then(function (response) {
-  console.log(response);
-})
+  .then(function (response) {
+    console.log(response);
+  })
 
 export default function Page() {
 
@@ -82,23 +82,23 @@ export default function Page() {
             <View style={styles.centeredView}>
               <View style={styles.modalView}>
                 <DatePicker
-                  mode="calendar"
+                  mode="datepicker"
                   minimumDate={startDate}
                   selected={startedDate}
                   onDateChanged={handleChangeStartDate}
                   onSelectedChange={(date) => setSelectedStartDate(date)}
                   options={{
-                    backgroundColor: "#080516",
-                    textHeaderColor: "#469ab6",
-                    textDefaultColor: "#FFFFFF",
-                    selectedTextColor: "#FFF",
-                    mainColor: "#469ab6",
-                    textSecondaryColor: "#FFFFFF",
+                    backgroundColor: "#fff",
+                    textHeaderColor: "#131313",
+                    textDefaultColor: "#131313",
+                    selectedTextColor: "#131313",
+                    mainColor: "#b5b5b5",
+                    textSecondaryColor: "#131313",
                     borderColor: "rgba(122, 146, 165, 0.1)",
                   }}
                 />
                 <TouchableOpacity onPress={handleOnPressStartDate}>
-                  <Text style={{ color: "white" }}>Close</Text>
+                  <Text style={{ color: "#131313" }}>Close</Text>
                 </TouchableOpacity>
 
               </View>
@@ -106,9 +106,12 @@ export default function Page() {
           </Modal>
 
 
-
+          
+           <TouchableOpacity style={styles.formbtn}>
+              <Text style={styles.textenv}>Enviar</Text>
+           </TouchableOpacity>
           <Link href="/Home_Estudante" style={styles.voltarText}>VOLTAR</Link>
-      <Text style={styles.lastText}>Tangy.app @2023</Text>
+          <Text style={styles.lastText}>Tangy.app @2023</Text>
         </View>
       </KeyboardAvoidingView>
 
@@ -148,7 +151,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "#080516",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 20,
@@ -173,17 +176,32 @@ const styles = StyleSheet.create({
     width: 200,
     height: 100,
   },
-  text:{
-    marginTop:30,
+  text: {
+    marginTop: 30,
   },
   voltarText: {
-    marginTop:350,
+    marginTop: 350,
     color: 'black',
   },
   lastText: {
-    marginTop:12,
+    marginTop: 12,
     color: 'gray',
+  },
+  textenv:{
+    textAlign:'center',
+    fontSize:15,
+    color:'#fff',
+    top:5,
+  },
+  formbtn:{
+    padding:10,
+    margin:10,
+    backgroundColor:'#131313',
+    width:300,
+    height:50,
+    borderRadius:5,
 
   }
+
 
 });
