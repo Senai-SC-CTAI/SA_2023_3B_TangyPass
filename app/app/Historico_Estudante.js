@@ -1,30 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import Div from '../src/Components/HistoricoHoras';
 import { Footer } from '../src/Components/footer';
 import Logo from './Logo';
 import { Link } from 'expo-router';
 
+
 export default function Page() {
-  
 
   return (
     <View style={styles.container}>
-    <Logo/>
+      <Logo />
       <Text style={styles.text1}>
         Histórico
       </Text>
       <Div />
       <Link style={styles.Link} href="Home_Estudante" >
-      <Text style={styles.text}>
-        Voltar
-      </Text>
-      <Div/>
+        <Text style={styles.text}>
+          Voltar
+        </Text>
+      </Link>
+      <Div />
       <Link href="Home_Estudante">
         <Text style={styles.text}>
           Voltar
         </Text>
       </Link>
-      <Footer/>
+      <Footer />
     </View>
   );
 }
@@ -43,8 +44,8 @@ const styles = StyleSheet.create({
     margin: 40,
   },
 
-  Link:{
-    marginTop:30,
+  Link: {
+    marginTop: 30,
   },
   text1: {
     color: 'black',

@@ -1,133 +1,189 @@
-import { StatusBar } from 'expo-status-bar';
-import { Link } from 'expo-router';
-import React from 'react';
-import { Image, TextInput, TouchableOpacity, StyleSheet, Text, View, Button, Pressable } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import axios from "axios";
+import { Text, View, StyleSheet, KeyboardAvoidingView, Platform, TouchableOpacity, Modal, Image} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
+import DatePicker from "react-native-modern-datepicker";
+import { getFormatedDate } from "react-native-modern-datepicker";
+import { Link } from "expo-router";
+import axios from 'axios';
+
+axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
+.then(function (response) {
+  console.log(response);
+})
+
+export default function Page() {
 
 
+  const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
+  const [openStartTimePicker, setOpenStartTimePicker] = useState(false)
+  const today = new Date();
+  const startDate = getFormatedDate(
+    today.setDate(today.getDate()), //today.getDate() + 1)
+    "YYYY/MM/DD",
+    "yyy-dd-mm"
+  );
 
+  const totime = new Date();
+  const starttime = getFormatedDate(
+    today.setDate(totime.getDate()), //today.getDate() + 1)
+    "yyy-dd-mm"
+  );
+  const [selectedStartDate, setSelectedStartDate] = useState("");
+  const [startedDate, setStartedDate] = useState("12/12/2023");
 
-export default function Requisitar() {
+  const [selectedStartTime, setSelectedStartTime] = useState();
+  const [startedTime, setStartedTime] = useState();
 
-  axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
-  .then(function (response) {
-    console.log(response);
-  })
+  function handleChangeStartDate(propDate) {
+    setStartedDate(propDate);
+  }
 
+  function handleChangeStartTime(propTime) {
+    setStartedTime(propTime);
+  }
+
+  const handleOnPressStartDate = () => {
+    setOpenStartDatePicker(!openStartDatePicker);
+  };
+
+  const handleOnPressStartTime = () => {
+    setOpenStartTimePicker(!openStartTimePicker)
+  };
   return (
-    <View style={styles.container}>
-      <Image source={require('../Assets/img.png')} style={styles.img} />
-      <Text style={styles.text}>Requisitar saída</Text>
-      <StatusBar style="auto" />
-          <View style={styles.inputWrapper}>
-      <View style={styles.input}>
-        <Icon name="calendar" size={20} color="#888" style={styles.icon} />
-          <TextInput
-            style={styles.inputText}
-            placeholder='Selecionar dia'
-            onChangeText={(text) => console.log(text)}
-          />
-          <View></View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS == "ios" ? "padding" : ""}
+        style={{
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#fff",
+        }}
+      >
+        <View style={{ flex: 1, alignItems: "center" }}>
+          <Image source={require('../Assets/img.png')} style={styles.img} />
+          <Text style={styles.text}>Requisitar saída</Text>
+
+          <View style={styles.align}>
+            <TouchableOpacity
+              style={styles.inputBtn}
+              onPress={handleOnPressStartDate}
+
+            >
+              <Text>{selectedStartDate}</Text>
+            </TouchableOpacity>
           </View>
-          <View style={styles.input}>
-          <Icon name="clock-outline" size={20} color="#888" style={styles.icon} />
-          <TextInput
-            style={styles.inputText}
-            placeholder='Selecionar hora'
-            onChangeText={(text) => console.log(text)}
-          />
-          </View>
+
+          {/* Create modal for date picker */}
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={openStartDatePicker}
+          >
+            <View style={styles.centeredView}>
+              <View style={styles.modalView}>
+                <DatePicker
+                  mode="calendar"
+                  minimumDate={startDate}
+                  selected={startedDate}
+                  onDateChanged={handleChangeStartDate}
+                  onSelectedChange={(date) => setSelectedStartDate(date)}
+                  options={{
+                    backgroundColor: "#080516",
+                    textHeaderColor: "#469ab6",
+                    textDefaultColor: "#FFFFFF",
+                    selectedTextColor: "#FFF",
+                    mainColor: "#469ab6",
+                    textSecondaryColor: "#FFFFFF",
+                    borderColor: "rgba(122, 146, 165, 0.1)",
+                  }}
+                />
+                <TouchableOpacity onPress={handleOnPressStartDate}>
+                  <Text style={{ color: "white" }}>Close</Text>
+                </TouchableOpacity>
+
+              </View>
+            </View>
+          </Modal>
+
+
+
+          <Link href="/Home_Estudante" style={styles.voltarText}>VOLTAR</Link>
+      <Text style={styles.lastText}>Tangy.app @2023</Text>
         </View>
-      <Pressable style={styles.buttonContainer}>
-        <Text style={styles.textButton}>Requisitar Saída</Text>
-      </Pressable>      
-        <Link href="/Home_Estudante" style={styles.voltarText}>VOLTAR</Link>
-        <Text style={styles.lastText}>Tangy.app @2023</Text>
-      </View>
+      </KeyboardAvoidingView>
+
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f6f6f6',
-    alignItems: 'center',
-    justifyContent: 'center',
+  inputBtn: {
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: "#222",
+    height: 50,
+    paddingLeft: 8,
+    fontSize: 18,
+    justifyContent: "center",
+    marginTop: 14,
+    width: '100%',
+    maxWidth: 300,
+    padding: 10,
+    margin: 10,
+    marginTop: 100,
   },
-  text: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    top: 150,
-    position: 'absolute'
+  submitBtn: {
+    backgroundColor: "#342342",
+    paddingVertical: 22,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    paddingVertical: 12,
+    marginVertical: 16,
+  },
+  centeredView: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "#080516",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
+    padding: 35,
+    width: "90%",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  align: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   img: {
     width: 200,
     height: 100,
-    top: 30,
-    position: 'absolute'
   },
-  inputWrapper: {
-    flexDirection: 'row',
-    width:"68%",
-    display: "flex",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-    gap: 15
-  },
-  input: {
-    height: 50,
-    paddingLeft: 10,
-    width: "68%",
-    backgroundColor: 'white',
-    borderRadius: 3,
-    textAlign: 'right',
-    bottom: 20,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
-  },
-  icon: {
-    left: 7,
-    top: 19,
-    position: 'absolute'
-  },
-  footerContainer: {
-    marginTop: 10,
-  },
-  inputText: {
-    position: 'absolute',
-    top: 15,
-    left: 30,
-    color: 'gray',
-    maxWidth:140,
-    width:"100%",
-  },
-  buttonContainer: {
-    backgroundColor: 'black',
-    width: "68%",
-    height: 50,
-    right: 4,
-    borderRadius: 3,
-    borderRightWidth: 4,
-    borderBottomWidth: 4,
-    borderColor: '#959595',
-    right: 1,
-  },
-  textButton: {
-    color: 'white',
-    textAlign: 'center',
-    marginTop:12,
+  text:{
+    marginTop:30,
   },
   voltarText: {
-    bottom: 136,
-    position: 'absolute',
+    marginTop:350,
     color: 'black',
   },
   lastText: {
-    bottom: 70,
+    marginTop:12,
     color: 'gray',
-    position: 'absolute'
+
   }
+
 });
