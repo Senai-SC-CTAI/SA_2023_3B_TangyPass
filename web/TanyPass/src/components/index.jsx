@@ -3,7 +3,54 @@ import './index.css'
 import logo from '../assets/Logo.png'
 import college from '../assets/college project-pana (1) 1.png'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const index = () => {
+
+  const [Password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
+  const navigati = useNavigate();
+
+
+  async function getEmail() {
+    const email = await AsyncStorage.getItem("emailUser");
+    if (email) {
+      navigati("/home");
+    }
+  }
+
+
+  getEmail()
+
+  async function armItem(email, id) {
+    try {
+      localStorage.setItem('emailUser',email);
+      localStorage.setItem('idUser',id)
+      navigati('/home');
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+
+  const clicked = () => {
+    axios.post(`https://nbrasil.online/aluno/login`, { user: email, password: Password })
+      .then(e => {
+        if (e.data.status != "error") {
+          armItem(email, e.data.id)
+        } else {
+          Alert.alert('Erro', 'Credenciais inválidas');
+        }
+      })
+      .catch(error => {
+        // Trate erros na solicitação
+        console.error('Erro na solicitação:', error);
+      })
+
+          
+      console.log(email, Password)
+  }
   return (
     <div>
 
@@ -31,9 +78,9 @@ const index = () => {
 
 
           <div className='formulario'>
-            <input type="email" className='inp' placeholder='Usuário( Email )' />
-            <input type="password" className='inp' placeholder='Insira sua senha' />
-              <Link to="/home" className='btn'> <h4>Enviar</h4> </Link>
+            <input type="email" className='inp' placeholder='Usuário( Email )' onChange={e => setEmail(e.target.value)}/>
+            <input type="password" className='inp' placeholder='Insira sua senha' onChange={e => setPassword(e.target.value)}/>
+            <Link className='btn' onClick={clicked}> <h4>Enviar</h4> </Link>
             <Link to="/recuperar" className='yper'> <p>Esqueceu a senha? </p> </Link>
             <p className='textfooter'>Tangy.app @2023</p>
           </div>
@@ -42,7 +89,7 @@ const index = () => {
       </div>
 
     </div>
-  ) 
+  )
 }
 
 export default index

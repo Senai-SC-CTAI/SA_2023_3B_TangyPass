@@ -23,6 +23,7 @@
     flex-direction: column;
 }
 
+
 .yperdirection{
     padding: 10px;
     margin: 10px;
@@ -32,6 +33,15 @@
     font-size: 1.5em;
     transition: 0.5s all;
 }
+
+.yperdirectionimg{
+  padding: 10px;
+}
+
+.yperdirectionimg{
+    margin-top: 100px;
+}
+
 
 
 .mtp a:hover{
