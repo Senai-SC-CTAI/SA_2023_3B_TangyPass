@@ -11,6 +11,7 @@ import Home from "./components/home";
 import Senrecu from "./components/Senrecu";
 import Qrcode from "./components/Qrcode";
 import Listaesdu from "./components/Listaesdu";
+import Formsresponsavel from "./components/formsresponsavel";
 
 import "./index.css"
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
     path: "/listaesdu",
     element: <Listaesdu/>,
   },
+  {
+    path: "/forms",
+    element:<Formsresponsavel/>
+  }
 
  
  

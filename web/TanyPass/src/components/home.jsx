@@ -30,6 +30,7 @@ const home = () => {
             <Link className='yperdirection'>{logUser}</Link>
             <Link className='yperdirection' to="">Home</Link>
             <Link to="/qrcode" className='yperdirection'>Qrcode</Link>
+            <Link to="/qrcode" className='yperdirection'>Forms</Link>
             <Link to="/listaesdu" className='yperdirection'>Lista-Estudante</Link>
           </div>
         </div>
