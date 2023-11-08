@@ -26,7 +26,7 @@ const home = () => {
       <div className='container'>
         <div className='alingdirection'>
           <div className="mtp">
-            <Link className='yperdirectionimg' onClick={logout}><img src={saida} alt="" /></Link>
+            <Link onClick={logout}><img src={saida} alt=""/></Link>
             <Link className='yperdirection'>{logUser}</Link>
             <Link className='yperdirection' to="">Home</Link>
             <Link to="/qrcode" className='yperdirection'>Qrcode</Link>
