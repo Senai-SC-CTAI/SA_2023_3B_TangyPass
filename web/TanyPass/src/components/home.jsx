@@ -1,5 +1,5 @@
 import React from 'react'
-import "./home.css"
+import "./styles/home.css"
 import { Link } from 'react-router-dom'
 import logohome from "../assets/Logo2.png"
 import { useState, useEffect } from 'react'
@@ -30,7 +30,7 @@ const home = () => {
             <Link className='yperdirection'>{logUser}</Link>
             <Link className='yperdirection' to="">Home</Link>
             <Link to="/qrcode" className='yperdirection'>Qrcode</Link>
-            <Link to="/qrcode" className='yperdirection'>Forms</Link>
+            <Link to="/registro" className='yperdirection'>Registro</Link>
             <Link to="/listaesdu" className='yperdirection'>Lista-Estudante</Link>
           </div>
         </div>
@@ -42,7 +42,7 @@ const home = () => {
         <div className='alingcontainer'>
           <div className='container2'>
             <h2>Bem vindo(a)</h2>
-            <p> Ao Site Tangy  Pass, Aqui você poderar  monitorar a entrada e saida dos estudantes</p>
+            <p>Ao Site Tangy Pass, aqui você poderá monitorar a entrada e saída dos estudantes</p>
           </div>
         </div>
 

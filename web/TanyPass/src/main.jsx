@@ -11,7 +11,7 @@ import Home from "./components/home";
 import Senrecu from "./components/Senrecu";
 import Qrcode from "./components/Qrcode";
 import Listaesdu from "./components/Listaesdu";
-import Formsresponsavel from "./components/formsresponsavel";
+import Registro from "./components/registro";
 
 import "./index.css"
 
@@ -33,16 +33,13 @@ const router = createBrowserRouter([
     element: <Qrcode/>,
   }, 
   {
+    path: "/registro",
+    element: <Registro/>,
+  }, 
+  {
     path: "/listaesdu",
     element: <Listaesdu/>,
   },
-  {
-    path: "/forms",
-    element:<Formsresponsavel/>
-  }
-
- 
- 
   
 ]);
 

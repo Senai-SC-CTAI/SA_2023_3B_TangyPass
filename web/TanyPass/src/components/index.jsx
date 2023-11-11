@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './styles/index.css'
 import logo from '../assets/Logo.png'
 import college from '../assets/college project-pana (1) 1.png'
 import { Link } from 'react-router-dom'
@@ -12,14 +12,12 @@ const index = () => {
   const [email, setEmail] = useState('')
   const navigati = useNavigate();
 
-
   async function getEmail() {
     const email = await AsyncStorage.getItem("emailUser");
     if (email) {
       navigati("/home");
     }
   }
-
 
   getEmail()
 
@@ -33,7 +31,6 @@ const index = () => {
     }
   }
 
-
   const clicked = () => {
     axios.post(`https://nbrasil.online/aluno/login`, { user: email, password: Password })
       .then(e => {
@@ -44,23 +41,20 @@ const index = () => {
         }
       })
       .catch(error => {
-        // Trate erros na solicitação
         console.error('Erro na solicitação:', error);
       })
-
           
       console.log(email, Password)
   }
   return (
     <div>
-
       <div className='aling'>
         <div className='form1'>
           <div className='logo'>
             <img src={logo} alt="" />
           </div>
           <div className='text'>
-            <h2>Faça Login Para Começarmos Sua experiência</h2>
+            <h2>Faça login para começarmos sua experiência</h2>
           </div>
 
           <div className='logo2'>
@@ -68,26 +62,20 @@ const index = () => {
           </div>
         </div>
 
-
         <div className='form2'>
           <div className='text2'>
             <h2>Login</h2>
           </div>
 
-
-
-
           <div className='formulario'>
-            <input type="email" className='inp' placeholder='Usuário( Email )' onChange={e => setEmail(e.target.value)}/>
-            <input type="password" className='inp' placeholder='Insira sua senha' onChange={e => setPassword(e.target.value)}/>
-            <Link className='btn' onClick={clicked}> <h4>Enviar</h4> </Link>
-            <Link to="/recuperar" className='yper'> <p>Esqueceu a senha? </p> </Link>
+            <input type="email" className='inp1' placeholder='Usuário( Email )' onChange={e => setEmail(e.target.value)}/>
+            <input type="password" className='inp2' placeholder='Insira sua senha' onChange={e => setPassword(e.target.value)}/>
+            <Link className='btn' onClick={clicked}><h4>Enviar</h4></Link>
+            <Link to="/recuperar" className='yper'><p>Esqueceu a senha?</p></Link>
             <p className='textfooter'>Tangy.app @2023</p>
           </div>
-
         </div>
       </div>
-
     </div>
   )
 }

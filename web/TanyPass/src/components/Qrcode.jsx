@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Qrcode.css'
+import './styles/Qrcode.css'
 import axios from 'axios';
 import {QRCodeSVG} from 'qrcode.react';
-import { useState,useEffect } from 'react';
-
-
-
+import { useState, useEffect } from 'react';
 
 const Qrcode = () => {
 
@@ -17,8 +14,6 @@ const Qrcode = () => {
   const [changeView, setChangeView] = useState("");
   const [changeQR, setChangeQR] = useState("");
  
-
-
   let lastId = 0;
 
   const verifyEntry = (cod) => {
@@ -28,8 +23,7 @@ const Qrcode = () => {
         console.log("asd", response.data.nome)
         setLastLogin(response.data.nome)
         setLastName(response.data.user)
-        setLastSala(response.data.sala)
-        
+        setLastSala(response.data.sala)  
         setChangeView("readedOpen")
         setChangeQR("readedQR")
       })
@@ -54,8 +48,6 @@ const Qrcode = () => {
     setChangeView("");
     setChangeQR("");
   }  
-  
-
 
   return (
     <div>
@@ -63,16 +55,15 @@ const Qrcode = () => {
         <div className='alingdirectionQr'>
           <div className="mtpQr">
           <Link to="/home" className='yperdirectionQr active'>Home</Link>
-            <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
+            <Link to="/registro" className='yperdirectionQr active'>Registro</Link>
             <Link to="/listaesdu" className='yperdirectionQr'>Lista-Estudante</Link>
           </div>
         </div>
 
-        <div className={"readedUserOut "+changeView}>
+        <div className={"readedUserOut"+changeView}>
           <div className='readedUser'>
             <div className='content-readed'>
               <h1>Dados recebidos</h1>
-
               <div className="infos">
                 <h3>Nome Estudante</h3>
                 <p>{lastLogin}</p>
@@ -100,9 +91,7 @@ const Qrcode = () => {
 
               </div>
           </div>
-
         </div>
-
           <div className='alingfooterQr'>
               <div className='footerQr'>
                   <h2>Tangy.app @2023</h2>

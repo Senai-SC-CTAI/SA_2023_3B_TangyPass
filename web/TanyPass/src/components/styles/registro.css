@@ -1,0 +1,76 @@
+.body {
+    background-color: #F6F6F6F6;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.logo1 {
+    position: absolute;
+    height: 12%;
+    width: 11%;
+    left: 45%;
+    top: 10%;
+}
+
+.mtpQr{
+    margin-top: 10px;
+    text-align: right;
+}
+
+.tittle {
+    font-family: 'alata';
+    color: #5D5D5D;
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 230px;
+    font-weight: 100;
+}
+
+.select1,
+.select2,
+.button {
+    position: absolute;
+    border-radius: 3px;
+    width: 330px;
+    height: 40px;
+    color: #9A9A9A;
+    font-family: 'alata';
+}
+
+.select1 {
+    top: 323px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.select2 {
+    top: 385px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 40px;
+    border-radius: 3px;
+    font-family: 'alata';
+}
+
+.footer {
+    font-family: 'alata';
+    color: #B6B6B6;
+    font-size: 65%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    top: 400px;
+}

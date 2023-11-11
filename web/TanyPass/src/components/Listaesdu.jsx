@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState,useEffect } from 'react'
-import './Listaesdu.css' 
+import './styles/Listaesdu.css' 
 const Listaesdu = () => {
 
   const [count, setCount] = useState(0)
@@ -26,7 +26,7 @@ const Listaesdu = () => {
           <div className="mtpQr">
           <Link to="/home" className='yperdirectionQr active'>Home</Link>
             <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
-            <Link to="/listaesdu" className='yperdirectionQr'>Lista-Estudante</Link>
+            <Link to="/registro" className='yperdirectionQr'>Registro</Link>
           </div>
         </div>
 

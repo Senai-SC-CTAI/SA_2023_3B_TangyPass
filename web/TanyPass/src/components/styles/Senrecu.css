@@ -6,8 +6,6 @@
     border: none;
 }
 
-
-
 .alingSenrecu  {
     display: flex;
     justify-content: space-between;
@@ -15,16 +13,11 @@
     flex-direction: row;
 }
 
-/*alinhamento dos containes que terão conteudo */
-
-
 .logoSenrecu  {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* alinhamento das imagens dentro do container  */
 
 .logo2Senrecu  {
     display: flex;
@@ -44,8 +37,6 @@
     margin-top: 10px;
 }
 
-/*logo do site */
-
 .textSenrecu h2 {
     font-family: 'Alata', sans-serif;
     text-align: center;
@@ -63,16 +54,6 @@
 
 }
 
-/* forma do container 1 */
-
-
-/* fim do container */
-
-
-/* Começo do container 2 */
-
-
-
 .form2Senrecu  {
     background-color: #131313;
     width: calc(100% - 10px);
@@ -82,22 +63,17 @@
 
 }
 
-/* forma do container 2 */
-
-
 .formularioSenrecu {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
- }  /* alinhamento formilario container 2 */
-
-
+}
 
 .text2Senrecu  h2 {
     font-family: 'Alata', sans-serif;
     text-align: center;
-    margin-top: 130px;
+    margin-top: 180px;
     padding: 20px;
 }
 
@@ -112,9 +88,7 @@
     margin-top: 10px;
     font-size: 1em;
     font-family: 'Alata', sans-serif;
-} /* estilho da caixa de texto (input)*/
-
-
+}
 
 .btnSenrecu {
     padding: 12px;
@@ -130,7 +104,7 @@
     font-size: 1em;
     font-family: 'Alata', sans-serif;
     
-} /*estilho do botão*/
+}
 
 .yperSenrecu {
     color:#000;
@@ -138,7 +112,7 @@
     text-decoration: none;
     margin-top: 30px;
     font-size: 15px;
-} /* lin de passagem*/
+}
 
 .textfooterSenrecu {
     color: #B6B6B6;
@@ -146,7 +120,7 @@
     text-decoration: none;
     margin-top: 30px;
     font-size: 13px;
-} /* mensagem abaixo no coonteudo*/
+}
 
 
 @media screen  and (min-width:1500px) and (max-width:1990px){
