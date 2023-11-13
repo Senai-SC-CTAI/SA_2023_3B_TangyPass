@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     maxWidth: 300,
     padding: 10,
     margin: 10,
-    marginTop: 100,
+    marginTop:200,
   },
   submitBtn: {
     backgroundColor: "#342342",
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   voltarText: {
-    marginTop: 350,
+    marginTop: 200,
     color: 'black',
   },
   lastText: {
