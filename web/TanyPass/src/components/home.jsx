@@ -5,6 +5,7 @@ import logohome from "../assets/Logo2.png"
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import saida from '../assets/saida.png'
+
 const home = () => {
   const [logUser, setLogUser] = useState("");
   const navigate = useNavigate();
@@ -30,17 +31,12 @@ const home = () => {
             <Link className='yperdirection'>{logUser}</Link>
             <Link className='yperdirection' to="">Home</Link>
             <Link to="/qrcode" className='yperdirection'>Qrcode</Link>
-<<<<<<< HEAD
             <Link to="/registro" className='yperdirection'>Registro</Link>
-=======
-            <Link to="/forms" className='yperdirection'>Forms</Link>
->>>>>>> 1c6d6fa8bcf2c7d69e655fe180b3ced823936b27
             <Link to="/listaesdu" className='yperdirection'>Lista-Estudante</Link>
           </div>
         </div>
 
         <div className='logohome'>
-          {/* <img src={logohome} alt="" /> */}
         </div>
 
         <div className='alingcontainer'>
