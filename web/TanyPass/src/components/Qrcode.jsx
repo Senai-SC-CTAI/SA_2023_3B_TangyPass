@@ -55,7 +55,7 @@ const Qrcode = () => {
         <div className='alingdirectionQr'>
           <div className="mtpQr">
           <Link to="/home" className='yperdirectionQr active'>Home</Link>
-            <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
+            <Link to="/registro" className='yperdirectionQr active'>Registro</Link>
             <Link to="/listaesdu" className='yperdirectionQr'>Lista-Estudante</Link>
           </div>
         </div>

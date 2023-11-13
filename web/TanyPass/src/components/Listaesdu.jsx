@@ -25,7 +25,6 @@ const Listaesdu = () => {
         <div className='alingdirectionlist'>
           <div className="mtpQr">
           <Link to="/home" className='yperdirectionQr active'>Home</Link>
-          <Link to="/forms" className='yperdirectionQr active'>Forms</Link>
             <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
             <Link to="/registro" className='yperdirectionQr'>Registro</Link>
           </div>
@@ -37,7 +36,7 @@ const Listaesdu = () => {
           <div className='containerlists'>
           <select onChange={e => console.log(e)} className='form'>
             <option>Selecione</option>
-            {namealunos.map((aluno) => (  //sintaxe do uso do map
+            {namealunos.map((aluno) => (
               <option onClick={e => console.log(e)} value={aluno.id} key={aluno.id} className='form2' >
                 Aluno: {aluno.nome} Sala: {aluno.sala}
               </option>

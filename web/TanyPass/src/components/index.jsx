@@ -6,8 +6,11 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-const index = () => {
+import Swal from 'sweetalert2'
 
+
+const index = () => {
+  
   const [Password, setPassword] = useState('')
   const [email, setEmail] = useState('')
   const navigati = useNavigate();
@@ -26,8 +29,13 @@ const index = () => {
       localStorage.setItem('emailUser',email);
       localStorage.setItem('idUser',id)
       navigati('/home');
+      Swal.fire({
+        title: "Sucesso",
+        text: "Usuario Logado",
+        icon: "success"
+      });
     } catch (e) {
-      console.log(e);
+      console.log(e);      
     }
   }
 
@@ -38,9 +46,15 @@ const index = () => {
           armItem(email, e.data.id)
         } else {
           Alert.alert('Erro', 'Credenciais inválidas');
+
         }
       })
       .catch(error => {
+        Swal.fire({
+          title: "Oops!",
+          text: "Algo Deu Errado",
+          icon: "error"
+        });
         console.error('Erro na solicitação:', error);
       })
           

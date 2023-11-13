@@ -97,7 +97,7 @@
     margin-top: 170px;
 }
 
-@media screen and (min-width:1400px) and (max-width:1990px){
+@media screen and (min-width:1600px) and (max-width:1990px){
 
     .form{
         margin-top: 25em;

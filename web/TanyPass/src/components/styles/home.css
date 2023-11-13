@@ -114,7 +114,7 @@
 }
 
 
-@media screen and (min-width:1400px) and (max-width:1990px) {
+@media screen and (min-width:1600px) and (max-width:1990px) {
 
     .container2{
         width: calc(100% -10px);
