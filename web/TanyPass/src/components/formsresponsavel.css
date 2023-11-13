@@ -168,3 +168,14 @@
     font-family: Poppins;
     color: #fff;
 }
+
+@media screen and (min-width:1600px) and (max-width:1990px) {
+
+  .alingformsrepo{
+    margin-top: 23vh;
+  }
+
+  .formsrepobtn button{
+    font-size: 16px;
+  }
+}

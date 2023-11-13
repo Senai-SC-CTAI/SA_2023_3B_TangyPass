@@ -24,7 +24,7 @@ const formsresponsavel = () => {
             <Link className='yperdirection'>{logUser}</Link>
             <Link className='yperdirection' to="/home">Home</Link>
             <Link to="/qrcode" className='yperdirection'>Qrcode</Link>
-            <Link to="" className='yperdirection'>Forms</Link>
+            <Link to="" className='yperdirection'>Cadastro de responsavel</Link>
             <Link to="/listaesdu" className='yperdirection'>Lista-Estudante</Link>
           </div>
         </div>

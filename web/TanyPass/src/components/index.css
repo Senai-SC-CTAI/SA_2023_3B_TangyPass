@@ -136,7 +136,7 @@
 
 .btn h4{
     text-align: center;
-    margin-top: 0.2em;
+    margin-top: 0.5em;
 }
 
 .yper{
@@ -157,7 +157,7 @@
 
 
 
-@media screen and (min-width:1400px) and (max-width: 1990px) {
+@media screen and (min-width:1600px) and (max-width: 1990px) {
     .formulario{
         margin-top: 140px;
     }
