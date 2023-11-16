@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
-
-
 *{
     padding: 0;
     margin: 0;
     border: none;
 }
-
-
 
 .containerlist{
     background-color: #fdfdfd;
@@ -17,15 +13,12 @@
     height: 60vh;
 }
 
-
 .alingdirectionlist{
     display: flex;
     justify-content: center;
     align-items: flex-end;
     flex-direction: column;
 }
-
-
 
 .yperdirectionlist{
     padding: 10px;
@@ -37,8 +30,6 @@
     transition: 0.5s all;
 }
 
-
-
 .mtpQr a:hover{
     color:#B6B6B6;
     transition: transform 0.3s ease;
@@ -48,7 +39,6 @@
     margin-top: 10px;
 }
 
-
 .alingcontainerlist{
     display: flex;
     justify-content:center;
@@ -56,7 +46,6 @@
     flex-direction: row;
     margin: 10px;
 }
-
 
 .containerlist h2{
     font-family: 'Alata', sans-serif;
@@ -70,7 +59,6 @@
     margin-top: 20px;
 }
 
-
 .footerlist h2{
     color: #b6b6b69d;
     font-family: 'Alata', sans-serif;
@@ -78,7 +66,6 @@
     font-size: 0.9em;
     text-align: end;
     padding: 10px;
-
 }
 
 .form{
@@ -95,6 +82,23 @@
     padding: 17px;
     margin: 15px;
     margin-top: 170px;
+}
+
+.arrowBackIcon{
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.backPageText{
+    position: absolute;
+    left: 45px;
+    top: 1px;
+    font-family: 'alata';
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
 }
 
 @media screen and (min-width:1600px) and (max-width:1990px){

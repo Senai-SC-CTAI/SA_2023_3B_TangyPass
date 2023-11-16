@@ -1,20 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
-
-*{
-    padding: 0;
-    margin: 0;
-    border: none;
-}
-
-
-
-.container{
-    background-color: #fdfdfd;
+.first_cont{
+    background-color: #000000;
     width: 100vw;
-    height: 100vh;
+    height: 4vh;
+    padding: 1vw;
 }
 
+.body{
+    background-color: #f6f6f6;
+}
 
 .alingdirection{
     display: flex;
@@ -23,107 +18,95 @@
     flex-direction: column;
 }
 
+.logohome{
+    height: 70px;
+    top: 9px;
+    position: absolute;
+}
+
+.icon_home{
+    height: 20px;
+    position: absolute;
+    left: 147px;
+    top: 34px;
+}
+
+.logUsuario{
+    position: absolute;
+    color: white;
+    font-family: 'alata';
+    top: 25px;
+    left: 210px;
+    text-decoration: none;
+    cursor: default;
+    font-size: 22px;
+}
+
 .yperdirection{
     padding: 10px;
     margin: 10px;
     text-decoration: none;
-    color: #131313;
+    color: #ffffff;
     font-family: 'Alata', sans-serif;
     font-size: 1.5em;
     transition: 0.5s all;
+}
+
+.mtp{
+    text-align: right;
 }
 
 .mtp a:hover{
     color:#B6B6B6;
     transition: 0.5s all;
-
 }
 
-.mtp{
- margin-top: 10px;
-}
-
-.mtp img{
-    margin: -1.2px;
-    width: 20px;
-}
-
-.logohome{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-}
-
-.logohome img{
-    margin: 1em;
-    padding: 3em;
-    margin-top: 5em;
-    margin-right:102px;
-    width: calc(100% - 1px);
-    max-width: 400px;
-}
-
-.alingcontainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin: 10px;
-}
-
-.container2{
-    background-color: rgb(255, 255, 255);
-    width: calc(100% - 10px);
-    max-width: 430px;
-    height: 270px;
-    margin-top: 150px;
-    padding: 10px;
-    border-radius: 1px;
-    box-shadow: 0px 2px 0px 0px rgba(30, 30, 30, 0.80) inset;
-}
-
-.container2 h2{
-    font-family: 'Alata', sans-serif;
-    font-size: 1.5em;
-}
-
-.container2 p{
-    font-family: 'Alata', sans-serif;
-    font-size: 1.6em;
-    margin: 5px;
+.icon_door{
+    height: 40px;
     margin-top: 20px;
 }
 
-.alingfooter{
-    display:flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: row;
-    margin: 10px;
-    padding: 10px;
+.back{
+    text-decoration: none;
+    font-family: 'alata';
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 94px;
 }
 
+.text_center{
+    font-family: 'alata';
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+}
 
-.footer h2{
-    color: #b6b6b69d;
+.text_hora {
     font-family: 'Alata', sans-serif;
-    margin-top: 100px;
-    font-size: 0.9em;
-
+    text-align: center;
+    font-size: 3em;
+    margin-top: 20px;
+    color: #000000;
+    font-weight: 100;
 }
 
+.icon_day {
+    height: 50px;
+    margin-top: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-@media screen and (min-width:1600px) and (max-width:1990px) {
-
-    .container2{
-        width: calc(100% -10px);
-        max-width: 70vh;
-        height: 10vh;
-        margin-top: 15em;
-    }
-
-    .footer{
-        margin-top: 27em;
-    }
+footer {
+    font-family: 'alata';
+    color: #B6B6B6;
+    display: block;
+    text-align: center; 
+    position: fixed; 
+    bottom: 160px; 
+    width: 100%; 
+    font-size: 0.9rem;
+    margin-top: 20px;
 }

@@ -72,5 +72,22 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%); 
-    top: 400px;
+    top: 700px;
+}
+
+.arrowBack{
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.backPage{
+    position: absolute;
+    left: 45px;
+    top: 1px;
+    font-family: 'alata';
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
 }

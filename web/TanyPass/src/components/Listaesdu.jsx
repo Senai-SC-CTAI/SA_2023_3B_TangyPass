@@ -1,11 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import './styles/Listaesdu.css' 
+import arrow_back from '../assets/arrow_back.png'
+
 const Listaesdu = () => {
 
   const [count, setCount] = useState(0)
   const [namealunos, setnameAlunos] = useState([])
+  const navigate = useNavigate();
 
   const url = "https://nbrasil.online/adm/listaEstudantes"
 
@@ -18,19 +21,18 @@ const Listaesdu = () => {
     fecthData()
   }, [])
 
-
   return (
     <div>
       <div className='containerlist'>
         <div className='alingdirectionlist'>
+        <Link to="#" onClick={() => navigate(-1)}><img src={arrow_back} className='arrowBackIcon'/></Link>
+      <Link to="#" onClick={() => navigate(-1)} className='backPageText'>Voltar</Link>
           <div className="mtpQr">
-          <Link to="/home" className='yperdirectionQr active'>Home</Link>
+            <Link to="/home" className='yperdirectionQr active'>Home</Link>
             <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
             <Link to="/registro" className='yperdirectionQr'>Registro</Link>
           </div>
         </div>
-
-     
 
         <div className='alingcontainerlist'>
           <div className='containerlists'>
