@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useState,useEffect } from 'react'
-import './styles/Listaesdu.css' 
+import { useState, useEffect } from 'react'
+import './styles/Listaesdu.css'
 import arrow_back from '../assets/arrow_back.png'
 
 const Listaesdu = () => {
@@ -12,8 +12,8 @@ const Listaesdu = () => {
 
   const url = "https://nbrasil.online/adm/listaEstudantes"
 
-  useEffect (() =>{
-    async function fecthData(){
+  useEffect(() => {
+    async function fecthData() {
       const res = await fetch(url)
       const data = await res.json()
       setnameAlunos(data)
@@ -25,8 +25,10 @@ const Listaesdu = () => {
     <div>
       <div className='containerlist'>
         <div className='alingdirectionlist'>
-        <Link to="#" onClick={() => navigate(-1)}><img src={arrow_back} className='arrowBackIcon'/></Link>
-      <Link to="#" onClick={() => navigate(-1)} className='backPageText'>Voltar</Link>
+          <div className='saida'>
+            <Link to="#" onClick={() => navigate(-1)}><img src={arrow_back} className='arrowBackIcon' /></Link>
+            <Link to="#" onClick={() => navigate(-1)} className='backPageText'>Voltar</Link>
+          </div>
           <div className="mtpQr">
             <Link to="/home" className='yperdirectionQr active'>Home</Link>
             <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
@@ -36,27 +38,27 @@ const Listaesdu = () => {
 
         <div className='alingcontainerlist'>
           <div className='containerlists'>
-          <select onChange={e => console.log(e)} className='form'>
-            <option>Selecione</option>
-            {namealunos.map((aluno) => (
-              <option onClick={e => console.log(e)} value={aluno.id} key={aluno.id} className='form2' >
-                Aluno: {aluno.nome} Sala: {aluno.sala}
-              </option>
-            ))}
-          </select>
+            <select onChange={e => console.log(e)} className='form'>
+              <option>Selecione</option>
+              {namealunos.map((aluno) => (
+                <option onClick={e => console.log(e)} value={aluno.id} key={aluno.id} className='form2' >
+                  Aluno: {aluno.nome} Sala: {aluno.sala}
+                </option>
+              ))}
+            </select>
           </div>
 
-        <div className='alingbtn'> 
-            <input type="submit" value="Procurar" className='btnlist'/>
-        </div>
-
-        </div>
-
-          <div className='alingfooterlist'>
-              <div className='footerlist'>
-                  <h2>Tangy.app @2023</h2>
-              </div>
+          <div className='alingbtn'>
+            <input type="submit" value="Procurar" className='btnlist' />
           </div>
+
+        </div>
+
+        <div className='alingfooterlist'>
+          <div className='footerlist'>
+            <h2>Tangy.app @2023</h2>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -101,6 +101,18 @@
     font-size: 30px;
 }
 
+.saida{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.saida a{
+    margin-top: 10px;
+    
+}
+
 @media screen and (min-width:1600px) and (max-width:1990px){
 
     .form{

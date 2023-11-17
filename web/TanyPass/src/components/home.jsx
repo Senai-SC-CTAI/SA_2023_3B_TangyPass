@@ -53,22 +53,33 @@ const Home = () => {
           <Link to="/registro" className='yperdirection'>Registro</Link>
           <Link to="/listaesdu" className='yperdirection'>Lista-Estudante</Link>
         </div>
-        <img src={logohome} className='logohome'/>
-        <img src={icon_home} className='icon_home'/>
-        <Link className='logUsuario'>{logUser}</Link>
-       </div>
-      <Link onClick={logout}><img src={open_door} className='icon_door'/></Link>
-      <Link onClick={logout} className='back'>Sair</Link>
-      <div>
-        <img src={icon} alt={hora} className='icon_day'/>
-        <p className='text_hora'>{hora}</p>
+
+      <div className='loghome'>
+        <img src={logohome} className='logohome' />
+        <img src={icon_home} className='icon_home' />
       </div>
-      <p className='text_center'>Seja bem-vindo ao TangyPass, projetado para você monitorar a 
-      <br/>
-      entrada e saída dos alunos, promovendo um ambiente seguro e 
-      <br/>
-      eficiente para todos nós!</p>
-      <footer>Tangy.app @2023</footer>
+      
+        <Link className='logUsuario'>{logUser}</Link>
+      </div>
+      <div className='saidaaling'>
+        <Link onClick={logout}><img src={open_door} className='icon_door' /></Link>
+        <Link onClick={logout} className='back'>Sair</Link>
+      </div>
+      <div className='daymensege'>
+        <img src={icon} alt={hora} className='icon_day' />
+        <p className='text_hora'>{hora}</p>
+      
+      <div className='mensege'>
+        <p className='text_center'>
+          Seja bem-vindo ao TangyPass, projetado para você monitorar a
+          entrada e saída dos alunos, promovendo um ambiente seguro e
+          eficiente para todos nós!
+        </p>
+      </div>
+      </div>
+      <div className='footer'>
+        <footer>Tangy.app @2023</footer>
+      </div>
     </div>
   );
 };
