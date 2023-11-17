@@ -13,14 +13,16 @@ export default function Div() {
         let date = new Date(unix * 1000)
         let ano = date.getFullYear();
         let hora = date.getHours();
+        let minutes = date.getMinutes()
         let dia = date.getDay();
         let mes = date.getMonth();
 
         return{
             year: ano,
-            hour: hora,
+            hour: `${hora}:${minutes}`,
             day: dia,
-            month: mes
+            month: mes,
+            complete: `${dia}/${mes}/${ano} às ${hora}:${minutes}`
 
         }
     }
@@ -57,10 +59,10 @@ export default function Div() {
                     data={histori}
                     renderItem={({ item }) => (
                         <View style={[styles.container, styles.shadowProp]}> 
-                            <Text style={styles.text}>Data: {converterHorario(item.horario).day}/</Text>
-                            <Text style={styles.text}>/{converterHorario(item.horario).month}</Text>
+                            <Text style={styles.text}>Data: {converterHorario(item.horario).complete}</Text>
+                            {/* <Text style={styles.text}>/{converterHorario(item.horario).month}</Text>
                             <Text style={styles.text}>/{converterHorario(item.horario).year}</Text>
-                            <Text style={styles.text}>{converterHorario(item.horario).hour}</Text>
+                            <Text style={styles.text}>{converterHorario(item.horario).hour}</Text> */}
 
                             <AntDesign name="caretup" size={18} color="#88D699" style={styles.icon} />
                         </View>
@@ -93,11 +95,15 @@ const styles = StyleSheet.create({
         shadowColor: '#696969',
         shadowOpacity: 0.5,
         shadowRadius: 3,
+        
     },
     text: {
         textAlign: 'center',
         margin: 'auto',
         color:'#131313',
+        border: 2,
+        borderStyle: "solid",
+        borderColor: "black"
     },
 
     icon:{

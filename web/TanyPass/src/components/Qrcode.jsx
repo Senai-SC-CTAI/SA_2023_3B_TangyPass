@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './styles/Qrcode.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './styles/Qrcode.css'
 import axios from 'axios';
-import arrow_back from '../assets/arrow_back.png';
-import { QRCodeSVG } from 'qrcode.react';
+import {QRCodeSVG} from 'qrcode.react';
+import { useState,useEffect } from 'react';
+
+
+
 
 const Qrcode = () => {
-  const navigate = useNavigate();
 
   const [time, setTime] = useState("");
   const [lastLogin, setLastLogin] = useState("");
@@ -15,59 +17,62 @@ const Qrcode = () => {
   const [changeView, setChangeView] = useState("");
   const [changeQR, setChangeQR] = useState("");
  
+
+
   let lastId = 0;
 
   const verifyEntry = (cod) => {
-    if (cod !== 0) {
+    if(cod != 0){
       axios.get(`https://nbrasil.online/guarda/verify?cod=${cod}`)
-        .then(function (response) {
-          console.log("asd", response.data.nome);
-          setLastLogin(response.data.nome);
-          setLastName(response.data.user);
-          setLastSala(response.data.sala);
-          setChangeView("readedOpen");
-          setChangeQR("readedQR");
-        });
+      .then(function (response) {
+        console.log("asd", response.data.nome)
+        setLastLogin(response.data.nome)
+        setLastName(response.data.user)
+        setLastSala(response.data.sala)
+        
+        setChangeView("readedOpen")
+        setChangeQR("readedQR")
+      })
     }
-  };
+  }
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      axios.get('https://nbrasil.online/qrcode/qr')
+  useEffect(() =>{
+    setInterval(()=>{
+        axios.get('https://nbrasil.online/qrcode/qr')
         .then(function (response) {
-          if (lastId !== response.data[0]) {
+          if(lastId != response.data[0]){
             verifyEntry(lastId);
             setTime(`${response.data[0]}`);
             lastId = response.data[0];
           }
-        });
-    }, 2000);
+        })
+      },2000)
 
-    return () => clearInterval(intervalId);
-  }, [setTime]);
+  },[setTime])
 
   const closeReaded = () => {
     setChangeView("");
     setChangeQR("");
-  };
+  }  
+  
+
 
   return (
     <div>
-      <div className='containerQr'>
+       <div className='containerQr'>
         <div className='alingdirectionQr'>
-          <Link to="#" onClick={() => navigate(-1)}><img src={arrow_back} className='backArrow'/></Link>
-          <Link to="#" onClick={() => navigate(-1)} className='back_to_page'>Voltar</Link>
           <div className="mtpQr">
-            <Link to="/home" className='yperdirectionQr active'>Home</Link>
-            <Link to="/registro" className='yperdirectionQr active'>Registro</Link>
+          <Link to="/home" className='yperdirectionQr active'>Home</Link>
+            <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
             <Link to="/listaesdu" className='yperdirectionQr'>Lista-Estudante</Link>
           </div>
         </div>
 
-        <div className={"readedUserOut"+changeView}>
+        <div className={"readedUserOut "+changeView}>
           <div className='readedUser'>
             <div className='content-readed'>
               <h1>Dados recebidos</h1>
+
               <div className="infos">
                 <h3>Nome Estudante</h3>
                 <p>{lastLogin}</p>
@@ -87,23 +92,25 @@ const Qrcode = () => {
 
         <div className='alingcontainerQr'>
           <div className='containerQr2'>
-            <div className="cardform">
-              <h2> QRCODE</h2>
-              <p>Leia o código QR para se identificar</p>
+              <div className="cardform">
+                <h2> QRCODE</h2>
+                <p>Leia o código QR para se identificar</p>
 
-              <QRCodeSVG value={time} className="qr"/>
-            </div>
+                <QRCodeSVG value={time} className="qr"/>
+
+              </div>
           </div>
+
         </div>
 
-        <div className='alingfooterQr'>
-          <div className='footerQr'>
-            <h2>Tangy.app @2023</h2>
+          <div className='alingfooterQr'>
+              <div className='footerQr'>
+                  <h2>Tangy.app @2023</h2>
+              </div>
           </div>
-        </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Qrcode;
+export default Qrcode

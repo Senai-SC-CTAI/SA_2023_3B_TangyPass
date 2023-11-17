@@ -29,6 +29,9 @@
     font-weight: 100;
 }
 
+.select1{
+    width: calc(330px - 10px)!important;
+}
 .select1,
 .select2,
 .button {
@@ -38,6 +41,7 @@
     height: 40px;
     color: #9A9A9A;
     font-family: 'alata';
+    padding: 0 5px;
 }
 
 .select1 {

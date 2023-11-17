@@ -18,9 +18,7 @@ const Registro = () => {
       </div>
       <img src={logo2} alt="" className='logo1' />
       <h1 className='tittle'>Registro</h1>
-      <select className='select1'>
-        <option className='option1'>Novo usuário responsável</option>
-      </select>
+      <input type="text" className='select1' placeholder='Novo nome de usuário'/>
       <select className='select2'>
         <option className='option2'>Selecione o Estudante</option>
       </select>
