@@ -1,11 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
+*{
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
 .first_cont{
     background-color: #000000;
     width: 100vw;
-    height: 4vh;
+    height: 8%;
     padding: 1vw;
 }
+
+.loghome{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.loghome a{
+    margin-top: px;
+}
+
+
+
 
 .body{
     background-color: #f6f6f6;
@@ -28,7 +48,7 @@
     height: 20px;
     position: absolute;
     left: 147px;
-    top: 34px;
+    top: 30px;
 }
 
 .logUsuario{
@@ -53,7 +73,11 @@
 }
 
 .mtp{
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -10px;
 }
 
 .mtp a:hover{
@@ -70,9 +94,8 @@
     text-decoration: none;
     font-family: 'alata';
     color: black;
-    font-size: 30px;
-    position: absolute;
-    top: 94px;
+    font-size: 19px;
+    margin-top: 15px;
 }
 
 .text_center{
@@ -99,14 +122,47 @@
     margin-right: auto;
 }
 
-footer {
+
+.footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    margin-top: -7em;
+}
+
+.footer footer {
     font-family: 'alata';
+    font-size: 15px;
     color: #B6B6B6;
-    display: block;
-    text-align: center; 
-    position: fixed; 
-    bottom: 160px; 
-    width: 100%; 
-    font-size: 0.9rem;
-    margin-top: 20px;
+    text-align: center;
+}
+
+
+.saidaaling{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.mensege{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+ 
+}
+
+.mensege p{
+ font-size:2.5em;
+}
+
+
+.daymensege{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    margin-top: -110px;
 }
