@@ -1,10 +1,11 @@
 import { Text, View, StyleSheet, KeyboardAvoidingView, Platform, TouchableOpacity, Modal, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DatePicker from "react-native-modern-datepicker";
 import { getFormatedDate } from "react-native-modern-datepicker";
 import { Link } from "expo-router";
 import axios from 'axios';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
   .then(function (response) {
@@ -13,27 +14,83 @@ axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
 
 export default function Page() {
 
+  const [idUser, setIdUser] = useState();
+  const [status, setStatus] = useState("Select data");
+
+  useEffect(()=>{
+    const getIdAcc = async () => {
+      let id = await AsyncStorage.getItem("idUser");
+      if(id){
+        setIdUser(id);
+      }
+    }
+    getIdAcc();
+  },[idUser])
+
 
   const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
-  
+  const [openStartTimePicker, setOpenStartTimePicker] = useState(false)
   const today = new Date();
   const startDate = getFormatedDate(
     today.setDate(today.getDate()), //today.getDate() + 1)
     "YYYY/MM/DD",
     "yyy-dd-mm"
   );
+
+  const totime = new Date();
+  const starttime = getFormatedDate(
+    today.setDate(totime.getDate()), //today.getDate() + 1)
+    "yyy-dd-mm"
+  );
   const [selectedStartDate, setSelectedStartDate] = useState("");
   const [startedDate, setStartedDate] = useState("12/12/2023");
+
+  const [selectedStartTime, setSelectedStartTime] = useState();
+  const [startedTime, setStartedTime] = useState();
+
+  const enviarData = () => {
+    const dataT = selectedStartDate.split('/')
+    const ano = dataT[0]
+    const mes = dataT[1]
+    const anoT = dataT[2]
+    const anoT2 = anoT.split(' ')
+    const dia = anoT2[0]
+    const horarioT = anoT2[1].split(':')
+    const hora = horarioT[0]
+    const min = horarioT[1]
+    const data = new Date()
+    data.setDate(dia)
+    data.setMonth(mes)
+    data.setFullYear(ano)
+    data.setHours(hora, min)
+    data.setMilliseconds(0)
+    data.setSeconds(0)
+    const timestamp = data.getTime()
+
+    console.log(dia, mes, ano, hora, min, timestamp, data)
+
+    axios.get(`https://nbrasil.online/aluno/saida?data=${timestamp}&id=${idUser}`)
+    .then(e=>{
+      let sts = e.data.status == "Sucesso" ? `Sucesso - id: ${e.data.idPedido}` : "Erro: data repetida";
+      setStatus(sts);
+    })
+  }
 
   function handleChangeStartDate(propDate) {
     setStartedDate(propDate);
   }
 
+  function handleChangeStartTime(propTime) {
+    setStartedTime(propTime);
+  }
 
   const handleOnPressStartDate = () => {
     setOpenStartDatePicker(!openStartDatePicker);
   };
 
+  const handleOnPressStartTime = () => {
+    setOpenStartTimePicker(!openStartTimePicker)
+  };
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <KeyboardAvoidingView
@@ -71,7 +128,11 @@ export default function Page() {
                   minimumDate={startDate}
                   selected={startedDate}
                   onDateChanged={handleChangeStartDate}
-                  onSelectedChange={(date) => setSelectedStartDate(date)}
+                  onSelectedChange={(date) => {
+
+                    setSelectedStartDate(date)
+
+                  }}
                   options={{
                     backgroundColor: "#fff",
                     textHeaderColor: "#131313",
@@ -91,10 +152,13 @@ export default function Page() {
           </Modal>
 
 
-          
-           <TouchableOpacity style={styles.formbtn}>
-              <Text style={styles.textenv}>Enviar</Text>
-           </TouchableOpacity>
+
+          <TouchableOpacity style={styles.formbtn} onPress={() => enviarData()}>
+            <Text style={styles.textenv}>Enviar</Text>
+          </TouchableOpacity>
+
+          <Text>{status}</Text>
+
           <Link href="/Home_Estudante" style={styles.voltarText}>VOLTAR</Link>
           <Text style={styles.lastText}>Tangy.app @2023</Text>
         </View>
@@ -118,7 +182,7 @@ const styles = StyleSheet.create({
     maxWidth: 300,
     padding: 10,
     margin: 10,
-    marginTop:200,
+    marginTop: 200,
   },
   submitBtn: {
     backgroundColor: "#342342",
@@ -172,19 +236,19 @@ const styles = StyleSheet.create({
     marginTop: 12,
     color: 'gray',
   },
-  textenv:{
-    textAlign:'center',
-    fontSize:15,
-    color:'#fff',
-    top:5,
+  textenv: {
+    textAlign: 'center',
+    fontSize: 15,
+    color: '#fff',
+    top: 5,
   },
-  formbtn:{
-    padding:10,
-    margin:10,
-    backgroundColor:'#131313',
-    width:300,
-    height:50,
-    borderRadius:5,
+  formbtn: {
+    padding: 10,
+    margin: 10,
+    backgroundColor: '#131313',
+    width: 300,
+    height: 50,
+    borderRadius: 5,
 
   }
 
