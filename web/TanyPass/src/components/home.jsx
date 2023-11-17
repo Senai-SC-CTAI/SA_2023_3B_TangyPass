@@ -53,17 +53,17 @@ const Home = () => {
           <Link to="/registro" className='yperdirection'>Registro</Link>
           <Link to="/listaesdu" className='yperdirection'>Lista-Estudante</Link>
         </div>
+        
 
       <div className='loghome'>
         <img src={logohome} className='logohome' />
         <img src={icon_home} className='icon_home' />
       </div>
       
-        <Link className='logUsuario'>{logUser}</Link>
-      </div>
-      <div className='saidaaling'>
-        <Link onClick={logout}><img src={open_door} className='icon_door' /></Link>
-        <Link onClick={logout} className='back'>Sair</Link>
+      
+        <Link className='logUsuario'>
+          {logUser}
+        </Link>
       </div>
       <div className='daymensege'>
         <img src={icon} alt={hora} className='icon_day' />

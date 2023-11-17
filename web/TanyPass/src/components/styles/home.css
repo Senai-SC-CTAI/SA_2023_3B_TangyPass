@@ -7,7 +7,7 @@
 }
 
 .first_cont{
-    background-color: #000000;
+    /* background-color: #000000; */
     width: 100vw;
     height: 8%;
     padding: 1vw;
@@ -42,6 +42,7 @@
     height: 70px;
     top: 9px;
     position: absolute;
+    filter: brightness(0);
 }
 
 .icon_home{
@@ -49,24 +50,30 @@
     position: absolute;
     left: 147px;
     top: 30px;
+    fill: black;
+    color: black;
+    filter: contrast(0);
+    display: none;
 }
 
 .logUsuario{
     position: absolute;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'alata';
     top: 25px;
     left: 210px;
     text-decoration: none;
     cursor: default;
     font-size: 22px;
+    display: flex; justify-content: center;
+    align-items: center;
 }
 
 .yperdirection{
     padding: 10px;
     margin: 10px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-family: 'Alata', sans-serif;
     font-size: 1.5em;
     transition: 0.5s all;
@@ -85,11 +92,6 @@
     transition: 0.5s all;
 }
 
-.icon_door{
-    height: 40px;
-    margin-top: 20px;
-}
-
 .back{
     text-decoration: none;
     font-family: 'alata';
@@ -101,8 +103,10 @@
 .text_center{
     font-family: 'alata';
     text-align: center;
-    margin-top: 30px;
     font-size: 30px;
+    max-width: 400px;
+    font-size: 25px;
+    margin: 20px auto;
 }
 
 .text_hora {
@@ -116,7 +120,7 @@
 
 .icon_day {
     height: 50px;
-    margin-top: 100px;
+    margin-top: 150px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -153,11 +157,6 @@
     flex-direction:column;
  
 }
-
-.mensege p{
- font-size:2.5em;
-}
-
 
 .daymensege{
     display: flex;
