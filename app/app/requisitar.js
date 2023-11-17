@@ -15,40 +15,25 @@ export default function Page() {
 
 
   const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
-  const [openStartTimePicker, setOpenStartTimePicker] = useState(false)
+  
   const today = new Date();
   const startDate = getFormatedDate(
     today.setDate(today.getDate()), //today.getDate() + 1)
     "YYYY/MM/DD",
     "yyy-dd-mm"
   );
-
-  const totime = new Date();
-  const starttime = getFormatedDate(
-    today.setDate(totime.getDate()), //today.getDate() + 1)
-    "yyy-dd-mm"
-  );
   const [selectedStartDate, setSelectedStartDate] = useState("");
   const [startedDate, setStartedDate] = useState("12/12/2023");
-
-  const [selectedStartTime, setSelectedStartTime] = useState();
-  const [startedTime, setStartedTime] = useState();
 
   function handleChangeStartDate(propDate) {
     setStartedDate(propDate);
   }
 
-  function handleChangeStartTime(propTime) {
-    setStartedTime(propTime);
-  }
 
   const handleOnPressStartDate = () => {
     setOpenStartDatePicker(!openStartDatePicker);
   };
 
-  const handleOnPressStartTime = () => {
-    setOpenStartTimePicker(!openStartTimePicker)
-  };
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <KeyboardAvoidingView

@@ -79,14 +79,13 @@
     transition: 0.5s all;
 }
 
-.mtp{
+.mtpQr{
+    margin-top: 10px;
+    margin-left: auto;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    flex-direction: row;
-    margin-top: -10px;
+    align-items: end;
 }
-
 .mtp a:hover{
     color:#B6B6B6;
     transition: 0.5s all;

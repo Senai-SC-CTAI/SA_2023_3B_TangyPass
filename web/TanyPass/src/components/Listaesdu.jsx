@@ -25,14 +25,11 @@ const Listaesdu = () => {
     <div>
       <div className='containerlist'>
         <div className='alingdirectionlist'>
-          <div className='saida'>
-            <Link to="#" onClick={() => navigate(-1)}><img src={arrow_back} className='arrowBackIcon' /></Link>
-            <Link to="#" onClick={() => navigate(-1)} className='backPageText'>Voltar</Link>
-          </div>
           <div className="mtpQr">
             <Link to="/home" className='yperdirectionQr active'>Home</Link>
-            <Link to="/qrcode" className='yperdirectionQr active'>Qrcode</Link>
+            <Link to="/qrcode" className='yperdirectionQr active'>QrCode</Link>
             <Link to="/registro" className='yperdirectionQr'>Registro</Link>
+            <Link to="/Listaesdu" className='yperdirectionQr'>Lista de Estudantes</Link>
           </div>
         </div>
 

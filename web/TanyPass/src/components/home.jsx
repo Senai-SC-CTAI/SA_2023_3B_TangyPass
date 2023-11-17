@@ -47,24 +47,14 @@ const Home = () => {
 
   return (
     <div className='body'>
-      <div className='first_cont'>
-        <div className="mtp">
-          <Link to="/qrcode" className='yperdirection'>QrCode</Link>
-          <Link to="/registro" className='yperdirection'>Registro</Link>
-          <Link to="/listaesdu" className='yperdirection'>Lista-Estudante</Link>
-        </div>
-        
-
-      <div className='loghome'>
-        <img src={logohome} className='logohome' />
-        <img src={icon_home} className='icon_home' />
+      {/* <div className='first_cont'> */}
+      <div className="mtpQr">
+        <Link to="/home" className='yperdirectionQr active'>Home</Link>
+        <Link to="/qrcode" className='yperdirectionQr active'>QrCode</Link>
+        <Link to="/registro" className='yperdirectionQr'>Registro</Link>
+        <Link to="/Listaesdu" className='yperdirectionQr'>Lista de Estudantes</Link>
       </div>
-      
-      
-        <Link className='logUsuario'>
-          {logUser}
-        </Link>
-      </div>
+      {/* </div> */}
       <div className='daymensege'>
         <img src={icon} alt={hora} className='icon_day' />
         <p className='text_hora'>{hora}</p>
