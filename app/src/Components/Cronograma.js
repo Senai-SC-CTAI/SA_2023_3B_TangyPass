@@ -1,24 +1,24 @@
-import React from 'react';
-import { View, StyleSheet, Text, FlatList, } from 'react-native';
-import { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, Text, FlatList } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
 
-
 export function Crono() {
-
-    const [crono, setcrono] = useState([])
-    const url = "http://localhost:3000/Datas"
+    const [crono, setcrono] = useState([]);
+    const url = "http://localhost:3000/Datas";
 
     useEffect(() => {   
-        async function fectCrono() {
-            const res = await fetch(url)
-            const data = await res.json()
-            setcrono(data)
+        async function fetchCrono() {
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                setcrono(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
         }
 
-        fectCrono()
-    }, [])
+        fetchCrono();
+    }, []);
 
     return (
         <View style={[styles.container, styles.shadowProp, styles.input]}>
@@ -27,19 +27,17 @@ export function Crono() {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.init}>
-                        <SimpleLineIcons name="user" size={18} color="#919191" style={styles.icon}/>
+                        <SimpleLineIcons name="user" size={18} color="#919191" style={styles.icon} />
                         <Text style={styles.text}>Email completo do estudante</Text>
                         <View style={styles.ccontainer}>
                             <View style={styles.area}>
                                 <Text style={styles.content}>{item.dia}</Text>
-                                <View style={styles.area}>
-                                    <Text style={styles.content}>{item.hora}</Text>
-                                </View>
+                                <Text style={styles.content}>{item.hora}</Text>
                             </View>
                         </View>
                     </View>
                 )}
-
+                style={styles.flatList}
             />
         </View>
     );
@@ -48,10 +46,8 @@ export function Crono() {
 const styles = StyleSheet.create({
     container: {
         width: '30%',
-        display: 'flex',
         padding: 10,
         margin: 10,
-        shadowColor: '#000',
         borderRadius: 5,
     },
     shadowProp: {
@@ -60,42 +56,34 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 3,
     },
-    ccontainer: {
-       
-    },
+    ccontainer: {},
     area: {
-        margin: 'auto',
         padding: 10,
-        textAlign: 'center',
         display: 'flex',
-        alignItems:"center",
-        justifyContent:"space-between",
-        flexDirection:"row"
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
     },
-    input: {
-      
-    },
+    input: {},
     init: {
-        display: 'flex',
-        alignItems:'center',
-        justifyContent:'center',
+        alignItems: 'center',
+        justifyContent: 'center',
         flexDirection: 'column',
-        padding:5,
-    
+        padding: 5,
     },
     text: {
         color: '#919191',
-        marginTop:-16,
-   
+        marginTop: -16,
     },
-
-    icon:{
-        marginRight:210,
+    icon: {
+        marginRight: 210,
     },
-
     content: {
         color: '#8C8C8C',
-        padding:10,
-        textAlign:'center'
-    }
+        padding: 10,
+        textAlign: 'center',
+    },
+    flatList: {
+        // Adicione estilos adicionais para a FlatList, se necessário
+    },
 });
