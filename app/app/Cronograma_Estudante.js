@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-import {Crono} from '../src/Components/Cronograma';
+import CronoEdu from '../src/Components/Cronograma.js'
 import { Link } from 'expo-router';
 import { Header } from '../src/Components/header.js';
 import { Footer } from '../src/Components/footer.js';
@@ -10,27 +10,17 @@ import Logo from './Logo';
 
 
 
-export default function PageE() {
+const CronoEdu = () =>{
 
 
-
-
-
-    let [fontsLoaded] = useFonts({
-        Alata_400Regular,
-      });
-    
-      if (!fontsLoaded) {
-        return null;
-      } 
     return (
         <View style={styles.container}>
           <Logo/>
             <Text style={styles.text}>
                 Crônograma
             </Text>
- 
-            <Crono/>
+
+            <CronoEdu/>
 
             <Link href="Home_Estudante">
                 <Text style={styles.text}>
@@ -43,6 +33,7 @@ export default function PageE() {
     );
 }
 
+export default CronoEdu
 
 const styles = StyleSheet.create({
     container: {
