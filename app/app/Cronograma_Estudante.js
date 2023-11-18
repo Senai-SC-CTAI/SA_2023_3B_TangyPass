@@ -1,39 +1,26 @@
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-import CronoEdu from '../src/Components/Cronograma.js'
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { Link } from 'expo-router';
-import { Header } from '../src/Components/header.js';
 import { Footer } from '../src/Components/footer.js';
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
-import { useState,useEffect } from 'react';
-
+import Cronograma from '../src/Components/Cronograma.js';
 import Logo from './Logo';
 
-
-
-const CronoEdu = () =>{
-
-
+export default function Cronograma_Estudante() {
     return (
         <View style={styles.container}>
-          <Logo/>
-            <Text style={styles.text}>
-                Crônograma
-            </Text>
-
-            <CronoEdu/>
+            <Logo />
+            <Text style={styles.text}>Crônograma</Text>
+            
+            <Cronograma />
 
             <Link href="Home_Estudante">
-                <Text style={styles.text}>
-                    Voltar
-                </Text>
+                <Text style={styles.text}>Voltar</Text>
             </Link>
 
-            <Footer/>
+            <Footer />
         </View>
     );
 }
-
-export default CronoEdu
 
 const styles = StyleSheet.create({
     container: {
@@ -47,11 +34,11 @@ const styles = StyleSheet.create({
         fontSize: 16,
         padding: 10,
         margin: 20,
-        fontFamily:"Alata_400Regular",
+        fontFamily: 'Alata_400Regular',
     },
-    form:{
-        padding:10,
-        margin:10,
-        backgroundColor:"red"
-    }
+    form: {
+        padding: 10,
+        margin: 10,
+        backgroundColor: 'red',
+    },
 });
