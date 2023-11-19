@@ -1,25 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text, FlatList, TouchableOpacity } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
+import Logo from '../../app/Logo';
 
 const Cronograma = () => {
 
-    const [crono, setcrono] = useState([]);
-    const url = "http://localhost:3000/Datas";
 
-    useEffect(() => {   
+    const converterHorario = (e) => {
+        let unix = e;
+        let date = new Date(unix * 1000)
+        let ano = date.getFullYear();
+        let hora = date.getHours();
+        let minutes = date.getMinutes()
+        let dia = date.getDay();
+        let mes = date.getMonth();
+
+        return {
+            year: ano,
+            hour: `${hora}:${minutes}`,
+            day: dia,
+            month: mes,
+            complete: `${dia}/${mes}/${ano} às ${hora}:${minutes}`
+
+        }
+    }
+
+
+
+
+    const [histori, setHistori] = useState([])
+    const [idUser, setIdUser] = useState(0);
+
+    useEffect(() => {
+        const getIdAcc = async () => {
+            let id = await AsyncStorage.getItem("idUser");
+            if (id) {
+                setIdUser(id);
+            }
+        }
+    
+        getIdAcc();
+    
         async function fetchCrono() {
+            let url = `https://nbrasil.online/aluno/cronograma?id=2${idUser}`
             try {
                 const res = await fetch(url);
                 const data = await res.json();
-                setcrono(data);
+                setHistori(data);
             } catch (error) {
-                console.error("Error fetching data:", error);
+                console.error("Erro ao obter dados da API:", error);
             }
         }
-
+    
         fetchCrono();
-    }, []);
+    }, [idUser]);
+    
 
     function cancelar(event){
 
@@ -29,7 +66,7 @@ const Cronograma = () => {
   return (
     
     <FlatList
-        data={crono}
+        data={histori}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
             <View style={[styles.container, styles.shadowProp, styles.input]}>
@@ -38,8 +75,8 @@ const Cronograma = () => {
                 <Text style={styles.text}>Email completo do estudante</Text>
                 <View style={styles.ccontainer}>
                     <View style={styles.area}>
-                        <Text style={styles.content}>{item.dia}</Text>
-                        <Text style={styles.content}>{item.hora}</Text>
+                        <Text style={styles.content}>data: {converterHorario(item.horario).complete}</Text>
+                        <Text style={styles.content}>{item.horario}</Text>
                     </View>
                     <TouchableOpacity onPress={cancelar} style={styles.btncancel}>
                         <Text style={styles.textbtn}>Cancelar</Text>
