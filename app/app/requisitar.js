@@ -7,11 +7,6 @@ import { Link } from "expo-router";
 import axios from 'axios';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-axios.get('https://nbrasil.online/aluno/saida?data=325678&repeat=true&id=20')
-  .then(function (response) {
-    console.log(response);
-  })
-
 export default function Page() {
 
   const [idUser, setIdUser] = useState();
@@ -37,60 +32,47 @@ export default function Page() {
     "yyy-dd-mm"
   );
 
-  const totime = new Date();
-  const starttime = getFormatedDate(
-    today.setDate(totime.getDate()), //today.getDate() + 1)
-    "yyy-dd-mm"
-  );
   const [selectedStartDate, setSelectedStartDate] = useState("");
   const [startedDate, setStartedDate] = useState("12/12/2023");
 
-  const [selectedStartTime, setSelectedStartTime] = useState();
-  const [startedTime, setStartedTime] = useState();
-
   const enviarData = () => {
-    const dataT = selectedStartDate.split('/')
-    const ano = dataT[0]
-    const mes = dataT[1]
-    const anoT = dataT[2]
-    const anoT2 = anoT.split(' ')
-    const dia = anoT2[0]
-    const horarioT = anoT2[1].split(':')
-    const hora = horarioT[0]
-    const min = horarioT[1]
-    const data = new Date()
-    data.setDate(dia)
-    data.setMonth(mes)
-    data.setFullYear(ano)
-    data.setHours(hora, min)
-    data.setMilliseconds(0)
-    data.setSeconds(0)
-    const timestamp = data.getTime()
+    if(selectedStartDate){
+      const dataT = selectedStartDate.split('/')
+      const ano = dataT[0]
+      const mes = dataT[1]
+      const anoT = dataT[2]
+      const anoT2 = anoT.split(' ')
+      const dia = anoT2[0]
+      const horarioT = anoT2[1].split(':')
+      const hora = horarioT[0]
+      const min = horarioT[1]
+      const data = new Date()
+      data.setDate(dia)
+      data.setMonth(mes)
+      data.setFullYear(ano)
+      data.setHours(hora, min)
+      data.setMilliseconds(0)
+      data.setSeconds(0)
+      const timestamp = data.getTime()
 
-    console.log(dia, mes, ano, hora, min, timestamp, data)
+      console.log(dia, mes, ano, hora, min, timestamp, data)
 
-    axios.get(`https://nbrasil.online/aluno/saida?data=${timestamp}&id=${idUser}`)
-    .then(e=>{
-      let sts = e.data.status == "Sucesso" ? `Sucesso - id: ${e.data.idPedido}` : "Erro: data repetida";
-      setStatus(sts);
-    })
+      axios.get(`https://nbrasil.online/aluno/saida?data=${timestamp}&id=${idUser}`)
+      .then(e=>{
+        let sts = e.data.status == "Sucesso" ? `Sucesso - id: ${e.data.idPedido}` : "Erro: data repetida";
+        setStatus(sts);
+      })
+  }
   }
 
   function handleChangeStartDate(propDate) {
     setStartedDate(propDate);
   }
 
-  function handleChangeStartTime(propTime) {
-    setStartedTime(propTime);
-  }
-
   const handleOnPressStartDate = () => {
     setOpenStartDatePicker(!openStartDatePicker);
   };
 
-  const handleOnPressStartTime = () => {
-    setOpenStartTimePicker(!openStartTimePicker)
-  };
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <KeyboardAvoidingView

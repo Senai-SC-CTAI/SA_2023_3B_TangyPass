@@ -10,12 +10,17 @@ export default function Div() {
 
     const converterHorario = (e) => {
         let unix = e;
+        
         let date = new Date(unix * 1000)
         let ano = date.getFullYear();
         let hora = date.getHours();
         let minutes = date.getMinutes()
         let dia = date.getDay();
         let mes = date.getMonth();
+
+        if(minutes < 10){
+            minutes = `0${minutes}`
+        }
 
         return{
             year: ano,

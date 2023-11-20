@@ -15,7 +15,7 @@ const Registro = () => {
         <Link to="/registro" className='yperdirectionQr'>Registro</Link>
         <Link to="/listaesdu" className='yperdirectionQr'>Lista de Estudantes</Link>
       </div>
-      <img src={logo2} alt="" className='logo1' />
+      {/* <img src={logo2} alt="" className='logo1' /> */}
       <h1 className='tittle'>Registro</h1>
       <input type="text" className='select1' placeholder='Novo nome de usuário'/>
       <select className='select2'>

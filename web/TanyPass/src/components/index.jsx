@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Swal from 'sweetalert2'
-
 
 const index = () => {
   
@@ -29,11 +27,6 @@ const index = () => {
       localStorage.setItem('emailUser',email);
       localStorage.setItem('idUser',id)
       navigati('/home');
-      Swal.fire({
-        title: "Sucesso",
-        text: "Usuario Logado",
-        icon: "success"
-      });
     } catch (e) {
       console.log(e);      
     }
@@ -50,11 +43,6 @@ const index = () => {
         }
       })
       .catch(error => {
-        Swal.fire({
-          title: "Oops!",
-          text: "Algo Deu Errado",
-          icon: "error"
-        });
         console.error('Erro na solicitação:', error);
       })
           
