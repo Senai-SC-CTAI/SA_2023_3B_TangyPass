@@ -8,6 +8,12 @@ import Logo from '../../app/Logo';
 const Cronograma = () => {
 
 
+axios.get('https://nbrasil.online/aluno/cronograma?id=2')
+.then(function (response) {
+  console.log(response);
+})
+
+
     const converterHorario = (e) => {
         let unix = e;
         let date = new Date(unix * 1000)
@@ -40,18 +46,18 @@ const Cronograma = () => {
                 setIdUser(id);
             }
         }
-    
+        
+        
         getIdAcc();
-    
         async function fetchCrono() {
-            let url = `https://nbrasil.online/aluno/cronograma?id=2${idUser}`
+            let url = `https://nbrasil.online/aluno/cronograma?id=2&userId=${idUser}`
             try {
-                const res = await fetch(url);
-                const data = await res.json();
-                setHistori(data);
+                const response = await axios.get(url);
+                setHistori(response.data);  // Assuming your data is in response.data
             } catch (error) {
-                console.error("Erro ao obter dados da API:", error);
+                console.error("Error fetching data:", error);
             }
+            
         }
     
         fetchCrono();
