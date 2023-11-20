@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from 'react-native';
 export function Footer() {
     return (
         <View style={styles.container}>
-            <Text>
+            <Text style={styles.text}>
                 Tangy.app{'\u00A9'} 2023
             </Text>
         </View>
@@ -14,5 +14,6 @@ export function Footer() {
 const styles = StyleSheet.create({
     container: {
         alignItems: "center",   
-    }
+    },
+    
 });

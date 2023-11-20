@@ -32,8 +32,6 @@ const styles = StyleSheet.create({
     text: {
         color: 'black',
         fontSize: 16,
-        padding: 10,
-        margin: 20,
         fontFamily: 'Alata_400Regular',
     },
     form: {
