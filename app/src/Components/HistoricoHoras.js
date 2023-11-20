@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, Text,FlatList } from 'react-native';
+import { View, StyleSheet, Text, FlatList } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function Div() {
-  
+
 
     const converterHorario = (e) => {
         let unix = e;
@@ -33,15 +33,15 @@ export default function Div() {
     }
 
 
-  
-  
+
+
     const [histori, setHistori] = useState([])
     const [idUser, setIdUser] = useState(0);
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         const getIdAcc = async () => {
             let id = await AsyncStorage.getItem("idUser");
-            if(id){
+            if (id) {
                 setIdUser(id);
             }
         }
@@ -56,23 +56,23 @@ export default function Div() {
         }
         fectCrono()
 
-    },[idUser])
+    }, [idUser])
 
     return (
         <View style={styles.asdd}>
-            <FlatList 
-                    data={histori}
-                    renderItem={({ item }) => (
-                        <View style={[styles.container, styles.shadowProp]}> 
-                            <Text style={styles.text}>Data: {converterHorario(item.horario).complete}</Text>
-                            {/* <Text style={styles.text}>/{converterHorario(item.horario).month}</Text>
+            <FlatList
+                data={histori}
+                renderItem={({ item }) => (
+                    <View style={[styles.container, styles.shadowProp]}>
+                        <Text style={styles.text}>data: {converterHorario(item.horario).complete}</Text>
+                        {/* <Text style={styles.text}>/{converterHorario(item.horario).month}</Text>
                             <Text style={styles.text}>/{converterHorario(item.horario).year}</Text>
                             <Text style={styles.text}>{converterHorario(item.horario).hour}</Text> */}
 
-                            <AntDesign name="caretup" size={18} color="#88D699" style={styles.icon} />
-                        </View>
-                    )}
-                />
+                        <AntDesign name="caretup" size={18} color="#88D699" style={styles.icon} />
+                    </View>
+                )}
+            />
         </View>
     );
 }
@@ -96,24 +96,28 @@ const styles = StyleSheet.create({
         // overflow: "hidden",
     },
     shadowProp: {
-        shadowOffset: { width: 1, height: 3 },
-        shadowColor: '#696969',
-        shadowOpacity: 0.5,
-        shadowRadius: 3,
-        
+        shadowColor: "#8c9494",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 5.62,
+        elevation: 4,
+
     },
     text: {
         textAlign: 'center',
         margin: 'auto',
-        color:'#131313',
+        color: '#131313',
         border: 2,
         borderStyle: "solid",
         borderColor: "black"
     },
 
-    icon:{
-        margin:10,
-        padding:1,
+    icon: {
+        margin: 10,
+        padding: 1,
 
     }
 });
