@@ -37,25 +37,28 @@ export default function Div() {
     const [histori, setHistori] = useState([])
     const [idUser, setIdUser] = useState(0);
 
+    async function fectCrono() {
+        let url = `https://nbrasil.online/aluno/historico?id=${idUser}`
+
+        const res = await fetch(url)
+        const data = await res.json()
+        setHistori(data.reverse())
+        
+
+    }
+
     useEffect(() => {
         const getIdAcc = async () => {
             let id = await AsyncStorage.getItem("idUser");
             if (id) {
                 setIdUser(id);
+                fectCrono();
             }
         }
-        async function fectCrono() {
-            let url = `https://nbrasil.online/aluno/historico?id=${idUser}`
-
-            const res = await fetch(url)
-            const data = await res.json()
-            setHistori(data)
-            getIdAcc();
-
-        }
-        fectCrono()
-
+        getIdAcc();
     }, [idUser])
+
+    
 
     return (
         <View style={styles.asdd}>

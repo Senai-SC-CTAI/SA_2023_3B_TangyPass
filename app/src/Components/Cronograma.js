@@ -110,41 +110,42 @@ const styles = StyleSheet.create({
         width: 300,
         padding: 10,
         margin: 10,
-        borderRadius: 5,
+        borderRadius: 500,
         marginBottom: 10,
-        position: "relative"
+        position: "relative",
     },
     status:{
         width: 15,
         height: 5,
-        borderRadius: 100
     },
 
     shadowProp: {
-        shadowColor: "#8c9494",
+        shadowColor: "#ccc",
         shadowOffset: {
             width: 0,
             height: 5,
         },
-        shadowOpacity: 0.20,
-        shadowRadius: 5.62,
-        elevation: 4,
+        shadowRadius: 2.62,
+        elevation: 5,
+        borderRadius: 5
 
     },
-    ccontainer: {},
+    ccontainer: {
+        borderRadius: 100,
+    },
     area: {
         padding: 10,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         flexDirection: 'row',
+        borderRadius: 100,
     },
-    input: {},
     init: {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
-        padding: 5,
+        borderRadius: 10,
     },
     text: {
         color: '#919191',
@@ -153,6 +154,7 @@ const styles = StyleSheet.create({
     },
     icon: {
         marginRight: 210,
+        marginTop: 10
     },
     content: {
         color: '#8C8C8C',
@@ -170,9 +172,6 @@ const styles = StyleSheet.create({
     textbtn: {
         color: '#131313',
         fontWeight: 'bold'
-    },
-    flatList: {
-        
     },
 });
 
