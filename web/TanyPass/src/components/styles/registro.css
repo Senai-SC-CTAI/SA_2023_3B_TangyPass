@@ -41,7 +41,7 @@
     height: 40px;
     color: #9A9A9A;
     font-family: 'alata';
-    padding: 0 5px;
+    padding: 0px;
 }
 
 .select1 {
@@ -51,6 +51,7 @@
 }
 
 .select2 {
+    background: #fff;
     top: 385px;
     left: 50%;
     transform: translateX(-50%);

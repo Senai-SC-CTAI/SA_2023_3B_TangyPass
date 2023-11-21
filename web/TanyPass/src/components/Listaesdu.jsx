@@ -6,7 +6,7 @@ import arrow_back from '../assets/arrow_back.png'
 
 const Listaesdu = () => {
 
-  const [count, setCount] = useState(0)
+  const [searchQuery, setSearchQuery] = useState("");
   const [namealunos, setnameAlunos] = useState([])
   const navigate = useNavigate();
 
@@ -20,6 +20,19 @@ const Listaesdu = () => {
     }
     fecthData()
   }, [])
+
+  function procurar() {
+    if (searchQuery === "") {
+      setnameAlunos((prevAlunos) => prevAlunos);
+    } else {
+      setnameAlunos((prevAlunos) =>
+        prevAlunos.filter((aluno) =>
+          aluno.nome.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+    }
+  }
+  
 
   return (
     <div>
@@ -35,20 +48,33 @@ const Listaesdu = () => {
 
         <div className='alingcontainerlist'>
           <div className='containerlists'>
-            <select onChange={e => console.log(e)} className='form'>
-              <option>Selecione</option>
+            <div className='form'>
+            <div className='forminplist'>
+                    <input
+                      type="text"
+                      placeholder="Pesquisar estudante..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                </div>
+            <select onChange={(e) => console.log(e)}>
               {namealunos.map((aluno) => (
-                <option onClick={e => console.log(e)} value={aluno.id} key={aluno.id} className='form2' >
+                <option
+                  onClick={(e) => console.log(e)}
+                  value={aluno.id}
+                  key={aluno.id}
+                  className="form2"
+                >
                   Aluno: {aluno.nome} Sala: {aluno.sala}
                 </option>
+                
               ))}
             </select>
+            <div className='alingbtn'>
+                <button onClick={procurar}>Procurar</button>
+            </div>
+            </div>
           </div>
-
-          <div className='alingbtn'>
-            <input type="submit" value="Procurar" className='btnlist' />
-          </div>
-
         </div>
 
         <div className='alingfooterlist'>

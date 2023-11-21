@@ -164,3 +164,9 @@
     flex-direction:column;
     margin-top: -110px;
 }
+
+@media screen and (max-width:625px) {
+        .mtpQr a{
+            font-size: 1em;
+        }
+}
