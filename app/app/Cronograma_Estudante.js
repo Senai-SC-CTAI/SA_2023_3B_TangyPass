@@ -9,7 +9,7 @@ export default function Cronograma_Estudante() {
     return (
         <View style={styles.container}>
             <Logo />
-            <Text style={styles.text}>Crônograma</Text>
+            <Text style={styles.text}>Meus pedidos</Text>
             
             <Cronograma />
 
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     text: {
         color: 'black',
         fontSize: 16,
-        fontFamily: 'Alata_400Regular',
+        marginBottom: 20
     },
     form: {
         padding: 10,

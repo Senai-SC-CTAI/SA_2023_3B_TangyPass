@@ -28,7 +28,6 @@ export default function Div() {
             day: dia,
             month: mes,
             complete: `${dia}/${mes}/${ano} às ${hora}:${minutes}`
-
         }
     }
 

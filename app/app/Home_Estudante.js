@@ -46,7 +46,7 @@ export default function Page(){
             
             
               <Link href="Cronograma_Estudante" style={styles.rqs}>
-                <Text style={styles.cronotxt}> Crônograma</Text>
+                <Text style={styles.cronotxt}>Meus pedidos</Text>
               </Link>
             
           </View>
