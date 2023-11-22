@@ -17,8 +17,15 @@ export default function Page() {
 
   async function getEmail(){
     const email = await AsyncStorage.getItem("emailUser");
+    const typeu = await AsyncStorage.getItem('typeUser');
     if(email){
-      navigation.navigate('Home_Estudante');
+      if(typeu == "responsavel"){
+        navigation.navigate('Home_Pai');
+
+      } else {
+        navigation.navigate('Home_Estudante');
+        
+      }
     }
   }
 
@@ -28,6 +35,7 @@ export default function Page() {
     try {
       await AsyncStorage.setItem('emailUser',email);
       await AsyncStorage.setItem('idUser',id);
+      await AsyncStorage.setItem('typeUser',"estudante");
       navigation.navigate('Home_Estudante');
     } catch (e){
       console.log(e);

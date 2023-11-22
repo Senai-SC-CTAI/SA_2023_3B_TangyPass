@@ -28,6 +28,7 @@ export default function Page() {
     try {
       await AsyncStorage.setItem('emailUser',email);
       await AsyncStorage.setItem('idUser',id);
+      await AsyncStorage.setItem('typeUser',"responsavel");
       navigation.navigate('Home_Pai');
     } catch (e){
       console.log(e);
