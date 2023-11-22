@@ -18,7 +18,7 @@ export default function Page() {
   async function getEmail(){
     const email = await AsyncStorage.getItem("emailUser");
     if(email){
-      navigation.navigate('Home_Estudante');
+      navigation.navigate('Home_Pai');
     }
   }
 
@@ -28,7 +28,7 @@ export default function Page() {
     try {
       await AsyncStorage.setItem('emailUser',email);
       await AsyncStorage.setItem('idUser',id);
-      navigation.navigate('Home_Estudante');
+      navigation.navigate('Home_Pai');
     } catch (e){
       console.log(e);
     }
@@ -36,7 +36,7 @@ export default function Page() {
  
 
   const clicked = ()  =>{
-    axios.post(`https://nbrasil.online/aluno/login`, {user: email, password:Password})
+    axios.post(`https://nbrasil.online/responsavel/login`, {user: email, password:Password})
     .then(e =>{
         if(e.data.status != "error"){
           armItem(email, e.data.id)
@@ -61,7 +61,7 @@ export default function Page() {
     <View style={styles.container}>
     <Logo/>
         <View>
-            <Text style={styles.tex}>Estudante</Text>
+            <Text style={styles.tex}>Responsável</Text>
         </View>
 
         <TextInput 
@@ -85,7 +85,7 @@ export default function Page() {
         </View>
 
         <Link href="Recuperar_Senha" style={styles.ty}> Recuperar Senha</Link>
-        <Link href="login_responsavel" style={styles.ty}> Entrar como responsável</Link>
+        <Link href="/" style={styles.ty}> Entrar como estudante</Link>
     </View>
 
     
@@ -130,11 +130,11 @@ const styles = StyleSheet.create({
   btn:{
     backgroundColor:'#000',
     padding:5,
+    marginTop: 20,
     maxWidth:262,
     width:"100%",
     borderRadius:5,
     height: 50,
-    marginTop: 20,
     display: "flex",
     justifyContent: "center",
     alignItems: "center"

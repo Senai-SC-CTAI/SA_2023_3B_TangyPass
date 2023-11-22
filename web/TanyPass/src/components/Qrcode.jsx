@@ -103,12 +103,6 @@ const Qrcode = () => {
           </div>
 
         </div>
-
-          <div className='alingfooterQr'>
-              <div className='footerQr'>
-                  <h2>Tangy.app @2023</h2>
-              </div>
-          </div>
       </div>
     </div>
   )

@@ -55,13 +55,13 @@ const index = () => {
           <div className='logo'>
             <img src={logo} alt="" />
           </div>
-          <div className='text'>
+          {/* <div className='text'>
             <h2>Faça login para começarmos sua experiência</h2>
           </div>
 
           <div className='logo2'>
             <img src={college} alt="" />
-          </div>
+          </div> */}
         </div>
 
         <div className='form2'>
@@ -70,7 +70,7 @@ const index = () => {
           </div>
 
           <div className='formulario'>
-            <input type="email" className='inp1' placeholder='Usuário( Email )' onChange={e => setEmail(e.target.value)}/>
+            <input type="email" className='inp1' placeholder='Usuário' onChange={e => setEmail(e.target.value)}/>
             <input type="password" className='inp2' placeholder='Insira sua senha' onChange={e => setPassword(e.target.value)}/>
             <Link className='btn' onClick={clicked}><h4>Enviar</h4></Link>
             <Link to="/recuperar" className='yper'><p>Esqueceu a senha?</p></Link>

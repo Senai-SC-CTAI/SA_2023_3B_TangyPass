@@ -1,23 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button, Touchable, TouchableOpacity } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
 import { Link } from 'expo-router';
-import { Alata_400Regular, useFonts } from '@expo-google-fonts/alata';
-import { Feather } from '@expo/vector-icons';
 import { Pedidos } from '../src/Components/pedidos';
+import Logo from "./Logo";
+import { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function App() {
-  let [fontsLoaded] = useFonts({
-    Alata_400Regular,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  } 
+  
   
   return (
     <View style={styles.container}>
-      <Image source={require('../Assets/img.png')} style={styles.Image}/>
+      <Logo/>
       <Text style={styles.Text}>Pedidos de saída</Text>
 
       <Pedidos/>
@@ -45,6 +39,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 3,
   },
+  Image: {
+
+  },
   card1:{
     width:"90%",
     height:170,
@@ -65,7 +62,7 @@ const styles = StyleSheet.create({
     marginTop:15, 
   },
   txt:{
-    fontFamily:"Alata_400Regular",
+    fontFamily:"alata",
     fontSize:16,
     color:"#919191",
     marginTop:2,
@@ -84,12 +81,12 @@ const styles = StyleSheet.create({
     justifyContent:"center"
   },
   txt1:{
-    fontFamily:"Alata_400Regular",
+    fontFamily:"alata",
     fontSize:14,
     color:"#8C8C8C",
   },
   txt2:{
-    fontFamily:"Alata_400Regular",
+    fontFamily:"alata",
     fontSize:14,
     color:"white",
   },
@@ -111,13 +108,14 @@ const styles = StyleSheet.create({
     borderRadius:5,
   },
   voltarText:{
-    fontFamily:"Alata_400Regular",
-    fontSize:18,
+    fontFamily:"Sans-serif",
+    fontSize:14,
     color:"black",
-    marginBottom:50,
+    marginTop:30,
+    marginBottom: 20
   },
   lastText:{
-    fontFamily:"Alata_400Regular",
+    fontFamily:"alata",
     fontSize:18,
     color:"#B6B6B6",
   }

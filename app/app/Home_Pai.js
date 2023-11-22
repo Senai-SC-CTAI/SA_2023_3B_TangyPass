@@ -1,15 +1,39 @@
 import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link } from "expo-router";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigation } from "expo-router";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Logo from "./Logo";
 
 export default function Page() {
+  const [logUser, setLogUser] = useState("");
+
+  const navigation = useNavigation();
+  
+  async function logout(){
+    await AsyncStorage.setItem("emailUser", "");
+    navigation.navigate("/login_responsavel");
+  }
+  
+  useEffect(()=>{
+    const getUser = async () => {
+      setLogUser(await AsyncStorage.getItem("emailUser"))
+    }
+    getUser();
+  },[logUser])
+
+  async function logout(){
+    await AsyncStorage.setItem("emailUser", "");
+    navigation.navigate("index");
+  }
 
   return (
     <View style={styles.container}>
 
-      <Image source={require('../Assets/img.png')} style={styles.logo} />
+      <Logo/>
       <Text style={styles.usertitle}>Logado Como</Text>
+      <Text>{logUser}</Text>
 
       <View style={styles.botoes}>
 
@@ -34,7 +58,7 @@ export default function Page() {
               </TouchableOpacity>
             </Link>
 
-            <Link href="Historico_Responsavel">
+            <Link href="Historico_Responsavel" style={[styles.hs2, styles.hs]}>
               <TouchableOpacity >
                 <Text style={styles.hstxt}>Historico de entradas e saidas</Text>
               </TouchableOpacity>
@@ -44,11 +68,9 @@ export default function Page() {
 
         </View>
       </View>
-      <Link href="/">
-        <TouchableOpacity style={styles.saidabtn}>
+        <TouchableOpacity onPress={e => logout()} style={styles.saidabtn}>
           <Text style={styles.saidatxt}>Sair</Text>
         </TouchableOpacity>
-      </Link>
       <Text style={styles.tangy}>Tangy.app @2023</Text>
     </View>
   );
@@ -68,7 +90,6 @@ const styles = StyleSheet.create({
     display: "flex",
     maxWidth: 320,
     flexDirection: "column",
-    gap: 15,
   },
   usertitle: {
     fontSize: 18,
@@ -80,7 +101,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 15,
     flexWrap: "wrap",
-    marginBottom: 15,
   },
   osdois2: {
     height: "100%",
@@ -89,7 +109,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    gap: 10,
   },
   agnd: {
     width: "47.5%",
@@ -99,13 +118,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
   },
+  hs2: {
+    marginTop: 10
+  },
   hs: {
     width: "100%",
     height: "50%",
     backgroundColor: "black",
     borderRadius: 5,
     textAlign: "center",
-    marginTop: 30,
 
 
   },

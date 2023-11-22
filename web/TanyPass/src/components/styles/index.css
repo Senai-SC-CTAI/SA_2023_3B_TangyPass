@@ -21,6 +21,7 @@ body, html {
 .logo {
     display: flex;
     justify-content: center;
+    height: 100vh;
     align-items: center;
 }
 
@@ -73,6 +74,7 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 25px;
  }
 
 .text2 h2 {
@@ -144,19 +146,4 @@ body, html {
     text-decoration: none;
     margin-top: 30px;
     font-size: 13px;
-}
-
-@media screen and (min-width:1600px) and (max-width: 1990px) {
-    .formulario{
-        margin-top: 100px;
-    }
-
-    .logo{
-        margin-top: 110px;
-    }
-
-
-    .form2 h2{
-        margin-top: 150px;
-    }
 }

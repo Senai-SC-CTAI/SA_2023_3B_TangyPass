@@ -7,6 +7,10 @@ import { useState,useEffect } from 'react';
 
 const Registro = () => {
   const [namealunos, setnameAlunos] = useState([])
+  const [alunoid, setALunoid] = useState(1);
+  const [emailR, setEmailR] = useState("");
+  const [msg, setMsg] = useState("");
+
   const url = "https://nbrasil.online/adm/listaEstudantes"
 
   useEffect(() => {
@@ -16,9 +20,23 @@ const Registro = () => {
       setnameAlunos(data)
     }
     fecthData()
-  }, [])
+  }, [namealunos])
 
-
+  const registrarResponsavel = () => {
+    setMsg("Carregando");
+    fetch("https://nbrasil.online/adm/registrarResponsavel",{
+      method: "POST",
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: emailR,
+        id: alunoid
+      })
+    })
+    .then(e=>e.json())
+    .then(e=>setMsg(e.status))
+  }
   return (
     <div className='body'>
       <div className="mtpQr">
@@ -30,11 +48,11 @@ const Registro = () => {
       {/* <img src={logo2} alt="" className='logo1' /> */}
       <div className='formsz'>
         <h1 className='tittle'>Registro</h1>
-        <input type="text" className='select1' placeholder='Novo nome de usuário'/>
-        <select onChange={(e) => console.log(e)} className='select2'>
+          {msg}
+          <input onKeyUp={e=>setEmailR(e.nativeEvent.target.value)} type="text" className='select1' placeholder='Email do responsavel'/>
+          <select onChange={(e) => setALunoid(e.nativeEvent.target.value)} className='select2'>
               {namealunos.map((aluno) => (
                 <option
-                  onClick={(e) => console.log(e)}
                   value={aluno.id}
                   key={aluno.id}
                   className="option2"
@@ -44,9 +62,8 @@ const Registro = () => {
                 
               ))}
             </select>
+        <button onClick={()=> registrarResponsavel()} className='button'>Registrar</button>
       </div>
-      <button className='button'>Registrar</button>
-      <footer className='footer'>Tangy.app @2023</footer>
     </div>
   );
 }

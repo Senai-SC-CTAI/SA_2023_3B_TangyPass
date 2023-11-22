@@ -36,14 +36,20 @@ export default function Div() {
 
     const [histori, setHistori] = useState([])
     const [idUser, setIdUser] = useState(0);
+    const [msg, setMsg] = useState("");
 
     async function fectCrono() {
         let url = `https://nbrasil.online/aluno/historico?id=${idUser}`
 
         const res = await fetch(url)
         const data = await res.json()
-        setHistori(data.reverse())
-        
+        if(data.length < 1){
+            setMsg("Nenhum registro encontrado");
+            setHistori(data)
+        } else {
+            setMsg("");
+            setHistori(data)
+        }        
 
     }
 
@@ -62,6 +68,7 @@ export default function Div() {
 
     return (
         <View style={styles.asdd}>
+            <Text style={{textAlign: "center", margin: 5}}>{msg}</Text>
             <FlatList
                 data={histori}
                 renderItem={({ item }) => (

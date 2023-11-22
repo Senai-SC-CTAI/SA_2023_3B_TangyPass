@@ -3,13 +3,13 @@ import { View, StyleSheet, Text, FlatList, TouchableOpacity } from 'react-native
 import { SimpleLineIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-import Logo from '../../app/Logo';
 
 const Cronograma = () => {
 
     const [histori, setHistori] = useState([])
     const [logUser, setLogUser] = useState("");
     const [idUser, setIdUser] = useState(0);
+    const [msg, setMsg] = useState("");
 
     useEffect(()=>{
         const getUser = async () => {
@@ -33,6 +33,11 @@ const Cronograma = () => {
     async function fetchCrono() {
         let url = `https://nbrasil.online/aluno/cronograma?id=${idUser}`
         const response = await axios.get(url)
+        if(response.data.length < 1){
+            setMsg("Nenhum registro encontrado")
+        } else {
+            setMsg("")
+        }
         setHistori(response.data); 
     }
 
@@ -78,8 +83,9 @@ const Cronograma = () => {
     }
 
     return (
-
-        <FlatList
+        // <View>
+            // <Text style={{textAlign: "center", margin: 5}}>{msg}</Text>
+            <FlatList
             data={histori.reverse()}
             keyExtractor={(item, index) => index.toString()} // Usando o índice como chave
             renderItem={({ item, index }) => (
@@ -102,6 +108,7 @@ const Cronograma = () => {
             )}
             style={styles.flatList}
         />
+    // </View>
 
     )
 }
