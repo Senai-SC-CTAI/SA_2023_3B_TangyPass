@@ -21,11 +21,11 @@ export function Pedidos() {
         getUser();
     },[idUser])
 
-    function fectCrono() {
+    async function fectCrono() {
         let url = `https://nbrasil.online/responsavel/pedidos?id=${idUser}`
         console.log(url)
-        const res = fetch(url)
-        const data = res.json()
+        const res = await fetch(url)
+        const data = await res.json()
         if(data.length < 1) {
             setMsg("Nenhum registro encontrado");
         } else {
